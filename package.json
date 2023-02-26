@@ -1,5 +1,5 @@
 {
-	"name": "eleventeen-base-blog",
+	"name": "eleventeen",
 	"version": "8.0.0",
 	"description": "A starter repository for a blog web site using the Eleventy site generator.",
 	"scripts": {
@@ -20,6 +20,9 @@
 		"email": "zachleatherman@gmail.com",
 		"url": "https://zachleat.com/"
 	},
+	"contributors": [
+		"Ricky de Laveaga (https://rdela.com)"
+	],
 	"license": "MIT",
 	"engines": {
 		"node": ">=14"
