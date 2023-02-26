@@ -24,7 +24,7 @@ The name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wik
 	- All URLs are decoupled from the content’s location on the file system.
 	- Configure templates via the [Eleventy Data Cascade](https://www.11ty.dev/docs/data-cascade/)
 - **Performance focused**: four-hundos Lighthouse score out of the box!
-	- [View the Lighthouse report for the latest build](https://eleventy-base-blog.netlify.app/reports/lighthouse/) courtesy of the [Netlify Lighthouse plugin](https://github.com/netlify/netlify-plugin-lighthouse).
+	- [View the Lighthouse report for the latest eleventeen build](https://eleventeen.netlify.app/reports/lighthouse/) courtesy of the [Netlify Lighthouse plugin](https://github.com/netlify/netlify-plugin-lighthouse).
 	- _0 Cumulative Layout Shift_
 	- _0ms Total Blocking Time_
 - Local development live reload provided by [Eleventy Dev Server](https://www.11ty.dev/docs/dev-server/).
@@ -42,7 +42,7 @@ The name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wik
 - Per page CSS bundles [via `eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle).
 - Built-in [syntax highlighter](https://www.11ty.dev/docs/plugins/syntaxhighlight/) (zero-JavaScript output).
 - Blog Posts
-	- Draft posts: use `draft: true` to mark a blog post as a draft. Drafts are **only** included during `--serve`/`--watch` and are excluded from full builds. View the [Drafts plugin source code](https://github.com/11ty/eleventy-base-blog/blob/main/eleventy.config.drafts.js).
+	- Draft posts: use `draft: true` to mark a blog post as a draft. Drafts are **only** included during `--serve`/`--watch` and are excluded from full builds. View the [Drafts plugin source code](https://github.com/rdela/eleventeen/blob/trunk/eleventy.config.drafts.js).
 	- Automated next/previous links
 	- Accessible deep links to headings
 - Generated Pages
@@ -62,9 +62,9 @@ The name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wik
 
 Deploy this Eleventy site in just a few clicks on these services:
 
-- [Get your own Eleventy web site on Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/11ty/eleventy-base-blog)
+- [Get your own eleventeen site on Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/rdela/eleventeen)
 - If you run Eleventy locally you can drag your `_site` folder to [`drop.netlify.com`](https://drop.netlify.com/) to upload it without using `git`.
-- [Get your own Eleventy web site on Vercel](https://vercel.com/import/project?template=11ty%2Feleventy-base-blog)
+- [Get your own eleventeen site on Vercel](https://vercel.com/import/project?template=rdela%2Feleventeen)
 - Read more about [Deploying an Eleventy project](https://www.11ty.dev/docs/deployment/) to the web.
 
 ## Getting Started
@@ -72,7 +72,7 @@ Deploy this Eleventy site in just a few clicks on these services:
 ### 1. Clone this Repository
 
 ```
-git clone https://github.com/11ty/eleventy-base-blog.git my-blog-name
+git clone https://github.com/rdela/eleventeen.git my-blog-name
 ```
 
 ### 2. Navigate to the directory
@@ -133,4 +133,3 @@ $env:DEBUG="Eleventy*"; npx @11ty/eleventy
 	- `_includes/layouts/home.njk`: the home page template (wrapped into `base.njk`)
 	- `_includes/layouts/post.njk`: the blog post template (wrapped into `base.njk`)
 - `_includes/postslist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `content/index.njk` has an example of how to use it.
-
