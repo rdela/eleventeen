@@ -10,7 +10,7 @@ The name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wik
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bd16afdb-d0a5-4de2-aa5c-19529038ed78/deploy-status)](https://app.netlify.com/sites/eleventeen/deploys)
 
-[Live eleventeen demo](https://eleventeen.netlify.app)
+[Live eleventeen demo](https://eleventeen.blog)
 
 [eleventeen on GitHub](https://github.com/rdela/eleventeen)
 
@@ -63,7 +63,7 @@ Or you can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the
 	- All URLs are decoupled from the content’s location on the file system.
 	- Configure templates via the [Eleventy Data Cascade](https://www.11ty.dev/docs/data-cascade/)
 - **Performance focused**: four-hundos Lighthouse score out of the box!
-	- [View the Lighthouse report for the latest eleventeen build](https://eleventeen.netlify.app/reports/lighthouse/) courtesy of the [Netlify Lighthouse plugin](https://github.com/netlify/netlify-plugin-lighthouse).
+	- [View the Lighthouse report for the latest eleventeen build](https://eleventeen.blog/reports/lighthouse/) courtesy of the [Netlify Lighthouse plugin](https://github.com/netlify/netlify-plugin-lighthouse).
 	- _0 Cumulative Layout Shift_
 	- _0ms Total Blocking Time_
 - Local development live reload provided by [Eleventy Dev Server](https://www.11ty.dev/docs/dev-server/).
@@ -93,7 +93,7 @@ Or you can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the
 
 ## Demos
 
-- [eleventeen on Netlify](https://eleventeen.netlify.app/)
+- eleventeen on Netlify: <https://eleventeen.blog> or <https://eleventeen.netlify.app>
 - [eleventy-base-blog on Netlify](https://eleventy-base-blog.netlify.app)
 - [eleventy-base-blog on GitHub Pages](https://11ty.github.io/eleventy-base-blog/)
 - [Remix eleventy-base-blog on Glitch](https://glitch.com/~11ty-eleventy-base-blog)

@@ -91,9 +91,6 @@ a[href]:active {
 	color: var(--text-color-link-active);
 }
 
-main {
-	padding: 1rem;
-}
 main :first-child {
 	margin-top: 0;
 }
@@ -144,13 +141,18 @@ code {
 	word-break: break-all;
 }
 
+footer,
+header,
+main {
+	padding: 1rem;
+}
+
 /* Header */
 header {
 	display: flex;
 	gap: 1em 0.5em;
 	flex-wrap: wrap;
 	align-items: center;
-	padding: 1em;
 }
 .home-link {
 	font-size: 1em; /* 16px /16 */
