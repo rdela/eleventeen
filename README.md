@@ -4,7 +4,7 @@ A work in progress variation of
 
 ## [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog)
 
-> A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v2.0 release](https://www.11ty.dev/blog/eleventy-v2-beta/)).
+> A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v2.0 release](https://www.11ty.dev/blog/eleventy-v2/)).
 
 The name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)).
 
@@ -18,7 +18,7 @@ The name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wik
 
 ## Features
 
-- Using [Eleventy v2.0](https://www.11ty.dev/blog/eleventy-v2-beta/) with zero-JavaScript output.
+- Using [Eleventy v2.0](https://www.11ty.dev/blog/eleventy-v2/) with zero-JavaScript output.
 	- Content is exclusively pre-rendered (this is a static site).
 	- Can easily [deploy to a subfolder without changing any content](https://www.11ty.dev/docs/plugins/html-base/)
 	- All URLs are decoupled from the content’s location on the file system.
