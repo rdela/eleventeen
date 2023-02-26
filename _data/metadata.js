@@ -1,5 +1,5 @@
 module.exports = {
-	title: "Eleventeen v8",
+	title: "eleventeen v8",
 	url: "https://rdela.com",
 	language: "en",
 	description: "Modified Eleventy Base Blog v8 template",
