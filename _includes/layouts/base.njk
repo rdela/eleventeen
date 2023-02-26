@@ -55,12 +55,14 @@
 		<footer></footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
-		{# <script>
+		{# choosing not to block render
+		https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#blocking_rendering_till_a_script_is_fetched_and_executed #}
+		<script async>
 			document.documentElement.style
 			.setProperty('--background-color', 'pink');
 			var bkdcol = getComputedStyle(document.documentElement)
 				.getPropertyValue('--background-color');
 			console.log(bkdcol);
-		</script> #}
+		</script>
 	</body>
 </html>
