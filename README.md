@@ -93,9 +93,10 @@ Or you can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the
 
 ## Demos
 
-- [Netlify](https://eleventy-base-blog.netlify.com/)
-- [GitHub Pages](https://11ty.github.io/eleventy-base-blog/)
-- [Remix on Glitch](https://glitch.com/~11ty-eleventy-base-blog)
+- [eleventeen on Netlify](https://eleventeen.netlify.app/)
+- [eleventy-base-blog on Netlify](https://eleventy-base-blog.netlify.app)
+- [eleventy-base-blog on GitHub Pages](https://11ty.github.io/eleventy-base-blog/)
+- [Remix eleventy-base-blog on Glitch](https://glitch.com/~11ty-eleventy-base-blog)
 
 ## Deploy this to your own site
 
