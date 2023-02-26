@@ -14,7 +14,46 @@ The name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wik
 
 [eleventeen on GitHub](https://github.com/rdela/eleventeen)
 
+## Getting Started
 
+1. Clone this Repository
+
+```
+git clone https://github.com/rdela/eleventeen.git my-blog-name
+```
+
+2. Navigate to the directory
+
+```
+cd my-blog-name
+```
+
+Specifically have a look at `eleventy.config.js` to see if you want to configure any Eleventy options differently.
+
+3. Have a look at `eleventy.config.js` to see if you want to configure any Eleventy options differently.
+4. Install dependencies
+
+```
+npm install
+```
+
+5. Edit `_data/metadata.js`
+
+6. Run Eleventy
+
+Generate a production-ready build:
+
+```
+npx @11ty/eleventy
+```
+
+Or build and host locally on a local development server:
+
+```
+npx @11ty/eleventy --serve
+```
+
+Or you can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the internals.
 
 ## Features
 
@@ -66,57 +105,6 @@ Deploy this Eleventy site in just a few clicks on these services:
 - If you run Eleventy locally you can drag your `_site` folder to [`drop.netlify.com`](https://drop.netlify.com/) to upload it without using `git`.
 - [Get your own eleventeen site on Vercel](https://vercel.com/import/project?template=rdela%2Feleventeen)
 - Read more about [Deploying an Eleventy project](https://www.11ty.dev/docs/deployment/) to the web.
-
-## Getting Started
-
-### 1. Clone this Repository
-
-```
-git clone https://github.com/rdela/eleventeen.git my-blog-name
-```
-
-### 2. Navigate to the directory
-
-```
-cd my-blog-name
-```
-
-Specifically have a look at `eleventy.config.js` to see if you want to configure any Eleventy options differently.
-
-### 3. Install dependencies
-
-```
-npm install
-```
-
-### 4. Edit `_data/metadata.js`
-
-### 5. Run Eleventy
-
-Generate a production-ready build:
-
-```
-npx @11ty/eleventy
-```
-
-Or build and host locally on a local development server:
-
-```
-npx @11ty/eleventy --serve
-```
-
-Or in [debug mode](https://www.11ty.dev/docs/debugging/) to see all the internals:
-
-```
-# Mac OS/Linux/etc
-DEBUG=Eleventy* npx @11ty/eleventy
-
-# Windows
-set DEBUG=Eleventy* & npx @11ty/eleventy
-
-# Windows (Powershell in VS Code)
-$env:DEBUG="Eleventy*"; npx @11ty/eleventy
-```
 
 ### Implementation Notes
 
