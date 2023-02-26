@@ -8,5 +8,4 @@ eleventyNavigation:
 
 Eleventeen is a work in progress variation of [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog), an [Eleventy](https://www.11ty.dev) blog starter. The name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)).
 
-- [Live eleventeen demo](https://eleventeen.netlify.app)
-- [eleventeen on GitHub](https://github.com/rdela/eleventeen)
+The eleventeen demo lives at <https://eleventeen.blog>
