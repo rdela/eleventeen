@@ -5,36 +5,39 @@
 		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
 		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
 		Courier, monospace;
+	--article-font-size: 1.25rem;
+	--syntax-tab-size: 4;
 }
 
-/* Theme colors */
+/* Default theme colors */
 :root {
-	--color-gray-20: #e0e0e0;
-	--color-gray-50: #c0c0c0;
-	--color-gray-90: #333;
+	--background-color-light: #fff;
+	--background-color-dark: #000;
+	--background-color: var(--background-color-light);
 
-	--background-color: #fff;
+	--active-light: #17050f;
+	--active-dark: #a6a6f8;
+	--complement: #1493fb;
+	--complementdarker: #5f2b48;
+	--primary: #6969f7;
+	--primarydarker: #082840;
+	--text-color-dark: #dad8d8;
+	--text-color-light: #282828;
 
-	--text-color: var(--color-gray-90);
-	--text-color-link: #082840;
-	--text-color-link-active: #5f2b48;
-	--text-color-link-visited: #17050f;
-
-	--syntax-tab-size: 2;
+	--text-color: var(--text-color-light);
+	--text-color-link: var(--primarydarker);
+	--text-color-link-active: var(--complementdarker);
+	--text-color-link-visited: var(--active-light);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-gray-20: #e0e0e0;
-		--color-gray-50: #c0c0c0;
-		--color-gray-90: #dad8d8;
+		--background-color: var(--background-color-dark);
 
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
-
-		--background-color: #000;
+		--text-color: var(--text-color-dark);
+		--text-color-link: var(--complement);
+		--text-color-link-active: var(--primary);
+		--text-color-link-visited: var(--active-dark);
 	}
 }
 
@@ -55,7 +58,7 @@ html {
 	overflow-y: scroll;
 }
 body {
-	max-width: 40em;
+	max-width: 50em;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -91,12 +94,15 @@ a[href]:active {
 	color: var(--text-color-link-active);
 }
 
+main {
+	font-size: var(--article-font-size);
+}
 main :first-child {
 	margin-top: 0;
 }
 
 /* header {
-	border-bottom: 1px dashed var(--color-gray-20);
+	border-bottom: 1px dashed #e0e0e0;
 } */
 header:after {
 	content: "";
@@ -106,7 +112,7 @@ header:after {
 
 .links-nextprev {
 	list-style: none;
-	/* border-top: 1px dashed var(--color-gray-20); */
+	/* border-top: 1px dashed #e0e0e0; */
 	padding: 1em 0;
 }
 
@@ -209,7 +215,7 @@ header {
 */
 .postlist-date {
 	font-size: 0.8125em; /* 13px /16 */
-	color: var(--color-gray-90);
+	color: var(--text-color);
 }
 .postlist-date {
 	word-spacing: -0.5px;

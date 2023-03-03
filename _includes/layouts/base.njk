@@ -52,17 +52,51 @@
 			{{ content | safe }}
 		</main>
 
-		<footer>🐙 <a href="https://github.com/rdela/eleventeen">eleventeen on github</a></footer>
+		<footer>
+			{#- 🌈 Rainbow button #}
+			<button onclick="rainbow()">🌈 Rainbow Me</button>
+			🐙 <a href="https://github.com/rdela/eleventeen">eleventeen on github</a>
+		</footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
-		{# choosing not to block render
-		https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#blocking_rendering_till_a_script_is_fetched_and_executed #}
-		<script async>
-			document.documentElement.style
-			.setProperty('--background-color', 'pink');
-			var bkdcol = getComputedStyle(document.documentElement)
-				.getPropertyValue('--background-color');
-			console.log(bkdcol);
-		</script>
+		{% js %}
+			{% include "node_modules/@famebot/hsl-gen/dist/hsl-gen.umd.js" %}
+		{% endjs %}
+		{% js %}
+const rainbow = () => {
+var colorScheme = hslGen();
+{#- console.log(colorScheme); #}
+
+{#- https://davidwalsh.name/css-variables-javascript #}
+const docstyle = document.documentElement.style;
+docstyle.setProperty('--active-light', colorScheme.darkhuehsl);
+docstyle.setProperty('--active-dark', colorScheme.huehsl);
+docstyle.setProperty('--background-color-light', colorScheme.huehsl);
+docstyle.setProperty('--background-color-dark', colorScheme.darkhuehsl);
+docstyle.setProperty('--complement', colorScheme.analhsl);
+docstyle.setProperty('--complementdarker', colorScheme.analhsldarker);
+docstyle.setProperty('--primary', colorScheme.comphsl);
+docstyle.setProperty('--primarydarker', colorScheme.comphsldarker);
+docstyle.setProperty('--text-color-dark', colorScheme.huehsllighter);
+docstyle.setProperty('--text-color-light', colorScheme.darkhuehsldarker);
+
+{#- console.log('--background-color: ' + getComputedStyle(document.documentElement)
+	.getPropertyValue('--background-color')); #}
+}
+rainbow();
+		{% endjs %}
+		{# 
+			getBundleFileUrl Writes the bundle content to a content-hashed file location in your 
+			output directory and returns the URL to the file for use.
+			https://github.com/11ty/eleventy-plugin-bundle/blob/main/README.md#write-a-bundle-to-a-file
+			Note that writing bundles to files will likely be slower for 
+			empty-cache first time visitors but better cached in the browser 
+			for repeat-views (and across multiple pages, too).
+			https://mathiasbynens.be/notes/inline-vs-separate-file
+			http://calendar.perfplanet.com/2011/why-inlining-everything-is-not-the-answer/
+			Choosing not to block render
+			https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#blocking_rendering_till_a_script_is_fetched_and_executed
+		#}
+		<script async src="{% getBundleFileUrl "js" %}"></script>
 	</body>
 </html>
