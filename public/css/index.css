@@ -27,7 +27,7 @@
 	--text-color: var(--text-color-light);
 	--text-color-link: var(--text-color-light);
 	--text-color-link-active: var(--primarydarker);
-	--text-color-link-highlight: var(--complementdarker)
+	--text-color-link-highlight: var(--complementdarker);
 	--text-color-link-visited: var(--primarydarker);
 	
 	--button-border-color: var(--background-color-dark);
@@ -41,7 +41,7 @@
 		--text-color: var(--text-color-dark);
 		--text-color-link: var(--primary);
 		--text-color-link-active: var(--text-color-dark);
-		--text-color-link-highlight: var(--complement)
+		--text-color-link-highlight: var(--complement);
 		--text-color-link-visited: var(--text-color-dark);
 		
 		--button-border-color: var(--background-color-light);
