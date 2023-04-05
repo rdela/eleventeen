@@ -25,19 +25,27 @@
 	--text-color-light: #282828;
 
 	--text-color: var(--text-color-light);
-	--text-color-link: var(--primarydarker);
-	--text-color-link-active: var(--complementdarker);
-	--text-color-link-visited: var(--active-light);
+	--text-color-link: var(--text-color-light);
+	--text-color-link-active: var(--primarydarker);
+	--text-color-link-highlight: var(--complementdarker)
+	--text-color-link-visited: var(--primarydarker);
+	
+	--button-border-color: var(--background-color-dark);
+	--button-border-color-highlight: var(--primarydarker);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		--background-color: var(--background-color-dark);
-
+		
 		--text-color: var(--text-color-dark);
-		--text-color-link: var(--complement);
-		--text-color-link-active: var(--primary);
-		--text-color-link-visited: var(--active-dark);
+		--text-color-link: var(--primary);
+		--text-color-link-active: var(--text-color-dark);
+		--text-color-link-highlight: var(--complement)
+		--text-color-link-visited: var(--text-color-dark);
+		
+		--button-border-color: var(--background-color-light);
+		--button-border-color-highlight: var(--primary);
 	}
 }
 
@@ -89,9 +97,32 @@ a[href] {
 a[href]:visited {
 	color: var(--text-color-link-visited);
 }
-a[href]:hover,
+a[href]:focus,
+a[href]:hover {
+	color: var(--text-color-link-highlight);
+}
 a[href]:active {
 	color: var(--text-color-link-active);
+}
+
+button {
+	background-color: var(--complement);
+	background-image: linear-gradient(45deg, var(--primary), var(--complement), var(--background-color-light));
+	border: .15625em solid var(--button-border-color);
+	border-radius: 99999px;
+	color: var(--text-color-light);
+	font-size: 1.5em;
+	padding: 0.25em 0.5em;
+}
+button:focus,
+button:hover {
+	background-color: var(--primary);
+	background-image: linear-gradient(315deg, var(--background-color-light), var(--primary), var(--complement));
+	border-color: var(--button-border-color-highlight);
+}
+button:active {
+	background-color: var(--background-color-light);
+	border-color: var(--text-color-link-highlight);
 }
 
 main {
@@ -152,6 +183,21 @@ header,
 main {
 	padding: 1rem;
 }
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@media screen and (max-width: 720px) {
+	footer {
+		flex-direction: column;
+		gap: 2rem;
+		justify-content: center;
+	}
+}
+
 
 /* Header */
 header {

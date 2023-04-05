@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="theme-color" content="white">
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
 
@@ -55,7 +56,8 @@
 		<footer>
 			{#- 🌈 Rainbow button #}
 			<button onclick="rainbow()">🌈 Rainbow Me</button>
-			🐙 <a href="https://github.com/rdela/eleventeen">eleventeen on github</a>
+			<span id="hsl-gen-hue"></span>
+			<span>🐙 <a href="https://github.com/rdela/eleventeen">eleventeen on github</a></span>
 		</footer>
 
 		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
@@ -82,6 +84,24 @@ docstyle.setProperty('--text-color-light', colorScheme.darkhuehsldarker);
 
 {#- console.log('--background-color: ' + getComputedStyle(document.documentElement)
 	.getPropertyValue('--background-color')); #}
+
+function activateColorScheme() {
+	const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: light)');
+	console.log(colorSchemeQueryList)
+	if ((colorSchemeQueryList.media === 'not all') 
+	|| (colorSchemeQueryList.matches === true)) {
+		document.querySelector('meta[name="theme-color"]').setAttribute('content', colorScheme.huehsl);
+	} else {
+		document.querySelector('meta[name="theme-color"]').setAttribute('content', colorScheme.darkhuehsl);
+	}
+}
+const darkPreference = window.matchMedia("(prefers-color-scheme: dark)");
+const lightPreference = window.matchMedia("(prefers-color-scheme: light)");
+darkPreference.addEventListener("change", e => e.matches && activateColorScheme());
+lightPreference.addEventListener("change", e => e.matches && activateColorScheme());
+activateColorScheme();
+
+document.querySelector('#hsl-gen-hue').innerHTML = ` Hue: ${colorScheme.hue} (<a href="https://hsl-gen.netlify.app">HSL Gen</a>)`;
 }
 rainbow();
 		{% endjs %}
