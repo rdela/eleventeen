@@ -33,38 +33,39 @@
 		<style>{% getBundle "css" %}</style>
 	</head>
 	<body>
-		<a href="#skip" class="visually-hidden">Skip to main content</a>
+		<div class="pantalla">
+			<a href="#skip" class="visually-hidden">Skip to main content</a>
 
-		<header>
-			<a href="/" class="home-link">{{ metadata.title }}</a>
+			<header>
+				<a href="/" class="home-link">{{ metadata.title }}</a>
 
-			{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-			<nav>
-				<h2 class="visually-hidden">Top level navigation menu</h2>
-				<ul class="nav">
-				{%- for entry in collections.all | eleventyNavigation %}
-					<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
-				{%- endfor %}
-				</ul>
-			</nav>
-		</header>
+				{#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
+				<nav>
+					<h2 class="visually-hidden">Top level navigation menu</h2>
+					<ul class="nav">
+					{%- for entry in collections.all | eleventyNavigation %}
+						<li class="nav-item"><a href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a></li>
+					{%- endfor %}
+					</ul>
+				</nav>
+			</header>
 
-		<main id="skip">
-			{{ content | safe }}
-		</main>
+			<main id="skip">
+				{{ content | safe }}
+			</main>
 
-		<footer>
-			{#- 🌈 Rainbow button #}
-			<button onclick="rainbow()">🌈 Rainbow Me</button>
-			<span id="hsl-gen-hue"></span>
-			<span>🐙 <a href="https://github.com/rdela/eleventeen">eleventeen on github</a></span>
-		</footer>
+			<footer>
+				{#- 🌈 Rainbow button #}
+				<button onclick="rainbow()">🌈 Rainbow Me</button>
+				<span id="hsl-gen-hue"></span>
+				<span>🐙 <a href="https://github.com/rdela/eleventeen">eleventeen on github</a></span>
+			</footer>
 
-		<!-- Current page: {{ page.url | htmlBaseUrl }} -->
-		{% js %}
-			{% include "node_modules/@famebot/hsl-gen/dist/hsl-gen.umd.js" %}
-		{% endjs %}
-		{% js %}
+			<!-- Current page: {{ page.url | htmlBaseUrl }} -->
+			{% js %}
+				{% include "node_modules/@famebot/hsl-gen/dist/hsl-gen.umd.js" %}
+			{% endjs %}
+			{% js %}
 const rainbow = () => {
 var colorScheme = hslGen();
 {#- console.log(colorScheme); #}
@@ -104,19 +105,20 @@ activateColorScheme();
 document.querySelector('#hsl-gen-hue').innerHTML = ` Hue: ${colorScheme.hue} (<a href="https://hsl-gen.netlify.app">HSL Gen</a>)`;
 }
 rainbow();
-		{% endjs %}
-		{# 
-			getBundleFileUrl Writes the bundle content to a content-hashed file location in your 
-			output directory and returns the URL to the file for use.
-			https://github.com/11ty/eleventy-plugin-bundle/blob/main/README.md#write-a-bundle-to-a-file
-			Note that writing bundles to files will likely be slower for 
-			empty-cache first time visitors but better cached in the browser 
-			for repeat-views (and across multiple pages, too).
-			https://mathiasbynens.be/notes/inline-vs-separate-file
-			http://calendar.perfplanet.com/2011/why-inlining-everything-is-not-the-answer/
-			Choosing not to block render
-			https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#blocking_rendering_till_a_script_is_fetched_and_executed
-		#}
-		<script async src="{% getBundleFileUrl "js" %}"></script>
+			{% endjs %}
+			{# 
+				getBundleFileUrl Writes the bundle content to a content-hashed file location in your 
+				output directory and returns the URL to the file for use.
+				https://github.com/11ty/eleventy-plugin-bundle/blob/main/README.md#write-a-bundle-to-a-file
+				Note that writing bundles to files will likely be slower for 
+				empty-cache first time visitors but better cached in the browser 
+				for repeat-views (and across multiple pages, too).
+				https://mathiasbynens.be/notes/inline-vs-separate-file
+				http://calendar.perfplanet.com/2011/why-inlining-everything-is-not-the-answer/
+				Choosing not to block render
+				https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#blocking_rendering_till_a_script_is_fetched_and_executed
+			#}
+			<script async src="{% getBundleFileUrl "js" %}"></script>
+		</div>
 	</body>
 </html>

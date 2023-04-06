@@ -32,6 +32,8 @@
 	
 	--button-border-color: var(--background-color-dark);
 	--button-border-color-highlight: var(--primarydarker);
+
+	--rainbow-horizon: var(--background-color-light), 50%, var(--complement), 88%, var(--primary)
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,6 +48,8 @@
 		
 		--button-border-color: var(--background-color-light);
 		--button-border-color-highlight: var(--primary);
+		
+		--rainbow-horizon: var(--background-color-dark), 64%, var(--complementdarker), 92%, var(--primarydarker)
 	}
 }
 
@@ -66,6 +70,13 @@ html {
 	overflow-y: scroll;
 }
 body {
+	background-image: linear-gradient(var(--rainbow-horizon));
+	min-height: 100vh;
+	min-height: 100dvh;
+}
+
+.pantalla {
+	margin: 0 auto;
 	max-width: 50em;
 }
 
