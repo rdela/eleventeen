@@ -28,7 +28,7 @@
 	--text-color-link: var(--text-color-light);
 	--text-color-link-active: var(--primarydarker);
 	--text-color-link-highlight: var(--complementdarker);
-	--text-color-link-visited: var(--primarydarker);
+	--text-color-link-visited: var(--primarytext);
 	
 	--button-border-color: var(--background-color-dark);
 	--button-border-color-highlight: var(--primarydarker);
