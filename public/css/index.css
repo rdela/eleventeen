@@ -5,36 +5,51 @@
 		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
 		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
 		Courier, monospace;
+	--article-font-size: 1.25rem;
+	--syntax-tab-size: 4;
 }
 
-/* Theme colors */
+/* Default theme colors */
 :root {
-	--color-gray-20: #e0e0e0;
-	--color-gray-50: #c0c0c0;
-	--color-gray-90: #333;
+	--background-color-light: #fff;
+	--background-color-dark: #000;
+	--background-color: var(--background-color-light);
 
-	--background-color: #fff;
+	--active-light: #17050f;
+	--active-dark: #a6a6f8;
+	--complement: #1493fb;
+	--complementdarker: #5f2b48;
+	--primary: #6969f7;
+	--primarydarker: #082840;
+	--text-color-dark: #dad8d8;
+	--text-color-light: #282828;
 
-	--text-color: var(--color-gray-90);
-	--text-color-link: #082840;
-	--text-color-link-active: #5f2b48;
-	--text-color-link-visited: #17050f;
+	--text-color: var(--text-color-light);
+	--text-color-link: var(--text-color-light);
+	--text-color-link-active: var(--primarydarker);
+	--text-color-link-highlight: var(--complementdarker);
+	--text-color-link-visited: var(--primarytext);
+	
+	--button-border-color: var(--background-color-dark);
+	--button-border-color-highlight: var(--primarydarker);
 
-	--syntax-tab-size: 2;
+	--rainbow-horizon: var(--background-color-light), 50%, var(--complement), 88%, var(--primary)
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-gray-20: #e0e0e0;
-		--color-gray-50: #c0c0c0;
-		--color-gray-90: #dad8d8;
-
-		/* --text-color is assigned to --color-gray-_ above */
-		--text-color-link: #1493fb;
-		--text-color-link-active: #6969f7;
-		--text-color-link-visited: #a6a6f8;
-
-		--background-color: #000;
+		--background-color: var(--background-color-dark);
+		
+		--text-color: var(--text-color-dark);
+		--text-color-link: var(--primary);
+		--text-color-link-active: var(--text-color-dark);
+		--text-color-link-highlight: var(--complement);
+		--text-color-link-visited: var(--text-color-dark);
+		
+		--button-border-color: var(--background-color-light);
+		--button-border-color-highlight: var(--primary);
+		
+		--rainbow-horizon: var(--background-color-dark), 64%, var(--complementdarker), 92%, var(--primarydarker)
 	}
 }
 
@@ -55,7 +70,14 @@ html {
 	overflow-y: scroll;
 }
 body {
-	max-width: 40em;
+	background-image: linear-gradient(var(--rainbow-horizon));
+	min-height: 100vh;
+	min-height: 100dvh;
+}
+
+.pantalla {
+	margin: 0 auto;
+	max-width: 50em;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -86,17 +108,43 @@ a[href] {
 a[href]:visited {
 	color: var(--text-color-link-visited);
 }
-a[href]:hover,
+a[href]:focus,
+a[href]:hover {
+	color: var(--text-color-link-highlight);
+}
 a[href]:active {
 	color: var(--text-color-link-active);
 }
 
+button {
+	background-color: var(--complement);
+	background-image: linear-gradient(45deg, var(--primary), var(--complement), var(--background-color-light));
+	border: .15625em solid var(--button-border-color);
+	border-radius: 99999px;
+	color: var(--text-color-light);
+	font-size: 1.5em;
+	padding: 0.25em 0.5em;
+}
+button:focus,
+button:hover {
+	background-color: var(--primary);
+	background-image: linear-gradient(315deg, var(--background-color-light), var(--primary), var(--complement));
+	border-color: var(--button-border-color-highlight);
+}
+button:active {
+	background-color: var(--background-color-light);
+	border-color: var(--text-color-link-highlight);
+}
+
+main {
+	font-size: var(--article-font-size);
+}
 main :first-child {
 	margin-top: 0;
 }
 
 /* header {
-	border-bottom: 1px dashed var(--color-gray-20);
+	border-bottom: 1px dashed #e0e0e0;
 } */
 header:after {
 	content: "";
@@ -106,7 +154,7 @@ header:after {
 
 .links-nextprev {
 	list-style: none;
-	/* border-top: 1px dashed var(--color-gray-20); */
+	/* border-top: 1px dashed #e0e0e0; */
 	padding: 1em 0;
 }
 
@@ -146,6 +194,21 @@ header,
 main {
 	padding: 1rem;
 }
+
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@media screen and (max-width: 720px) {
+	footer {
+		flex-direction: column;
+		gap: 2rem;
+		justify-content: center;
+	}
+}
+
 
 /* Header */
 header {
@@ -209,7 +272,7 @@ header {
 */
 .postlist-date {
 	font-size: 0.8125em; /* 13px /16 */
-	color: var(--color-gray-90);
+	color: var(--text-color);
 }
 .postlist-date {
 	word-spacing: -0.5px;

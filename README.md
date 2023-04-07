@@ -1,18 +1,30 @@
 # [eleventeen v8](https://github.com/rdela/eleventeen)
 
-A work in progress variation of
-
-## [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog)
-
-> A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v2.0 release](https://www.11ty.dev/blog/eleventy-v2/)).
-
-The name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)).
+Visit the [live eleventeen demo](https://eleventeen.blog) on <https://eleventeen.blog>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bd16afdb-d0a5-4de2-aa5c-19529038ed78/deploy-status)](https://app.netlify.com/sites/eleventeen/deploys)
 
-[Live eleventeen demo](https://eleventeen.blog)
+Please star [eleventeen on GitHub](https://github.com/rdela/eleventeen).
 
-[eleventeen on GitHub](https://github.com/rdela/eleventeen)
+ eleventeen is a work in progress variation of [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog) with [MOTHEREFFIN Rainbow mode](https://github.com/rdela/eleventeen/pull/1) powered by [HSL Gen](https://github.com/famebot/hsl-gen) 🌈💥 
+
+eleventy-base-blog describes itself as:
+
+> A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v2.0 release](https://www.11ty.dev/blog/eleventy-v2/)).
+
+Rejoicing and rainbows aside, eleventeen also makes some more subtle adjustments to eleventy-base-blog. There are various changes in `public/css/index.css`, and in `_includes/postslist.njk`:
+ 
+```njk
+<ol reversed class="postlist" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+```
+ 
+becomes:
+ 
+```njk
+<ul reversed class="postlist">
+```
+
+The eleventeen name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)).
 
 ## Getting Started
 
@@ -110,7 +122,7 @@ Deploy this Eleventy site in just a few clicks on these services:
 ### Implementation Notes
 
 - `content/about/index.md` is an example of a content page.
-- `content/archive/` has the blog posts but really they can live in any directory, they are in [`content/blog/`](https://github.com/11ty/eleventy-base-blog/tree/main/content/blog) in eleventy-base-blog. They only need the `post` tag to be included in the blog posts [collection](https://www.11ty.dev/docs/collections/), see `content/archive/archive.11tydata.js`.
+- `content/archive/` has the blog posts but really they can live in any directory, in eleventy-base-blog they are in [`content/blog/`](https://github.com/11ty/eleventy-base-blog/tree/main/content/blog). They only need the `posts` tag to be included in the blog posts [collection](https://www.11ty.dev/docs/collections/), see `content/archive/archive.11tydata.js`.
 - Use the `eleventyNavigation` key (via the [Eleventy Navigation plugin](https://www.11ty.dev/docs/plugins/navigation/)) in your front matter to add a template to the top level site navigation. This is in use on `content/index.njk` and `content/about/index.md`.
 - Content can be in _any template format_ (blog posts needn’t exclusively be markdown, for example). Configure your project’s supported templates in `eleventy.config.js` -> `templateFormats`.
 - The `public` folder in your input directory will be copied to the output folder (via `addPassthroughCopy` in the `eleventy.config.js` file). This means `./public/css/*` will live at `./_site/css/*` after your build completes.
