@@ -15,7 +15,7 @@ module.exports = function(eleventyConfig) {
 	// For example, `./public/css/` ends up in `_site/css/`
 	eleventyConfig.addPassthroughCopy({
 		"./public/": "/",
-		"./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css"
+		"./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css",
 	});
 
 	// Run Eleventy when these files change:
@@ -31,7 +31,7 @@ module.exports = function(eleventyConfig) {
 	// Official plugins
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
-		preAttributes: { tabindex: 0 }
+		preAttributes: { tabindex: 0 },
 	});
 	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
@@ -40,20 +40,22 @@ module.exports = function(eleventyConfig) {
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "dd LLLL yyyy");
+		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(
+			format || "dd LLLL yyyy"
+		);
 	});
 
-	eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+	eleventyConfig.addFilter("htmlDateString", (dateObj) => {
 		// dateObj input: https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+		return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
 	});
 
 	// Get the first `n` elements of a collection.
 	eleventyConfig.addFilter("head", (array, n) => {
-		if(!Array.isArray(array) || array.length === 0) {
+		if (!Array.isArray(array) || array.length === 0) {
 			return [];
 		}
-		if( n < 0 ) {
+		if (n < 0) {
 			return array.slice(n);
 		}
 
@@ -66,20 +68,22 @@ module.exports = function(eleventyConfig) {
 	});
 
 	// Return all the tags used in a collection
-	eleventyConfig.addFilter("getAllTags", collection => {
+	eleventyConfig.addFilter("getAllTags", (collection) => {
 		let tagSet = new Set();
-		for(let item of collection) {
-			(item.data.tags || []).forEach(tag => tagSet.add(tag));
+		for (let item of collection) {
+			(item.data.tags || []).forEach((tag) => tagSet.add(tag));
 		}
 		return Array.from(tagSet);
 	});
 
 	eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
-		return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+		return (tags || []).filter(
+			(tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1
+		);
 	});
 
 	// Customize Markdown library settings:
-	eleventyConfig.amendLibrary("md", mdLib => {
+	eleventyConfig.amendLibrary("md", (mdLib) => {
 		mdLib.use(markdownItAnchor, {
 			permalink: markdownItAnchor.permalink.ariaHidden({
 				placement: "after",
@@ -87,9 +91,45 @@ module.exports = function(eleventyConfig) {
 				symbol: "#",
 				ariaHidden: false,
 			}),
-			level: [1,2,3,4],
-			slugify: eleventyConfig.getFilter("slugify")
+			level: [1, 2, 3, 4],
+			slugify: eleventyConfig.getFilter("slugify"),
 		});
+	});
+
+	// Development server: https://www.11ty.dev/docs/dev-server/
+	eleventyConfig.setServerOptions({
+		// Default values commented out
+
+		// Whether the live reload snippet is used
+		// liveReload: true,
+
+		// Whether DOM diffing updates are applied where possible instead of page reloads
+		// domDiff: true,
+
+		// The starting port number
+		// Will increment up to (configurable) 10 times if a port is already in use.
+		// port: 8080,
+
+		// Additional files to watch that will trigger server updates
+		// Accepts an Array of file paths or globs (passed to `chokidar.watch`).
+		// Works great with a separate bundler writing files to your output folder.
+		// e.g. `watch: ["_site/**/*.css"]`
+		// watch: [],
+
+		// Show local network IP addresses for device testing
+		showAllHosts: true,
+
+		// Use a local key/certificate to opt-in to local HTTP/2 with https
+		// https: {
+			// key: "./localhost.key",
+			// cert: "./localhost.cert",
+		// },
+
+		// Change the default file encoding for reading/serving files
+		// encoding: "utf-8",
+
+		// Show the dev server version number on the command line
+		// showVersion: false,
 	});
 
 	// Features to make your build faster (when you need them)
@@ -103,12 +143,7 @@ module.exports = function(eleventyConfig) {
 	return {
 		// Control which files Eleventy will process
 		// e.g.: *.md, *.njk, *.html, *.liquid
-		templateFormats: [
-			"md",
-			"njk",
-			"html",
-			"liquid",
-		],
+		templateFormats: ["md", "njk", "html", "liquid"],
 
 		// Pre-process *.md files with: (default: `liquid`)
 		markdownTemplateEngine: "njk",
@@ -118,10 +153,10 @@ module.exports = function(eleventyConfig) {
 
 		// These are all optional:
 		dir: {
-			input: "content",          // default: "."
-			includes: "../_includes",  // default: "_includes"
-			data: "../_data",          // default: "_data"
-			output: "_site"
+			input: "content", // default: "."
+			includes: "../_includes", // default: "_includes"
+			data: "../_data", // default: "_data"
+			output: "_site",
 		},
 
 		// -----------------------------------------------------------------

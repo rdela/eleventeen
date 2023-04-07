@@ -2,7 +2,7 @@
 <html lang="{{ metadata.language }}">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 		<meta name="theme-color" content="white">
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
@@ -68,7 +68,6 @@
 			{% js %}
 const rainbow = () => {
 var colorScheme = hslGen();
-{#- console.log(colorScheme); #}
 
 {#- https://davidwalsh.name/css-variables-javascript #}
 const docstyle = document.documentElement.style;
@@ -85,12 +84,8 @@ docstyle.setProperty('--primarytext', colorScheme.comphsltext);
 docstyle.setProperty('--text-color-dark', colorScheme.huehsllighter);
 docstyle.setProperty('--text-color-light', colorScheme.darkhuehsldarker);
 
-{#- console.log('--background-color: ' + getComputedStyle(document.documentElement)
-	.getPropertyValue('--background-color')); #}
-
 function activateColorScheme() {
 	const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: light)');
-	console.log(colorSchemeQueryList)
 	if ((colorSchemeQueryList.media === 'not all') 
 	|| (colorSchemeQueryList.matches === true)) {
 		document.querySelector('meta[name="theme-color"]').setAttribute('content', colorScheme.huehsl);
