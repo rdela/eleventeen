@@ -40,9 +40,8 @@ git clone https://github.com/rdela/eleventeen.git my-blog-name
 cd my-blog-name
 ```
 
-Specifically have a look at `eleventy.config.js` to see if you want to configure any Eleventy options differently.
-
 3. Have a look at `eleventy.config.js` to see if you want to configure any Eleventy options differently.
+
 4. Install dependencies
 
 ```
