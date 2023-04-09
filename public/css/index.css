@@ -49,7 +49,7 @@
 		--button-border-color: var(--background-color-light);
 		--button-border-color-highlight: var(--primary);
 		
-		--rainbow-horizon: var(--background-color-dark), 64%, var(--complementdarker), 92%, var(--primarydarker)
+		--rainbow-horizon: var(--background-color-dark), 64%, var(--complementdark), 92%, var(--primarydark)
 	}
 }
 
