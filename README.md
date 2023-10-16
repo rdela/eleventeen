@@ -6,7 +6,7 @@ Visit the [live eleventeen demo](https://eleventeen.blog) on <https://eleventeen
 
 Please star [eleventeen on GitHub](https://github.com/rdela/eleventeen).
 
- eleventeen is a work in progress variation of [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog) with [MOTHEREFFIN Rainbow mode](https://github.com/rdela/eleventeen/pull/1) powered by [HSL Gen](https://github.com/famebot/hsl-gen) 🌈💥 
+ eleventeen is a work in progress variation of [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog) with [MOTHEREFFIN Rainbow mode](https://github.com/rdela/eleventeen/pull/1) powered by [Chromagen](https://github.com/famebot/chromagen) 🌈💥 
 
 eleventy-base-blog describes itself as:
 
@@ -28,29 +28,31 @@ The eleventeen name is an homage to the [Daisy Chainsaw album](https://en.wikipe
 
 ## Getting Started
 
-1. Clone this Repository
+If you get stuck, try the [Eleventy Getting Started Guide](https://www.11ty.dev/docs/getting-started/).
+
+1. Make a directory and navigate to it.
 
 ```
-git clone https://github.com/rdela/eleventeen.git my-blog-name
-```
-
-2. Navigate to the directory
-
-```
+mkdir my-blog-name
 cd my-blog-name
 ```
 
-3. Have a look at `eleventy.config.js` to see if you want to configure any Eleventy options differently.
 
-4. Install dependencies
+2. Clone this Repository to your new directory.
+
+```
+git clone https://github.com/rdela/eleventeen.git .
+```
+
+_Optional:_ Review `eleventy.config.js` and `_data/metadata.js` to configure the site’s options and data.
+
+3. Install dependencies
 
 ```
 npm install
 ```
 
-5. Edit `_data/metadata.js`
-
-6. Run Eleventy
+4. Run Eleventy
 
 Generate a production-ready build:
 
@@ -58,13 +60,13 @@ Generate a production-ready build:
 npx @11ty/eleventy
 ```
 
-Or build and host locally on a local development server:
+Or build and host on a local development server:
 
 ```
 npx @11ty/eleventy --serve
 ```
 
-Or you can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the internals.
+You can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the internals.
 
 ## Features
 
@@ -116,6 +118,7 @@ Deploy this Eleventy site in just a few clicks on these services:
 - [Get your own eleventeen site on Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/rdela/eleventeen)
 - If you run Eleventy locally you can drag your `_site` folder to [`drop.netlify.com`](https://drop.netlify.com/) to upload it without using `git`.
 - [Get your own eleventeen site on Vercel](https://vercel.com/import/project?template=rdela%2Feleventeen)
+- [Try it out on Stackblitz](https://stackblitz.com/github/rdela/eleventeen)
 - Read more about [Deploying an Eleventy project](https://www.11ty.dev/docs/deployment/) to the web.
 
 ### Implementation Notes
@@ -133,3 +136,17 @@ Deploy this Eleventy site in just a few clicks on these services:
 	- `_includes/layouts/home.njk`: the home page template (wrapped into `base.njk`)
 	- `_includes/layouts/post.njk`: the blog post template (wrapped into `base.njk`)
 - `_includes/postslist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `content/index.njk` has an example of how to use it.
+
+If your site enforces a Content Security Policy (as public-facing sites should), either, in `base.njk`, disable
+
+```html
+<style>{% getBundle "css" %}</style>
+```
+
+and enable
+
+```html
+<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
+```
+
+or configure the server with the CSP directive `style-src: 'unsafe-inline'` (which is less secure).
