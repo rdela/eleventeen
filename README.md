@@ -6,7 +6,7 @@ Visit the [live eleventeen demo](https://eleventeen.blog) on <https://eleventeen
 
 Please star [eleventeen on GitHub](https://github.com/rdela/eleventeen).
 
- eleventeen is a work in progress variation of [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog) with [MOTHEREFFIN Rainbow mode](https://github.com/rdela/eleventeen/pull/1) powered by [HSL Gen](https://github.com/famebot/hsl-gen) 🌈💥 
+ eleventeen is a work in progress variation of [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog) with [MOTHEREFFIN Rainbow mode](https://github.com/rdela/eleventeen/pull/1) powered by [Chromagen](https://github.com/famebot/chromagen) 🌈💥 
 
 eleventy-base-blog describes itself as:
 

@@ -57,17 +57,17 @@
 			<footer>
 				{#- 🌈 Rainbow button #}
 				<button onclick="rainbow()">🌈 Rainbow Me</button>
-				<span id="hsl-gen-hue"></span>
+				<span id="chromagen-hue"></span>
 				<span>🐙 <a href="https://github.com/rdela/eleventeen">eleventeen on github</a></span>
 			</footer>
 
 			<!-- Current page: {{ page.url | htmlBaseUrl }} -->
 			{% js %}
-				{% include "node_modules/@famebot/hsl-gen/dist/hsl-gen.umd.js" %}
+				{% include "node_modules/@famebot/chromagen/dist/chromagen.umd.js" %}
 			{% endjs %}
 			{% js %}
 const rainbow = () => {
-var colorScheme = hslGen();
+var colorScheme = chromagen();
 
 {#- https://davidwalsh.name/css-variables-javascript #}
 const docstyle = document.documentElement.style;
@@ -99,7 +99,7 @@ darkPreference.addEventListener("change", e => e.matches && activateColorScheme(
 lightPreference.addEventListener("change", e => e.matches && activateColorScheme());
 activateColorScheme();
 
-document.querySelector('#hsl-gen-hue').innerHTML = ` Hue: ${colorScheme.hue} (<a href="https://hsl-gen.netlify.app">HSL Gen</a>)`;
+document.querySelector('#chromagen-hue').innerHTML = ` Hue: ${colorScheme.hue} (<a href="https://chromagen.io">Chromagen</a>)`;
 }
 rainbow();
 			{% endjs %}
