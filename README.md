@@ -44,7 +44,9 @@ cd my-blog-name
 git clone https://github.com/rdela/eleventeen.git .
 ```
 
-_Optional:_ Review `eleventy.config.js` and `_data/metadata.js` to configure the site’s options and data.
+Edit `_data/metadata.js` to configure the site’s details.
+
+_Optional:_ Review `eleventy.config.js` to customize the Eleventy build configuration.
 
 3. Install dependencies
 
@@ -54,7 +56,25 @@ npm install
 
 4. Run Eleventy
 
+Develop:
+
+```
+npm run d
+```
+
+Or
+
+```
+npm run start
+```
+
 Generate a production-ready build:
+
+```
+npm run build
+```
+
+Or
 
 ```
 npx @11ty/eleventy
