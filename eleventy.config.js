@@ -8,9 +8,6 @@ import pluginNavigation from "@11ty/eleventy-navigation";
 import pluginDrafts from "./eleventy.config.drafts.js";
 import pluginImages from "./eleventy.config.images.js";
 
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-
 export default async function(eleventyConfig) {
 	const { HtmlBasePlugin } = await import("@11ty/eleventy");
 	// Copy the contents of the `public` folder to the output folder
