@@ -130,6 +130,7 @@ You can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the in
 - [eleventy-base-blog on Netlify](https://eleventy-base-blog.netlify.app)
 - [eleventy-base-blog on GitHub Pages](https://11ty.github.io/eleventy-base-blog/)
 - [Remix eleventy-base-blog on Glitch](https://glitch.com/~11ty-eleventy-base-blog)
+- [eleventy-base-blog on Cloudflare Pages](https://eleventy-base-blog-d2a.pages.dev/)
 
 ## Deploy this to your own site
 
