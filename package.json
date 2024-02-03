@@ -4,13 +4,13 @@
 	"description": "A starter repository for a blog web site using the Eleventy site generator.",
 	"type": "module",
 	"scripts": {
-		"build": "npx @11ty/eleventy",
-		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventeen-base-blog/",
-		"d": "npx @11ty/eleventy@canary --serve --quiet",
-		"start": "npx @11ty/eleventy@canary --serve --quiet",
-		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
-		"benchmark": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+		"build": "eleventy",
+		"build-ghpages": "eleventy --pathprefix=/eleventeen-base-blog/",
+		"d": "eleventy --serve",
+		"start": "eleventy --serve",
+		"debug": "DEBUG=Eleventy* eleventy",
+		"debugstart": "DEBUG=Eleventy* eleventy --serve --quiet",
+		"benchmark": "DEBUG=Eleventy:Benchmark* eleventy"
 	},
 	"repository": {
 		"type": "git",
