@@ -1,13 +1,14 @@
 {
 	"name": "eleventeen",
-	"version": "8.0.0",
+	"version": "8.0.1-alpha.4",
 	"description": "A starter repository for a blog web site using the Eleventy site generator.",
 	"type": "module",
 	"scripts": {
 		"build": "eleventy",
-		"build-ghpages": "eleventy --pathprefix=/eleventeen-base-blog/",
-		"d": "eleventy --serve",
-		"start": "eleventy --serve",
+		"build-ghpages": "eleventy --pathprefix=/eleventeen/",
+		"d": "eleventy --serve --quiet",
+		"noisy": "eleventy --serve",
+		"start": "eleventy --serve --quiet",
 		"debug": "DEBUG=Eleventy* eleventy",
 		"debugstart": "DEBUG=Eleventy* eleventy --serve --quiet",
 		"benchmark": "DEBUG=Eleventy:Benchmark* eleventy"
