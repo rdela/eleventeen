@@ -1,16 +1,14 @@
 # [eleventeen v8](https://github.com/rdela/eleventeen)
 
-Visit the [live eleventeen demo](https://eleventeen.blog) on <https://eleventeen.blog>
+## WARNING: Here Be Canaries 🐥
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bd16afdb-d0a5-4de2-aa5c-19529038ed78/deploy-status)](https://app.netlify.com/sites/eleventeen/deploys)
-
-Please star [eleventeen on GitHub](https://github.com/rdela/eleventeen).
-
- eleventeen is a work in progress variation of [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog) with [MOTHEREFFIN Rainbow mode](https://github.com/rdela/eleventeen/pull/1) powered by [Chromagen](https://github.com/famebot/chromagen) 🌈💥 
+This starter has advanced ahead of its upstream source [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog) to boldy embrace [Eleventy v3.0](https://www.11ty.dev/blog/canary-eleventy-v3/#how-to-require(@11ty/eleventy)-in-commonjs)
 
 eleventy-base-blog describes itself as:
 
 > A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v2.0 release](https://www.11ty.dev/blog/eleventy-v2/)).
+
+In addition to all of base-blog’s killer features and Eleventy 3’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports [MOTHEREFFIN Rainbow mode](https://github.com/rdela/eleventeen/pull/1) powered by [Chromagen](https://github.com/famebot/chromagen) 🌈📓➕🎨💥
 
 Rejoicing and rainbows aside, eleventeen also makes some more subtle adjustments to eleventy-base-blog. There are various changes in `public/css/index.css`, and in `_includes/postslist.njk`:
  
@@ -25,6 +23,12 @@ becomes:
 ```
 
 The eleventeen name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)).
+
+Visit the [live eleventeen demo](https://eleventeen.blog) on <https://eleventeen.blog> 🌈📓
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bd16afdb-d0a5-4de2-aa5c-19529038ed78/deploy-status)](https://app.netlify.com/sites/eleventeen/deploys)
+
+Please remember to star [eleventeen on GitHub](https://github.com/rdela/eleventeen) ⭐️
 
 ## Getting Started
 
