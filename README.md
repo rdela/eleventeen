@@ -2,7 +2,7 @@
 
 ## WARNING: Here Be Canaries 🐥
 
-This starter has advanced ahead of its upstream source, [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog), to boldy embrace [Eleventy v3.0](https://www.11ty.dev/blog/canary-eleventy-v3/#how-to-require(@11ty/eleventy)-in-commonjs) in [PR #8](https://github.com/rdela/eleventeen/pull/8).
+This starter has advanced ahead of its upstream source, [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog), to boldy embrace [Eleventy v3.0](https://www.11ty.dev/blog/canary-eleventy-v3/) in [PR #8](https://github.com/rdela/eleventeen/pull/8).
 
 eleventy-base-blog describes itself as:
 
