@@ -2,7 +2,7 @@
 
 ## WARNING: Here Be Canaries 🐥
 
-This starter has advanced ahead of its upstream source [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog) to boldy embrace [Eleventy v3.0](https://www.11ty.dev/blog/canary-eleventy-v3/#how-to-require(@11ty/eleventy)-in-commonjs)
+This starter has advanced ahead of its upstream source, [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog), to boldy embrace [Eleventy v3.0](https://www.11ty.dev/blog/canary-eleventy-v3/#how-to-require(@11ty/eleventy)-in-commonjs) in [PR #8](https://github.com/rdela/eleventeen/pull/8).
 
 eleventy-base-blog describes itself as:
 
@@ -22,13 +22,13 @@ becomes:
 <ul reversed class="postlist">
 ```
 
-The eleventeen name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)).
+The eleventeen name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)) 👩🏻‍🎤🎶
+
+Please remember to star [eleventeen on GitHub](https://github.com/rdela/eleventeen) ⭐️🐙
 
 Visit the [live eleventeen demo](https://eleventeen.blog) on <https://eleventeen.blog> 🌈📓
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bd16afdb-d0a5-4de2-aa5c-19529038ed78/deploy-status)](https://app.netlify.com/sites/eleventeen/deploys)
-
-Please remember to star [eleventeen on GitHub](https://github.com/rdela/eleventeen) ⭐️
 
 ## Getting Started
 
