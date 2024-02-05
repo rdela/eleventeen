@@ -1,4 +1,4 @@
-module.exports = {
+let data = {
 	title: "eleventeen v8",
 	url: "https://eleventeen.blog",
 	language: "en",
@@ -9,3 +9,5 @@ module.exports = {
 		url: "https://example.org",
 	},
 };
+
+export default data;

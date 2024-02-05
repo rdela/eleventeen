@@ -1,3 +1,5 @@
-module.exports = {
-	eleventyExcludeFromCollections: true
-}
+let data = {
+	eleventyExcludeFromCollections: true,
+};
+
+export default data;

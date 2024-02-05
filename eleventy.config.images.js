@@ -1,5 +1,5 @@
-const path = require("path");
-const eleventyImage = require("@11ty/eleventy-img");
+import path from "path";
+import eleventyImage from "@11ty/eleventy-img";
 
 function relativeToInputPath(inputPath, relativeFilePath) {
 	let split = inputPath.split("/");
@@ -17,7 +17,7 @@ function isFullUrl(url) {
 	}
 }
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	// Eleventy Image shortcode
 	// https://www.11ty.dev/docs/plugins/image/
 	eleventyConfig.addAsyncShortcode(
