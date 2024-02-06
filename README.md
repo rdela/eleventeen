@@ -1,4 +1,4 @@
-# [eleventeen](https://github.com/rdela/eleventeen)
+# [eleventeen](https://eleventeen.blog)
 
 ## WARNING: Here Be Canaries 🐥
 
