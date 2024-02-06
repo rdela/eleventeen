@@ -1,16 +1,16 @@
-# [eleventeen v8](https://github.com/rdela/eleventeen)
+# [eleventeen](https://github.com/rdela/eleventeen)
 
 ## WARNING: Here Be Canaries 🐥
 
-This starter has advanced ahead of its upstream source, [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog), to boldy embrace [Eleventy v3.0](https://www.11ty.dev/blog/canary-eleventy-v3/) in [PR #8](https://github.com/rdela/eleventeen/pull/8).
+This starter has advanced ahead of its upstream source, [Eleventy Base Blog v8](https://github.com/11ty/eleventy-base-blog), to boldy embrace [Eleventy v3.0](https://www.11ty.dev/blog/canary-eleventy-v3/) in [PR #8](https://github.com/rdela/eleventeen/pull/8).
 
-eleventy-base-blog describes itself as:
+Eleventy Base Blog v8 is:
 
 > A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v2.0 release](https://www.11ty.dev/blog/eleventy-v2/)).
 
-In addition to all of base-blog’s killer features and Eleventy 3’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports [MOTHEREFFIN Rainbow mode](https://github.com/rdela/eleventeen/pull/1) powered by [Chromagen](https://github.com/famebot/chromagen) 🌈📓➕🎨💥
+In addition to all of Base Blog’s killer features and Eleventy 3’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports [Rainbow Mode™](https://github.com/rdela/eleventeen/pull/1) powered by [Chromagen](https://github.com/famebot/chromagen) 🌈📓➕🎨💥
 
-Rejoicing and rainbows aside, eleventeen also makes some more subtle adjustments to eleventy-base-blog. There are various changes in `public/css/index.css`, and in `_includes/postslist.njk`:
+Rejoicing and rainbows aside, eleventeen also makes some more subtle adjustments to Eleventy Base Blog. There are various changes in `public/css/index.css`, and in `_includes/postslist.njk`:
  
 ```njk
 <ol reversed class="postlist" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
