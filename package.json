@@ -1,6 +1,6 @@
 {
 	"name": "eleventeen",
-	"version": "8.0.1-alpha.4",
+	"version": "8.0.1-alpha.5",
 	"description": "A starter repository for a blog web site using the Eleventy site generator.",
 	"type": "module",
 	"scripts": {
@@ -38,7 +38,7 @@
 	},
 	"homepage": "https://github.com/11ty/eleventy-base-blog#readme",
 	"devDependencies": {
-		"@11ty/eleventy": "3.0.0-alpha.4",
+		"@11ty/eleventy": "3.0.0-alpha.5",
 		"@11ty/eleventy-img": "^3.1.8",
 		"@11ty/eleventy-navigation": "^0.3.5",
 		"@11ty/eleventy-plugin-bundle": "^1.0.5",
