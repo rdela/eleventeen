@@ -96,6 +96,10 @@ module.exports = function(eleventyConfig) {
 		});
 	});
 
+	eleventyConfig.addShortcode("currentBuildDate", () => {
+		return (new Date()).toISOString();
+	})
+
 	// Development server: https://www.11ty.dev/docs/dev-server/
 	eleventyConfig.setServerOptions({
 		// Default values commented out

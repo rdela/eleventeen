@@ -6,9 +6,9 @@ Visit the [live eleventeen demo](https://eleventeen.blog) on <https://eleventeen
 
 Please star [eleventeen on GitHub](https://github.com/rdela/eleventeen).
 
- eleventeen is a work in progress variation of [eleventy-base-blog v8](https://github.com/11ty/eleventy-base-blog) with [MOTHEREFFIN Rainbow mode](https://github.com/rdela/eleventeen/pull/1) powered by [Chromagen](https://github.com/famebot/chromagen) 🌈💥 
+ eleventeen is a work in progress variation of [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog) with [MOTHEREFFIN Rainbow mode](https://github.com/rdela/eleventeen/pull/1) powered by [Chromagen](https://github.com/famebot/chromagen) 🌈💥 
 
-eleventy-base-blog describes itself as:
+Eleventy Base Blog describes itself as:
 
 > A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v2.0 release](https://www.11ty.dev/blog/eleventy-v2/)).
 
@@ -90,7 +90,7 @@ You can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the in
 
 ## Features
 
-- Using [Eleventy v2.0](https://www.11ty.dev/blog/eleventy-v2/) with zero-JavaScript output.
+- Using [Eleventy ~~v2.0~~ 3.0 alpha](https://www.11ty.dev/blog/canary-eleventy-v3/) with zero-JavaScript output.
 	- Content is exclusively pre-rendered (this is a static site).
 	- Can easily [deploy to a subfolder without changing any content](https://www.11ty.dev/docs/plugins/html-base/)
 	- All URLs are decoupled from the content’s location on the file system.
@@ -135,10 +135,10 @@ You can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the in
 
 Deploy this Eleventy site in just a few clicks on these services:
 
-- [Get your own eleventeen site on Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/rdela/eleventeen)
-- If you run Eleventy locally you can drag your `_site` folder to [`drop.netlify.com`](https://drop.netlify.com/) to upload it without using `git`.
-- [Get your own eleventeen site on Vercel](https://vercel.com/import/project?template=rdela%2Feleventeen)
-- [Try it out on Stackblitz](https://stackblitz.com/github/rdela/eleventeen)
+- [Deploy eleventeen to **Netlify**](https://app.netlify.com/start/deploy?repository=https://github.com/rdela/eleventeen)
+- [Deploy eleventeen to **Vercel**](https://vercel.com/import/project?template=rdela%2Feleventeen)
+- Look in `.github/workflows/gh-pages.yml.sample` for information on Deploying to **GitHub Pages**.
+- [Try it out on **Stackblitz**](https://stackblitz.com/github/rdela/eleventeen)
 - Read more about [Deploying an Eleventy project](https://www.11ty.dev/docs/deployment/) to the web.
 
 ### Implementation Notes
