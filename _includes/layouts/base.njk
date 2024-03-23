@@ -104,7 +104,7 @@ darkPreference.addEventListener("change", e => e.matches && activateColorScheme(
 lightPreference.addEventListener("change", e => e.matches && activateColorScheme());
 activateColorScheme();
 
-document.querySelector('#chromagen-hue').innerHTML = ` Hue: ${colorScheme.hue} (<a href="https://chromagen.io">Chromagen</a>)`;
+document.querySelector('#chromagen-hue').innerHTML = ` H ${colorScheme.hue} C ${colorScheme.complement} H ${colorScheme.analogous} (<a href="https://chromagen.io">Chromagen</a>)`;
 }
 rainbow();
 			{% endjs %}
