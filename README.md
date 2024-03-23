@@ -125,7 +125,7 @@ You can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the in
 	- Home, Archive, and About pages.
 	- [Feeds for Atom and JSON](https://www.11ty.dev/docs/plugins/rss/)
 	- `sitemap.xml`
-	- Zero-maintenance tag pages ([View on the Demo](https://eleventy-base-blog.netlify.app/tags/))
+	- Zero-maintenance tag pages ([View on the Demo](https://eleventeen.blog/tags/))
 	- Content not found (404) page
 
 ## Demos
