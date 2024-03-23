@@ -24,25 +24,30 @@ function eleventyComputedExcludeFromCollections() {
 	}
 };
 
-module.exports.eleventyComputedPermalink = eleventyComputedPermalink;
-module.exports.eleventyComputedExcludeFromCollections = eleventyComputedExcludeFromCollections;
+export { eleventyComputedPermalink, eleventyComputedExcludeFromCollections };
 
-module.exports = eleventyConfig => {
-	eleventyConfig.addGlobalData("eleventyComputed.permalink", eleventyComputedPermalink);
-	eleventyConfig.addGlobalData("eleventyComputed.eleventyExcludeFromCollections", eleventyComputedExcludeFromCollections);
+export default function (eleventyConfig) {
+	eleventyConfig.addGlobalData(
+		"eleventyComputed.permalink",
+		eleventyComputedPermalink
+	);
+	eleventyConfig.addGlobalData(
+		"eleventyComputed.eleventyExcludeFromCollections",
+		eleventyComputedExcludeFromCollections
+	);
 
 	let logged = false;
-	eleventyConfig.on("eleventy.before", ({runMode}) => {
+	eleventyConfig.on("eleventy.before", ({ runMode }) => {
 		let text = "Excluding";
 		// Only show drafts in serve/watch modes
-		if(runMode === "serve" || runMode === "watch") {
+		if (runMode === "serve" || runMode === "watch") {
 			process.env.BUILD_DRAFTS = true;
 			text = "Including";
 		}
 
 		// Only log once.
-		if(!logged) {
-			console.log( `[11ty/eleventy-base-blog] ${text} drafts.` );
+		if (!logged) {
+			console.log(`[eleventeen] ${text} drafts.`);
 		}
 
 		logged = true;

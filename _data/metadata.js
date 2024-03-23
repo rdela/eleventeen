@@ -1,5 +1,5 @@
-module.exports = {
-	title: "eleventeen v8",
+let data = {
+	title: "eleventeen v8.0.1-alpha.5",
 	url: "https://eleventeen.blog",
 	language: "en",
 	description: "Rainbow Eleventy Base Blog v8 template",
@@ -9,3 +9,5 @@ module.exports = {
 		url: "https://example.org",
 	},
 };
+
+export default data;

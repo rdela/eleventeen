@@ -1,6 +1,6 @@
-module.exports = {
-	tags: [
-		"posts"
-	],
-	"layout": "layouts/post.njk",
+let data = {
+	tags: ["posts"],
+	layout: "layouts/post.njk",
 };
+
+export default data;

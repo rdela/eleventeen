@@ -1,18 +1,16 @@
-# [eleventeen v8](https://github.com/rdela/eleventeen)
+# [eleventeen](https://eleventeen.blog)
 
-Visit the [live eleventeen demo](https://eleventeen.blog) on <https://eleventeen.blog>
+## WARNING: Here Be Canaries 🐥
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bd16afdb-d0a5-4de2-aa5c-19529038ed78/deploy-status)](https://app.netlify.com/sites/eleventeen/deploys)
+This starter has advanced ahead of its upstream source, [Eleventy Base Blog v8](https://github.com/11ty/eleventy-base-blog), to boldy embrace [Eleventy v3.0](https://www.11ty.dev/blog/canary-eleventy-v3/) in [PR #8](https://github.com/rdela/eleventeen/pull/8).
 
-Please star [eleventeen on GitHub](https://github.com/rdela/eleventeen).
-
- eleventeen is a work in progress variation of [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog) with [MOTHEREFFIN Rainbow mode](https://github.com/rdela/eleventeen/pull/1) powered by [Chromagen](https://github.com/famebot/chromagen) 🌈💥 
-
-Eleventy Base Blog describes itself as:
+Eleventy Base Blog v8 is:
 
 > A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v2.0 release](https://www.11ty.dev/blog/eleventy-v2/)).
 
-Rejoicing and rainbows aside, eleventeen also makes some more subtle adjustments to eleventy-base-blog. There are various changes in `public/css/index.css`, and in `_includes/postslist.njk`:
+In addition to all of Base Blog’s killer features and Eleventy 3’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports [Rainbow Mode™](https://github.com/rdela/eleventeen/pull/1) powered by [Chromagen](https://github.com/famebot/chromagen) 🌈📓➕🎨💥
+
+Rejoicing and rainbows aside, eleventeen also makes some more subtle adjustments to Eleventy Base Blog. There are various changes in `public/css/index.css`, and in `_includes/postslist.njk`:
  
 ```njk
 <ol reversed class="postlist" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
@@ -24,7 +22,13 @@ becomes:
 <ul reversed class="postlist">
 ```
 
-The eleventeen name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)).
+The eleventeen name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)) 👩🏻‍🎤🎶
+
+Please remember to star [eleventeen on GitHub](https://github.com/rdela/eleventeen) ⭐️🐙
+
+Visit the [live eleventeen demo](https://eleventeen.blog) on <https://eleventeen.blog> 🌈📓
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bd16afdb-d0a5-4de2-aa5c-19529038ed78/deploy-status)](https://app.netlify.com/sites/eleventeen/deploys)
 
 ## Getting Started
 
@@ -130,6 +134,7 @@ You can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the in
 - [eleventy-base-blog on Netlify](https://eleventy-base-blog.netlify.app)
 - [eleventy-base-blog on GitHub Pages](https://11ty.github.io/eleventy-base-blog/)
 - [Remix eleventy-base-blog on Glitch](https://glitch.com/~11ty-eleventy-base-blog)
+- [eleventy-base-blog on Cloudflare Pages](https://eleventy-base-blog-d2a.pages.dev/)
 
 ## Deploy this to your own site
 
@@ -157,16 +162,9 @@ Deploy this Eleventy site in just a few clicks on these services:
 	- `_includes/layouts/post.njk`: the blog post template (wrapped into `base.njk`)
 - `_includes/postslist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `content/index.njk` has an example of how to use it.
 
-If your site enforces a Content Security Policy (as public-facing sites should), either, in `base.njk`, disable
+#### Content Security Policy
 
-```html
-<style>{% getBundle "css" %}</style>
-```
+If your site enforces a [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) (as public-facing sites should), you should pick one:
 
-and enable
-
-```html
-<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">
-```
-
-or configure the server with the CSP directive `style-src: 'unsafe-inline'` (which is less secure).
+1. In `base.njk`, remove `<style>{% getBundle "css" %}</style>` and uncomment `<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">`
+2. Configure the server with the CSP directive `style-src: 'unsafe-inline'` (less secure).
