@@ -2,9 +2,9 @@
 
 ## WARNING: Here Be Canaries 🐥
 
-This starter has advanced ahead of its upstream source, [Eleventy Base Blog v8](https://github.com/11ty/eleventy-base-blog), to boldy embrace [Eleventy v3.0](https://www.11ty.dev/blog/canary-eleventy-v3/) in [PR #8](https://github.com/rdela/eleventeen/pull/8).
+This starter has advanced ahead of its upstream source, [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), to boldy embrace [Eleventy v3](https://www.11ty.dev/blog/canary-eleventy-v3/) in [PR #8](https://github.com/rdela/eleventeen/pull/8).
 
-Eleventy Base Blog v8 is:
+Eleventy Base Blog is:
 
 > A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v2.0 release](https://www.11ty.dev/blog/eleventy-v2/)).
 

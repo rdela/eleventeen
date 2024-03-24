@@ -1,8 +1,8 @@
 let data = {
-	title: "eleventeen v8.0.2-alpha.5",
+	title: "eleventeen v9.0.0-alpha.5",
 	url: "https://eleventeen.blog",
 	language: "en",
-	description: "Rainbow Eleventy Base Blog v8 template",
+	description: "Rainbow Eleventy blog",
 	author: {
 		name: "Juanita Appleseed",
 		email: "juanita@example.com",
