@@ -94,7 +94,7 @@ You can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the in
 
 ## Features
 
-- Using [Eleventy v2.0](https://www.11ty.dev/blog/eleventy-v2/) with zero-JavaScript output.
+- Using [Eleventy ~~v2.0~~ 3.0 alpha](https://www.11ty.dev/blog/canary-eleventy-v3/) with zero-JavaScript output.
 	- Content is exclusively pre-rendered (this is a static site).
 	- Can easily [deploy to a subfolder without changing any content](https://www.11ty.dev/docs/plugins/html-base/)
 	- All URLs are decoupled from the content’s location on the file system.
@@ -125,7 +125,7 @@ You can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the in
 	- Home, Archive, and About pages.
 	- [Feeds for Atom and JSON](https://www.11ty.dev/docs/plugins/rss/)
 	- `sitemap.xml`
-	- Zero-maintenance tag pages ([View on the Demo](https://eleventy-base-blog.netlify.app/tags/))
+	- Zero-maintenance tag pages ([View on the Demo](https://eleventeen.blog/tags/))
 	- Content not found (404) page
 
 ## Demos
@@ -140,10 +140,10 @@ You can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the in
 
 Deploy this Eleventy site in just a few clicks on these services:
 
-- [Get your own eleventeen site on Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/rdela/eleventeen)
-- If you run Eleventy locally you can drag your `_site` folder to [`drop.netlify.com`](https://drop.netlify.com/) to upload it without using `git`.
-- [Get your own eleventeen site on Vercel](https://vercel.com/import/project?template=rdela%2Feleventeen)
-- [Try it out on Stackblitz](https://stackblitz.com/github/rdela/eleventeen)
+- [Deploy eleventeen to **Netlify**](https://app.netlify.com/start/deploy?repository=https://github.com/rdela/eleventeen)
+- [Deploy eleventeen to **Vercel**](https://vercel.com/import/project?template=rdela%2Feleventeen)
+- Look in `.github/workflows/gh-pages.yml.sample` for information on Deploying to **GitHub Pages**.
+- [Try it out on **Stackblitz**](https://stackblitz.com/github/rdela/eleventeen)
 - Read more about [Deploying an Eleventy project](https://www.11ty.dev/docs/deployment/) to the web.
 
 ### Implementation Notes
