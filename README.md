@@ -1,5 +1,7 @@
 # [eleventeen](https://eleventeen.blog)
 
+[![](https://o.famebot.com/file/famebot/eleventeen.png)](https://eleventeen.blog)
+
 ## WARNING: Here Be Canaries 🐥
 
 This starter has advanced ahead of its upstream source, [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), to boldy embrace [Eleventy v3](https://www.11ty.dev/blog/canary-eleventy-v3/) in [PR #8](https://github.com/rdela/eleventeen/pull/8).
