@@ -1,5 +1,5 @@
 let data = {
-	title: "eleventeen v9.0.0-alpha.5",
+	title: "eleventeen v9.1.0-alpha.5",
 	url: "https://eleventeen.blog",
 	language: "en",
 	description: "Rainbow Eleventy blog",

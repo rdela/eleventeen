@@ -59,9 +59,9 @@
 
 			<footer>
 				{#- 🌈 Rainbow button #}
-				<button onclick="rainbow()">🌈 Rainbow Me</button>
-				<span id="chromagen-hue"></span>
-				<span>powered by <a href="https://github.com/rdela/eleventeen">eleventeen</a></span>
+				<button title="wish upon a star" onclick="rainbow()">🌈 Rainbow Me</button>
+				<aside id="chromagen"></aside>
+				<aside>powered by <a title="v9.1.0-alpha.5" href="https://github.com/rdela/eleventeen">eleventeen</a></aside>
 			</footer>
 
 			<!-- This page `{{ page.url | htmlBaseUrl }}` was built on {% currentBuildDate %} -->
@@ -104,7 +104,22 @@ darkPreference.addEventListener("change", e => e.matches && activateColorScheme(
 lightPreference.addEventListener("change", e => e.matches && activateColorScheme());
 activateColorScheme();
 
-document.querySelector('#chromagen-hue').innerHTML = ` H ${colorScheme.hue} C ${colorScheme.complement} H ${colorScheme.analogous} (<a href="https://chromagen.io">Chromagen</a>)`;
+document.querySelector('#chromagen').innerHTML = `<details>
+	<summary>🎨
+		<span title="hue"> H&nbsp;${colorScheme.hue} </span> 
+		<span title="complement">C&nbsp;${colorScheme.complement} </span> 
+		<span title="analogous">A&nbsp;${colorScheme.analogous}</span>
+	</summary>
+	<span title="saturation">S&nbsp;${colorScheme.saturation} </span>
+	<span title="xlight">XL&nbsp;${colorScheme.xlight} </span>
+	<span title="lighter">L+&nbsp;${colorScheme.lighter} </span>
+	<span title="lightness">L&nbsp;${colorScheme.lightness} </span>
+	<span title="midrange">M&nbsp;${colorScheme.midrange} </span>
+	<span title="lowmid">LM&nbsp;${colorScheme.lowmid} </span>
+	<span title="darkness">D&nbsp;${colorScheme.darkness} </span>
+	<span title="darker">D+&nbsp;${colorScheme.darker} </span>
+	<a href="https://chromagen.io">Chromagen</a>
+</details>`;
 }
 rainbow();
 			{% endjs %}
