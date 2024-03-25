@@ -200,6 +200,7 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	min-height: 7rem;
 }
 
 @media screen and (max-width: 720px) {
@@ -210,6 +211,12 @@ footer {
 	}
 }
 
+#chromagen {
+	cursor: pointer;
+	max-width: 18rem;
+	padding: 0 1rem;
+	text-align: center;
+}
 
 /* Header */
 header {
