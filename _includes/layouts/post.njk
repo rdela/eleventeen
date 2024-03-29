@@ -6,6 +6,9 @@ layout: layouts/base.njk
 {% include "node_modules/prismjs/themes/prism-okaidia.css" %}
 {% include "public/css/prism-diff.css" %}
 {%- endcss %}
+{%- if hero and heroalt %}
+{% image hero, heroalt %}
+{%- endif %}
 <h1>{{ title }}</h1>
 
 <ul class="post-metadata">

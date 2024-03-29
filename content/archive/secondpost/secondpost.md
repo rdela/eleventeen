@@ -2,6 +2,8 @@
 title: This is my second post with a much longer title.
 description: This is a post on My Blog about leveraging agile frameworks.
 date: 2018-07-04
+hero: elle-balloon-r1-t1-c2.png
+heroalt: Close-up of Elle the possum, suspended from a red balloon.
 tags:
   - number 2
 ---

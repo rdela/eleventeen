@@ -1,6 +1,9 @@
 ---
 layout: layouts/base.njk
 ---
+
+{{ content | safe }}
+
 <!-- Delete this message, it will also remove the component CSS from the bundle -->
 {%- css %}{% include "public/css/message-box.css" %}{% endcss %}
 <div class="message-box">
@@ -12,5 +15,3 @@ layout: layouts/base.njk
 	<p><em>This is an <a href="https://www.11ty.dev/">Eleventy project</a> created from <a href="https://github.com/rdela/eleventeen">eleventeen</a>, a variation of <a href="https://github.com/11ty/eleventy-base-blog">Eleventy Base Blog</a></em> 👉 Find out more <a href="/about/">about eleventeen</a> 📖✨</p>
 </div>
 <!-- Stop deleting -->
-
-{{ content | safe }}
