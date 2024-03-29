@@ -144,6 +144,15 @@ main :first-child {
 	margin-top: 0;
 }
 
+main img {
+	height: auto;
+	max-width: 100%;
+}
+
+figure {
+	margin: 0;
+}
+
 /* header {
 	border-bottom: 1px dashed #e0e0e0;
 } */
@@ -262,7 +271,7 @@ header {
 .postlist-item {
 	display: flex;
 	flex-wrap: wrap;
-	align-items: baseline;
+	align-items: center;
 	margin-bottom: 1em;
 }
 /* if using ol in _includes/postslist.njk */
@@ -295,6 +304,16 @@ header {
 }
 .postlist-item-active .postlist-link {
 	font-weight: bold;
+}
+.postlist-img img {
+	height: 128px;
+	width: 128px;
+	object-fit: cover;
+	margin-right: 1em;
+}
+.postlist-text {
+	display: flex;
+	flex-direction: column;
 }
 
 /* Tags */
