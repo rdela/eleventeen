@@ -270,9 +270,14 @@ header {
 }
 .postlist-item {
 	display: flex;
-	flex-wrap: wrap;
 	align-items: center;
 	margin-bottom: 1em;
+}
+@media screen and (max-width: 320px) {
+	.postlist-item {
+		/* moved from prev rule */
+		flex-wrap: wrap;
+	}
 }
 /* if using ol in _includes/postslist.njk */
 /* counter-increment: start-from -1;
@@ -297,7 +302,7 @@ header {
 .postlist-link {
 	font-size: 1.1875em; /* 19px /16 */
 	font-weight: 700;
-	flex-basis: calc(100% - 1.5rem);
+	flex-basis: calc(100% - 1.5rem); /* see postlist-item:before margin-left above */
 	text-underline-position: from-font;
 	text-underline-offset: 0;
 	text-decoration-thickness: 1px;
@@ -309,11 +314,28 @@ header {
 	height: 128px;
 	width: 128px;
 	object-fit: cover;
+}
+.postlist-img {
 	margin-right: 1em;
+	min-width: 128px;
 }
 .postlist-text {
 	display: flex;
 	flex-direction: column;
+	padding-bottom: 0.4375em;
+}
+.postlist-text a {
+	line-height: 1.25;
+}
+.ellipsize {
+	overflow: hidden; /* keeps the element from overflowing its parent */
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3; /* start showing ellipsis when 3rd line is reached */
+	line-clamp: 3;
+	/* implicit... */
+	/* text-overflow: ellipsis; */
+	/* white-space: normal; */
 }
 
 /* Tags */

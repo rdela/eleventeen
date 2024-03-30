@@ -8,6 +8,7 @@ let data = {
 		email: "juanita@example.com",
 		url: "https://example.org",
 	},
+	eleventeen: "v9.2.1-alpha.5",
 };
 
 export default data;
