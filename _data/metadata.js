@@ -1,5 +1,5 @@
 let data = {
-	title: "eleventeen v9.2.1-alpha.5",
+	title: "eleventeen v9.2.2-alpha.5",
 	url: "https://eleventeen.blog",
 	language: "en",
 	description: "Rainbow Eleventy blog",
@@ -8,6 +8,7 @@ let data = {
 		email: "juanita@example.com",
 		url: "https://example.org",
 	},
+	eleventeen: "v9.2.2-alpha.5",
 };
 
 export default data;

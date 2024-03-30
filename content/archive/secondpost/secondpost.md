@@ -1,6 +1,6 @@
 ---
-title: This is my second post with a much longer title.
-description: This is a post on My Blog about leveraging agile frameworks.
+title: This is my second post with a much longer title. I love ellipsis la la la la la la la la la la la.
+description: Republishing my guest post on Ellipsize about leveraging agile frameworks to maximize ellipsization.
 date: 2018-07-04
 hero: elle-balloon-r1-t1-c2.png
 heroalt: Close-up of Elle the possum, suspended from a red balloon.
