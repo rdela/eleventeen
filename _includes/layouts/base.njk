@@ -59,7 +59,7 @@
 
 			<footer>
 				{#- 🌈 Rainbow button #}
-				<button title="wish upon a star" onclick="rainbow()">🌈 Rainbow Me</button>
+				<div id="rainbutton"></div>
 				<aside id="chromagen"></aside>
 				<aside>powered by <a title="{{ metadata.eleventeen }}" href="https://github.com/rdela/eleventeen">eleventeen</a></aside>
 			</footer>
@@ -104,6 +104,7 @@ darkPreference.addEventListener("change", e => e.matches && activateColorScheme(
 lightPreference.addEventListener("change", e => e.matches && activateColorScheme());
 activateColorScheme();
 
+document.querySelector('#rainbutton').innerHTML = `<button title="wish upon a star" onclick="rainbow()">🌈 Rainbow Me</button>`;
 document.querySelector('#chromagen').innerHTML = `<details>
 	<summary>🎨
 		<span title="hue"> H&nbsp;${colorScheme.hue} </span> 

@@ -310,6 +310,10 @@ header {
 .postlist-item-active .postlist-link {
 	font-weight: bold;
 }
+.postlist-thumb,
+.postlist-img img {
+	display: block;
+}
 .postlist-img img {
 	height: 128px;
 	width: 128px;
