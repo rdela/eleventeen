@@ -15,14 +15,14 @@
 	--background-color-dark: #000;
 	--background-color: var(--background-color-light);
 
-	--active-light: #17050f;
-	--active-dark: #a6a6f8;
-	--complement: #1493fb;
-	--complementdarker: #5f2b48;
-	--primary: #6969f7;
-	--primarydarker: #082840;
-	--text-color-dark: #dad8d8;
-	--text-color-light: #282828;
+	--active-light: hsl(172, 94%, 20%); /* #17050f */
+	--active-dark: hsl(172, 94%, 65%); /* #a6a6f8 */
+	--complement: hsl(38, 94%, 65%); /* #1493fb */
+	--complementdarker: hsl(38, 94%, 9%); /* #5f2b48 */
+	--primary: hsl(351, 94%, 65%); /* #6969f7 */
+	--primarydarker: hsl(351, 94%, 9%); /* #082840 */
+	--text-color-dark: hsl(172, 94%, 83%); /* #dad8d8 */
+	--text-color-light: hsl(172, 94%, 9%); /* #282828 */
 
 	--text-color: var(--text-color-light);
 	--text-color-link: var(--text-color-light);
@@ -70,7 +70,6 @@ html {
 	overflow-y: scroll;
 }
 body {
-	background-image: linear-gradient(var(--rainbow-horizon));
 	min-height: 100vh;
 	min-height: 100dvh;
 	padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
@@ -117,9 +116,9 @@ a[href]:active {
 	color: var(--text-color-link-active);
 }
 
-button {
+button,
+.button {
 	background-color: var(--complement);
-	background-image: linear-gradient(45deg, var(--primary), var(--complement), var(--background-color-light));
 	border: .15625em solid var(--button-border-color);
 	border-radius: 99999px;
 	color: var(--text-color-light);
@@ -127,14 +126,25 @@ button {
 	padding: 0.25em 0.5em;
 }
 button:focus,
-button:hover {
+button:hover,
+.button:focus, 
+.button:hover {
 	background-color: var(--primary);
-	background-image: linear-gradient(315deg, var(--background-color-light), var(--primary), var(--complement));
 	border-color: var(--button-border-color-highlight);
 }
-button:active {
+button:active, 
+.button:active {
 	background-color: var(--background-color-light);
 	border-color: var(--text-color-link-highlight);
+}
+.button {
+	text-decoration: none;
+}
+.button[href]:focus,
+.button[href]:hover
+.button[href]:active,
+.button[href]:visited {
+	color: var(--text-color-light);
 }
 
 main {

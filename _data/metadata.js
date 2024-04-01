@@ -8,6 +8,7 @@ let data = {
 		email: "juanita@example.com",
 		url: "https://example.org",
 	},
+	mono: false,
 	eleventeen: "v9.2.2-alpha.5",
 };
 
