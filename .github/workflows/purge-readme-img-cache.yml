@@ -1,0 +1,2 @@
+- name: action-camo-purge
+  uses: kevincobain2000/action-camo-purge@v1          
