@@ -102,17 +102,17 @@ li {
 	line-height: 1.5;
 }
 
-a[href] {
+a {
 	color: var(--text-color-link);
 }
-a[href]:visited {
+a:visited {
 	color: var(--text-color-link-visited);
 }
-a[href]:focus,
-a[href]:hover {
+a:focus,
+a:hover {
 	color: var(--text-color-link-highlight);
 }
-a[href]:active {
+a:active {
 	color: var(--text-color-link-active);
 }
 
@@ -140,10 +140,10 @@ button:active,
 .button {
 	text-decoration: none;
 }
-.button[href]:focus,
-.button[href]:hover
-.button[href]:active,
-.button[href]:visited {
+.button:focus,
+.button:hover,
+.button:active,
+.button:visited {
 	color: var(--text-color-light);
 }
 
@@ -165,12 +165,12 @@ figure {
 
 /* header {
 	border-bottom: 1px dashed #e0e0e0;
-} */
+} 
 header:after {
 	content: "";
 	display: table;
 	clear: both;
-}
+} */
 
 .links-nextprev {
 	list-style: none;
@@ -239,10 +239,11 @@ footer {
 
 /* Header */
 header {
-	display: flex;
-	gap: 1em 0.5em;
-	flex-wrap: wrap;
 	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em 0.5em;
+	justify-content: space-between;
 }
 .home-link {
 	font-size: 1em; /* 16px /16 */
@@ -264,10 +265,10 @@ header {
 	display: inline-block;
 	margin-right: 1em;
 }
-.nav-item a[href]:not(:hover) {
+.nav-item a:not(:hover) {
 	text-decoration: none;
 }
-.nav a[href][aria-current="page"] {
+.nav a[aria-current="page"] {
 	text-decoration: underline;
 }
 
@@ -384,16 +385,16 @@ header {
 	font-size: 1em;
 	margin-left: 0.1em;
 }
-a[href].header-anchor,
-a[href].header-anchor:visited {
+a.header-anchor,
+a.header-anchor:visited {
 	color: transparent;
 }
-a[href].header-anchor:focus,
-a[href].header-anchor:hover {
+a.header-anchor:focus,
+a.header-anchor:hover {
 	text-decoration: underline;
 }
-a[href].header-anchor:focus,
-:hover > a[href].header-anchor {
+a.header-anchor:focus,
+:hover > a.header-anchor {
 	color: #aaa;
 }
 

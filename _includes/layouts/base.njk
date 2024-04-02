@@ -55,6 +55,8 @@
 					{%- endfor %}
 					</ul>
 				</nav>
+				
+				<a class="button" href="https://conf.11ty.dev/">Attend 11ty Conf <span role="img" aria-label="">🎫</span></a>
 			</header>
 
 			<main id="skip">
@@ -114,19 +116,19 @@ activateColorScheme();
 
 document.querySelector('#rainbutton').innerHTML = `<button title="wish upon a star" onclick="rainbow()">🌈 Rainbow Me</button>`;
 document.querySelector('#chromagen').innerHTML = `<details>
-	<summary>🎨
+	<summary><span role="img" aria-label="palette">🎨</span>
 		<span title="hue"> H&nbsp;${colorScheme.hue} </span> 
 		<span title="complement">C&nbsp;${colorScheme.complement} </span> 
 		<span title="analogous">A&nbsp;${colorScheme.analogous}</span>
 	</summary>
 	<span title="saturation">S&nbsp;${colorScheme.saturation} </span>
 	<span title="xlight">XL&nbsp;${colorScheme.xlight} </span>
-	<span title="lighter">L+&nbsp;${colorScheme.lighter} </span>
+	<span title="lighter">LR&nbsp;${colorScheme.lighter} </span>
 	<span title="lightness">L&nbsp;${colorScheme.lightness} </span>
 	<span title="midrange">M&nbsp;${colorScheme.midrange} </span>
 	<span title="lowmid">LM&nbsp;${colorScheme.lowmid} </span>
 	<span title="darkness">D&nbsp;${colorScheme.darkness} </span>
-	<span title="darker">D+&nbsp;${colorScheme.darker} </span>
+	<span title="darker">DR&nbsp;${colorScheme.darker} </span>
 	<a href="https://chromagen.io">Chromagen</a>
 </details>`;
 }
