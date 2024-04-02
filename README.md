@@ -10,17 +10,18 @@ Eleventy Base Blog is:
 
 > A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v2.0 release](https://www.11ty.dev/blog/eleventy-v2/)).
 
-In addition to Base Blog’s killer features and Eleventy 3’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports a novel new visual experience we call [Rainbow Mode™](https://github.com/rdela/eleventeen/pull/1), powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish under the [famebot](https://github.com/famebot) organization. Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color
+In addition to Base Blog’s killer features and Eleventy 3’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports a novel new visual experience we call [Rainbow Mode™](https://github.com/rdela/eleventeen/pull/1), powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish under the [Famebot](https://github.com/famebot) organization. Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color
 names.” We posit a third color scheme preference in addition to light and dark “modes,” rainbow.
 
 Here in the world of eleventeen, rainbow is the default. But we acknowledge not all sites are a match for Rainbow Mode, and still want those sites to enjoy the rest of what eleventeen has to offer, so [v9.2.3-alpha.5](https://github.com/rdela/eleventeen/releases/tag/v9.2.3-alpha.5), adds a `mono` option to [`_data/metadata.js`](_data/metadata.js) in [PR #13](https://github.com/rdela/eleventeen/pull/13) that will disable Rainbow Mode if you set it to `true`. `mono` is `false` by default, on purpose, because it beats making people set an option called `rainbow` to `false` and might make the current `{%- if not metadata.mono %}` template logic in [`_includes/layouts/base.njk`](_includes/layouts/base.njk) a little more resilient.
 
-<figure role="img" aria-label="">fig. 1<br />
-🎈📓 ➕ 🎨💥 🟰 🌈💥</figure>
+You can see mono enabled at [mono.eleventeen.blog](https://mono.eleventeen.blog). Try toggling light and dark mode using devtools, there are links to how at the bottom to [chromagen.io](https://chromagen.io/). The rainbow eleventeen demo still lives at [eleventeen.blog](https://eleventeen.blog) <span role="img" aria-label="">🌈📓</span>
 
+<figure role="img" aria-label="">fig. 1<br />
+🎈📓 ➕ 🎨💥 🟰 🌈💥</figure><br />
 
 Rejoicing and rainbows aside, eleventeen also adds post images in [PR #10](https://github.com/rdela/eleventeen/pull/10) / [v9.2.1-alpha.5 ](https://github.com/rdela/eleventeen/releases/tag/v9.2.1-alpha.5), refines them further in 🎈[PR #11](https://github.com/rdela/eleventeen/pull/10) / [v9.2.2-alpha.5 ](https://github.com/rdela/eleventeen/releases/tag/v9.2.2-alpha.5), and makes some more subtle adjustments to Eleventy Base Blog. There are various changes in `public/css/index.css`, and in `_includes/postslist.njk`:
- 
+
 ```njk
 <ol reversed class="postlist" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
 ```
@@ -34,8 +35,6 @@ becomes:
 The eleventeen name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)) <span role="img" aria-label="">👩🏻‍🎤🎶</span>
 
 Please remember to star [eleventeen on GitHub](https://github.com/rdela/eleventeen) <span role="img" aria-label="">⭐️🐙</span>
-
-Visit the [live eleventeen demo](https://eleventeen.blog) on <https://eleventeen.blog> <span role="img" aria-label="">🌈📓</span>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/bd16afdb-d0a5-4de2-aa5c-19529038ed78/deploy-status)](https://app.netlify.com/sites/eleventeen/deploys)
 
