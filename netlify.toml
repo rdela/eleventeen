@@ -13,12 +13,14 @@
 
 	package = "@netlify/plugin-lighthouse"
 
+	[plugins.inputs]
+		fail_deploy_on_score_thresholds = "true"
+		output_path = "reports/lighthouse/index.html"
+
 	# optional, fails build when a category is below a threshold
+	# deploy previews score 92 on seo due to `x-robots-tag: noindex` header
 	[plugins.inputs.thresholds]
 		performance = 1.0
 		accessibility = 1.0
 		best-practices = 1.0
 		seo = 0.9
-
-	[plugins.inputs]
-		output_path = "reports/lighthouse/index.html"
