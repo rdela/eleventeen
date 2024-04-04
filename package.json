@@ -1,6 +1,6 @@
 {
 	"name": "eleventeen",
-	"version": "9.2.5-alpha.5",
+	"version": "9.2.6-alpha.5",
 	"description": "A starter repository for a blog web site using the Eleventy site generator.",
 	"type": "module",
 	"scripts": {
