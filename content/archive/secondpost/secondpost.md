@@ -4,6 +4,8 @@ description: Republishing my guest post on Ellipsize about leveraging agile fram
 date: 2018-07-04
 hero: elle-balloon-r1-t1-c2.png
 heroalt: Close-up of Elle the possum, suspended from a red balloon.
+herocaption: Illustration of Eleventy mascot Elle the possum by Ricky de Laveaga
+herolink: https://www.11ty.dev/blog/logo-homage/
 tags:
   - number 2
 ---
