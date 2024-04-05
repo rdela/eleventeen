@@ -2,7 +2,6 @@ on:
   push:
     branches:
       - trunk
-  pull_request:
 
 jobs:
   camo-purge:

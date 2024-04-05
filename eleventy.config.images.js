@@ -50,4 +50,40 @@ export default function (eleventyConfig) {
 			return eleventyImage.generateHTML(metadata, imageAttributes);
 		}
 	);
+
+	eleventyConfig.addAsyncShortcode(
+		"shareimg",
+		async function shareImageShortcode(src) {
+			let input;
+			if (isFullUrl(src)) {
+				input = src;
+			} else {
+				input = relativeToInputPath(this.page.inputPath, src);
+			}
+
+			let metadata = await eleventyImage(input, {
+				widths: [1280],
+				formats: ["jpeg", "png"],
+				outputDir: path.join(eleventyConfig.dir.output, "img"),
+			});
+
+			let data;
+			let ext = input.slice(-3);
+			if (ext === "jpg") {
+				data = metadata.jpeg[metadata.jpeg.length - 1];
+			} else {
+				data = metadata.png[metadata.png.length - 1];
+			}
+
+			return data.url;
+		}
+	);
+
+	eleventyConfig.addFilter("fullPostImgUrl", (src) => {
+		if (isFullUrl(src)) {
+			return true;
+		} else {
+			return false;
+		}
+	});
 };
