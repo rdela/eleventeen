@@ -3,11 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-		<meta name="theme-color" content="white">
+		<meta name="theme-color" content="#fff">
 		<title>{{ title or metadata.title }}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
 		<meta property="og:image" content="{% shareimg hero or metadata.siteimage %}" />
-		{# {{ hero or metadata.siteimage }} #}
 		{#- Atom and JSON feeds included by default #}
 		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
 		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
@@ -75,31 +74,13 @@
 
 			<!-- This page `{{ page.url | htmlBaseUrl }}` was built on {% currentBuildDate %} -->			
 
-			{%- if not metadata.mono %}
+			{#
+				listen for and respond to prefers-color-scheme (light/dark)
+				changes in both mono and rainbow modes
+			#}
 			{% js %}
-				{% include "node_modules/@famebot/chromagen/dist/chromagen.umd.js" %}
-			{% endjs %}
-			{% js %}
-const rainbow = () => {
-var colorScheme = chromagen();
-
-{#- https://davidwalsh.name/css-variables-javascript #}
-const docstyle = document.documentElement.style;
-const huedark = `hsl(${colorScheme.hue}, ${colorScheme.saturation}, ${colorScheme.darkness})`;
-const huehsl = `hsl(${colorScheme.hue}, ${colorScheme.saturation}, ${colorScheme.lightness})`;
-docstyle.setProperty('--active-light', huedark);
-docstyle.setProperty('--active-dark', huehsl);
-docstyle.setProperty('--background-color-light', huehsl);
-docstyle.setProperty('--background-color-dark', huedark);
-docstyle.setProperty('--complement', `hsl(${colorScheme.analogous}, ${colorScheme.saturation}, ${colorScheme.lightness})`);
-docstyle.setProperty('--complementdark', `hsl(${colorScheme.analogous}, ${colorScheme.saturation}, ${colorScheme.darkness})`);
-docstyle.setProperty('--complementdarker', `hsl(${colorScheme.analogous}, ${colorScheme.saturation}, ${colorScheme.darker})`);
-docstyle.setProperty('--primary', `hsl(${colorScheme.complement}, ${colorScheme.saturation}, ${colorScheme.lightness})`);
-docstyle.setProperty('--primarydark', `hsl(${colorScheme.complement}, ${colorScheme.saturation}, ${colorScheme.darkness})`);
-docstyle.setProperty('--primarydarker', `hsl(${colorScheme.complement}, ${colorScheme.saturation}, ${colorScheme.darker})`);
-docstyle.setProperty('--text-color-dark', `hsl(${colorScheme.hue}, ${colorScheme.saturation}, ${colorScheme.lighter})`);
-docstyle.setProperty('--text-color-light', `hsl(${colorScheme.hue}, ${colorScheme.saturation}, ${colorScheme.darker})`);
-
+let huedark = `#000`;
+let huehsl = `#fff`;
 function activateColorScheme() {
 	const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: light)');
 	if ((colorSchemeQueryList.media === 'not all') 
@@ -113,7 +94,33 @@ const darkPreference = window.matchMedia("(prefers-color-scheme: dark)");
 const lightPreference = window.matchMedia("(prefers-color-scheme: light)");
 darkPreference.addEventListener("change", e => e.matches && activateColorScheme());
 lightPreference.addEventListener("change", e => e.matches && activateColorScheme());
-activateColorScheme();
+			{% endjs %}
+			
+			{# rainbow mode magic #}
+			{%- if not metadata.mono %}
+			{% js %}
+				{% include "node_modules/@famebot/chromagen/dist/chromagen.umd.js" %}
+			{% endjs %}
+			{% js %}
+const rainbow = () => {
+var colorScheme = chromagen();
+
+{#- https://davidwalsh.name/css-variables-javascript #}
+const docstyle = document.documentElement.style;
+huedark = `hsl(${colorScheme.hue}, ${colorScheme.saturation}, ${colorScheme.darkness})`;
+huehsl = `hsl(${colorScheme.hue}, ${colorScheme.saturation}, ${colorScheme.lightness})`;
+docstyle.setProperty('--active-light', huedark);
+docstyle.setProperty('--active-dark', huehsl);
+docstyle.setProperty('--background-color-light', huehsl);
+docstyle.setProperty('--background-color-dark', huedark);
+docstyle.setProperty('--complement', `hsl(${colorScheme.analogous}, ${colorScheme.saturation}, ${colorScheme.lightness})`);
+docstyle.setProperty('--complementdark', `hsl(${colorScheme.analogous}, ${colorScheme.saturation}, ${colorScheme.darkness})`);
+docstyle.setProperty('--complementdarker', `hsl(${colorScheme.analogous}, ${colorScheme.saturation}, ${colorScheme.darker})`);
+docstyle.setProperty('--primary', `hsl(${colorScheme.complement}, ${colorScheme.saturation}, ${colorScheme.lightness})`);
+docstyle.setProperty('--primarydark', `hsl(${colorScheme.complement}, ${colorScheme.saturation}, ${colorScheme.darkness})`);
+docstyle.setProperty('--primarydarker', `hsl(${colorScheme.complement}, ${colorScheme.saturation}, ${colorScheme.darker})`);
+docstyle.setProperty('--text-color-dark', `hsl(${colorScheme.hue}, ${colorScheme.saturation}, ${colorScheme.lighter})`);
+docstyle.setProperty('--text-color-light', `hsl(${colorScheme.hue}, ${colorScheme.saturation}, ${colorScheme.darker})`);
 
 document.querySelector('#rainbutton').innerHTML = `<button title="wish upon a star" onclick="rainbow()">🌈 Rainbow Me</button>`;
 document.querySelector('#chromagen').innerHTML = `<details>
@@ -135,7 +142,15 @@ document.querySelector('#chromagen').innerHTML = `<details>
 }
 rainbow();
 			{% endjs %}
-			{# 
+			{% endif %}
+			{# end rainbow mode magic #}
+
+			{# activate initial theme-color in both mono and rainbow modes #}
+			{% js %}
+activateColorScheme();
+			{% endjs %}
+
+			{#
 				getBundleFileUrl Writes the bundle content to a content-hashed file location in your 
 				output directory and returns the URL to the file for use.
 				https://github.com/11ty/eleventy-plugin-bundle/blob/main/README.md#write-a-bundle-to-a-file
@@ -146,9 +161,10 @@ rainbow();
 				http://calendar.perfplanet.com/2011/why-inlining-everything-is-not-the-answer/
 				Choosing not to block render
 				https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#blocking_rendering_till_a_script_is_fetched_and_executed
+				need bundle in both mono and rainbow modes to set and respond to 
+				prefers-color-scheme initial preference and changes
 			#}
 			<script async src="{% getBundleFileUrl "js" %}"></script>
-			{% endif %}
 		</div>
 	</body>
 </html>
