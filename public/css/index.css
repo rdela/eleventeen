@@ -30,8 +30,10 @@
 	--text-color-link-highlight: var(--complementdarker);
 	--text-color-link-visited: var(--primarytext);
 	
-	--button-border-color: var(--background-color-dark);
-	--button-border-color-highlight: var(--primarydarker);
+	--button-border-color: var(--text-color-link);
+	--button-border-highlight: var(--primarydarker);
+	--button-text-color: var(--text-color-link);
+	--button-text-highlight: var(--text-color-light);
 
 	--rainbow-horizon: var(--background-color-light), 50%, var(--complement), 88%, var(--primary)
 }
@@ -41,13 +43,13 @@
 		--background-color: var(--background-color-dark);
 		
 		--text-color: var(--text-color-dark);
-		--text-color-link: var(--primary);
+		--text-color-link: var(--complement);
 		--text-color-link-active: var(--text-color-dark);
-		--text-color-link-highlight: var(--complement);
+		--text-color-link-highlight: var(--primary);
 		--text-color-link-visited: var(--text-color-dark);
 		
-		--button-border-color: var(--background-color-light);
-		--button-border-color-highlight: var(--primary);
+		--button-border-highlight: var(--complement);
+		--button-text-highlight: var(--text-color-light);
 		
 		--rainbow-horizon: var(--background-color-dark), 64%, var(--complementdark), 92%, var(--primarydark)
 	}
@@ -116,12 +118,15 @@ a:active {
 	color: var(--text-color-link-active);
 }
 
+.button {
+	text-decoration: none;
+}
 button,
 .button {
-	background-color: var(--complement);
+	background-color: transparent;
 	border: .15625em solid var(--button-border-color);
 	border-radius: 99999px;
-	color: var(--text-color-light);
+	color: var(--button-text-color);
 	font-size: 1.5em;
 	padding: 0.25em 0.5em;
 }
@@ -129,22 +134,18 @@ button:focus,
 button:hover,
 .button:focus, 
 .button:hover {
-	background-color: var(--primary);
-	border-color: var(--button-border-color-highlight);
+	background-color: var(--complement);
+	border-color: var(--text-color-link-highlight);
+	color: var(--button-text-highlight);
 }
 button:active, 
 .button:active {
-	background-color: var(--background-color-light);
-	border-color: var(--text-color-link-highlight);
+	background-color: var(--primary);
+	border-color: var(--button-border-highlight);
+	color: var(--button-text-highlight);
 }
-.button {
-	text-decoration: none;
-}
-.button:focus,
-.button:hover,
-.button:active,
 .button:visited {
-	color: var(--text-color-light);
+	border-color: var(--text-color-link-visited);
 }
 
 main {
@@ -343,7 +344,8 @@ header {
 .postlist-text {
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 0.4375em;
+	padding-bottom: 0.65625em;
+	padding-top: 0.4375em;
 }
 .postlist-text a {
 	line-height: 1.25;
