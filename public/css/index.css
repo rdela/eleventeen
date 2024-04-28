@@ -106,14 +106,46 @@ p {
 	margin-block-start: 1.5rem;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.25;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.125em;
+}
+
+h4 {
+	font-size: 1.0625em;
+}
+
+h5 {
+	font-size: 0.9375em;
+	text-transform: uppercase;
+}
+
+h6 {
+	font-size: 0.875em;
+	text-transform: uppercase;
+}
+
 p:last-child {
 	margin-block-end: 0;
 }
 
-p {
-	line-height: 1.5;
-}
-
+p,
 li {
 	line-height: 1.5;
 }
@@ -424,7 +456,7 @@ a.header-anchor:hover {
 
 a.header-anchor:focus,
 :hover > a.header-anchor {
-	color: #aaa;
+	color: var(--text-color-link-highlight);
 }
 
 h2 + .header-anchor {
