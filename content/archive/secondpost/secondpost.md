@@ -14,8 +14,13 @@ Edit posts in the github app like wheeeeeee agile frameworks to provide a robust
 
 ## Section Header
 
-<a href="/archive/firstpost/">First post</a>
-<a href="/archive/thirdpost/">Third post</a>
+- <a href="/archive/firstpost/">First post</a>
+  + [Section Header](/archive/firstpost/#section-header)
+- <a href="/archive/thirdpost/">Third post</a>
+  + [Code](/archive/thirdpost/#code)
+    * [Styled (with Syntax)](/archive/thirdpost/#styled-with-syntax)
+    * [Unstyled](/archive/thirdpost/#unstyled)
+  + [Section Header](/archive/thirdpost/#section-header)
 
 Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
 
