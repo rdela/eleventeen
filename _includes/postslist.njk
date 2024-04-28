@@ -1,6 +1,3 @@
-{# if using ol instead of ul and also fancy try:
-	style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}"
-#}
 <ul reversed class="postlist">
 {% for post in postslist | reverse %}
 	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">

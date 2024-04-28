@@ -2,23 +2,35 @@
 
 [![](https://o.famebot.com/file/famebot/eleventeen.png)](https://eleventeen.blog)
 
+Eleventeen is an evolving variation of [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), an [Eleventy](https://www.11ty.dev) blog starter. The name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)) <span role="img" aria-label="">👩🏻‍🎤🎶</span>
+
 ## WARNING: Here Be Canaries <span role="img" aria-label="">🐥</span>
 
-This starter has advanced ahead of its upstream source, [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), to boldy embrace [Eleventy v3](https://www.11ty.dev/blog/canary-eleventy-v3/) in [PR #8](https://github.com/rdela/eleventeen/pull/8) / [v9.0.0-alpha.5](https://github.com/rdela/eleventeen/releases/tag/v9.0.0-alpha.5).
+Eleventeen boldly embraced [Eleventy v3](https://www.11ty.dev/blog/canary-eleventy-v3/) ahead of its upstream source in [PR #8](https://github.com/rdela/eleventeen/pull/8) / [v9.0.0-alpha.5](https://github.com/rdela/eleventeen/releases/tag/v9.0.0-alpha.5), while Eleventy Base Blog remains on the stable [v2 release](https://www.11ty.dev/blog/eleventy-v2/)) as of 28 April 2024.
 
-Eleventy Base Blog is:
+## Rainbow Mode™
 
-> A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v2.0 release](https://www.11ty.dev/blog/eleventy-v2/)).
+In addition to Base Blog’s killer features and Eleventy 3’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports a novel new visual experience we call [Rainbow Mode™](https://github.com/rdela/eleventeen/pull/1), powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish under the [Famebot](https://github.com/famebot) organization. Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color names.”
 
-In addition to Base Blog’s killer features and Eleventy 3’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports a novel new visual experience we call [Rainbow Mode™](https://github.com/rdela/eleventeen/pull/1), powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish under the [Famebot](https://github.com/famebot) organization. Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color
-names.” We posit a third color scheme preference in addition to light and dark “modes,” rainbow.
+### prefers-color-scheme: rainbow
 
-Here in the world of eleventeen, rainbow is the default. But we acknowledge not all sites are a match for Rainbow Mode, and still want those sites to enjoy the rest of what eleventeen has to offer, so [v9.2.3-alpha.5](https://github.com/rdela/eleventeen/releases/tag/v9.2.3-alpha.5), adds a `mono` option to [`_data/metadata.js`](_data/metadata.js) in [PR #13](https://github.com/rdela/eleventeen/pull/13) that will disable Rainbow Mode if you set it to `true`. `mono` is `false` by default, on purpose, because it beats making people set an option called `rainbow` to `false` and might make the current `{%- if not metadata.mono %}` template logic in [`_includes/layouts/base.njk`](_includes/layouts/base.njk) a little more resilient.
+We posit a third color scheme preference in addition to light and dark “modes,” rainbow. And here in the world of eleventeen, rainbow is the default. But we acknowledge not all sites are a match for Rainbow Mode, and still want those sites to enjoy the rest of what eleventeen has to offer.
 
-You can see mono enabled at [mono.eleventeen.blog](https://mono.eleventeen.blog). Try toggling light and dark mode using devtools, there are links to how at the bottom to [chromagen.io](https://chromagen.io/). The rainbow eleventeen demo still lives at [eleventeen.blog](https://eleventeen.blog) <span role="img" aria-label="">🌈📓</span>
+## Mono Mode <span role="img" aria-label="">📓🏁</span>
 
-<figure role="img" aria-label="">fig. 1<br />
-🎈📓 ➕ 🎨💥 🟰 🌈💥</figure><br />
+[v9.2.3-alpha.5](https://github.com/rdela/eleventeen/releases/tag/v9.2.3-alpha.5) added a `mono` option to [`_data/metadata.js`](_data/metadata.js) in [PR #13](https://github.com/rdela/eleventeen/pull/13) that disables Rainbow Mode if you set it to `true`.
+
+`mono` is `false` by default, on purpose, because it beats making people set an option called `rainbow` to `false`. Plus it might make the current `{%- if not metadata.mono %}` template logic in [`_includes/layouts/base.njk`](_includes/layouts/base.njk) a little more resilient.
+
+### Show Me the Mono
+
+You can see mono enabled at [mono.eleventeen.blog](https://mono.eleventeen.blog)
+
+Try toggling light and dark mode using devtools, there are links to how at the bottom to [chromagen.io](https://chromagen.io/)
+
+The rainbow eleventeen demo still lives (happily ever after) at [eleventeen.blog](https://eleventeen.blog)
+
+## Other Additions to and Divergences from Eleventy Base Blog
 
 Rejoicing and rainbows aside, eleventeen also adds post images in [PR #10](https://github.com/rdela/eleventeen/pull/10) / [v9.2.1-alpha.5 ](https://github.com/rdela/eleventeen/releases/tag/v9.2.1-alpha.5), refines them further in 🎈[PR #11](https://github.com/rdela/eleventeen/pull/10) / [v9.2.2-alpha.5 ](https://github.com/rdela/eleventeen/releases/tag/v9.2.2-alpha.5), and makes some more subtle adjustments to Eleventy Base Blog. There are various changes in `public/css/index.css`, and in `_includes/postslist.njk`:
 
@@ -32,7 +44,7 @@ becomes:
 <ul reversed class="postlist">
 ```
 
-The eleventeen name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)) <span role="img" aria-label="">👩🏻‍🎤🎶</span>
+The example About page [`content/about/index.md`](content/about/index.md) tells the story as well.
 
 Please remember to star [eleventeen on GitHub](https://github.com/rdela/eleventeen) <span role="img" aria-label="">⭐️🐙</span>
 
