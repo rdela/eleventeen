@@ -15,7 +15,7 @@
 	--background-color-dark: #000;
 	--background-color: var(--background-color-light);
 
-	--active-light: hwb(172 1% 61%);
+	--active-light: hsl(172, 94%, 20%);
 	--active-dark: hsl(172, 94%, 65%);
 	--complement: hsl(38, 94%, 65%);
 	--complementdarker: hsl(38, 94%, 9%);
