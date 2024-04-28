@@ -15,14 +15,14 @@
 	--background-color-dark: #000;
 	--background-color: var(--background-color-light);
 
-	--active-light: hsl(172, 94%, 20%); /* #17050f */
-	--active-dark: hsl(172, 94%, 65%); /* #a6a6f8 */
-	--complement: hsl(38, 94%, 65%); /* #1493fb */
-	--complementdarker: hsl(38, 94%, 9%); /* #5f2b48 */
-	--primary: hsl(351, 94%, 65%); /* #6969f7 */
-	--primarydarker: hsl(351, 94%, 9%); /* #082840 */
-	--text-color-dark: hsl(172, 94%, 83%); /* #dad8d8 */
-	--text-color-light: hsl(172, 94%, 9%); /* #282828 */
+	--active-light: hwb(172 1% 61%);
+	--active-dark: hsl(172, 94%, 65%);
+	--complement: hsl(38, 94%, 65%);
+	--complementdarker: hsl(38, 94%, 9%);
+	--primary: hsl(351, 94%, 65%);
+	--primarydarker: hsl(351, 94%, 9%);
+	--text-color-dark: hsl(172, 94%, 83%);
+	--text-color-light: hsl(172, 94%, 9%);
 
 	--text-color: var(--text-color-light);
 	--text-color-link: var(--text-color-light);
@@ -68,9 +68,11 @@ body {
 	color: var(--text-color);
 	background-color: var(--background-color);
 }
+
 html {
 	overflow-y: scroll;
 }
+
 body {
 	min-height: 100vh;
 	min-height: 100dvh;
@@ -93,13 +95,6 @@ body {
 	width: 1px;
 }
 
-p:last-child {
-	margin-bottom: 0;
-}
-p {
-	line-height: 1.5;
-}
-
 h1,
 h2,
 h3,
@@ -111,6 +106,14 @@ p {
 	margin-block-start: 1.5rem;
 }
 
+p:last-child {
+	margin-block-end: 0;
+}
+
+p {
+	line-height: 1.5;
+}
+
 li {
 	line-height: 1.5;
 }
@@ -118,13 +121,16 @@ li {
 a {
 	color: var(--text-color-link);
 }
+
 a:visited {
 	color: var(--text-color-link-visited);
 }
+
 a:focus,
 a:hover {
 	color: var(--text-color-link-highlight);
 }
+
 a:active {
 	color: var(--text-color-link-active);
 }
@@ -132,6 +138,7 @@ a:active {
 .button {
 	text-decoration: none;
 }
+
 button,
 .button {
 	background-color: transparent;
@@ -141,6 +148,7 @@ button,
 	font-size: 1.5em;
 	padding: 0.25em 0.5em;
 }
+
 button:focus,
 button:hover,
 .button:focus, 
@@ -149,12 +157,14 @@ button:hover,
 	border-color: var(--text-color-link-highlight);
 	color: var(--button-text-highlight);
 }
+
 button:active, 
 .button:active {
 	background-color: var(--primary);
 	border-color: var(--button-border-highlight);
 	color: var(--button-text-highlight);
 }
+
 .button:visited {
 	border-color: var(--text-color-link-visited);
 }
@@ -166,27 +176,28 @@ figure {
 figcaption {
 	text-align: center;
 	font-size: 1rem;
-	margin-top: 0.25rem;
+	margin-block-start: 0.25rem;
 }
 
 .links-nextprev {
 	list-style: none;
-	/* border-top: 1px dashed #e0e0e0; */
 	padding: 1em 0;
 }
 
 table {
 	margin: 1em 0;
 }
+
 table td,
 table th {
-	padding-right: 1em;
+	padding-inline-end: 1em;
 }
 
 pre,
 code {
 	font-family: var(--font-family-monospace);
 }
+
 pre:not([class*="language-"]) {
 	margin: 0.5em 0;
 	line-height: 1.375; /* 22px /16 */
@@ -202,6 +213,7 @@ pre:not([class*="language-"]) {
 	word-spacing: normal;
 	word-break: normal;
 }
+
 code {
 	word-break: break-word;
 }
@@ -210,8 +222,9 @@ main {
 	font-size: var(--article-font-size);
 	padding: 0 1rem;
 }
+
 main :first-child {
-	margin-top: 0;
+	margin-block-start: 0;
 }
 
 main img {
@@ -223,15 +236,6 @@ footer,
 header {
 	padding: 1rem;
 }
-
-/* header {
-	border-bottom: 1px dashed #e0e0e0;
-} 
-header:after {
-	content: "";
-	display: table;
-	clear: both;
-} */
 
 footer {
 	display: flex;
@@ -256,6 +260,7 @@ footer {
 }
 
 /* Header */
+
 header {
 	align-items: center;
 	display: flex;
@@ -263,11 +268,13 @@ header {
 	gap: 1em 0.5em;
 	justify-content: space-between;
 }
+
 .home-link {
 	font-size: 1em; /* 16px /16 */
 	font-weight: 700;
-	margin-right: 2em;
+	margin-inline-end: 2em;
 }
+
 .home-link:link:not(:hover) {
 	text-decoration: none;
 }
@@ -279,86 +286,86 @@ header {
 	margin: 0;
 	list-style: none;
 }
+
 .nav-item {
 	display: inline-block;
-	margin-right: 1em;
+	margin-inline-end: 1em;
 }
+
 .nav-item a:not(:hover) {
 	text-decoration: none;
 }
+
 .nav a[aria-current="page"] {
 	text-decoration: underline;
 }
 
 /* Posts list */
+
 .postlist {
 	list-style: none;
 	padding: 0;
-	/* if using ol in _includes/postslist.njk */
-	/* padding-left: 1.5rem; */
 }
+
 .postlist-item {
 	display: flex;
 	align-items: center;
-	margin-bottom: 1em;
+	margin-block-end: 1em;
 }
+
 @media screen and (max-width: 320px) {
 	.postlist-item {
-		/* moved from prev rule */
 		flex-wrap: wrap;
 	}
 }
-/* if using ol in _includes/postslist.njk */
-/* counter-increment: start-from -1;
-}
-/* .postlist-item:before {
-	display: inline-block;
-	pointer-events: none;
-	content: "" counter(start-from, decimal-leading-zero) ". ";
-	line-height: 100%;
-	text-align: right;
-	margin-left: -1.5rem;
-} 
-.postlist-item:before, 
-*/
+
 .postlist-date {
 	font-size: 0.8125em; /* 13px /16 */
 	color: var(--text-color);
 }
+
 .postlist-date {
 	word-spacing: -0.5px;
 }
+
 .postlist-link {
 	font-size: 1.1875em; /* 19px /16 */
 	font-weight: 700;
-	flex-basis: calc(100% - 1.5rem); /* see postlist-item:before margin-left above */
+	flex-basis: 100%;
 	text-underline-position: from-font;
 	text-underline-offset: 0;
 	text-decoration-thickness: 1px;
 }
+
 .postlist-item-active .postlist-link {
 	font-weight: bold;
 }
+
 .postlist-thumb,
 .postlist-img img {
 	display: block;
 }
+
 .postlist-img img {
 	height: 128px;
 	width: 128px;
 	object-fit: cover;
 }
+
 .postlist-img {
-	margin-right: 1em;
+	margin-inline-end: 1em;
 	min-width: 128px;
 }
+
 .postlist-text {
 	display: flex;
 	flex-direction: column;
 }
+
 .postlist-text a {
 	line-height: 1.25;
 }
+
 .ellipsize {
 	overflow: hidden; /* keeps the element from overflowing its parent */
 	display: -webkit-box;
@@ -378,6 +385,7 @@ header {
 	text-transform: capitalize;
 	font-style: italic;
 }
+
 .postlist-item > .post-tag {
 	align-self: center;
 }
@@ -391,8 +399,9 @@ header {
 	padding: 0;
 	margin: 0;
 }
+
 .post-metadata time {
-	margin-right: 1em;
+	margin-inline-end: 1em;
 }
 
 /* Direct Links / Markdown Headers */
@@ -400,16 +409,19 @@ header {
 	text-decoration: none;
 	font-style: normal;
 	font-size: 1em;
-	margin-left: 0.1em;
+	margin-inline-start: 0.1em;
 }
+
 a.header-anchor,
 a.header-anchor:visited {
 	color: transparent;
 }
+
 a.header-anchor:focus,
 a.header-anchor:hover {
 	text-decoration: underline;
 }
+
 a.header-anchor:focus,
 :hover > a.header-anchor {
 	color: #aaa;
