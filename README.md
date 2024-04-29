@@ -150,7 +150,9 @@ You can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the in
 
 ## Demos
 
-- eleventeen on Netlify: <https://eleventeen.blog> or <https://eleventeen.netlify.app>
+- eleventeen on Netlify, Rainbow Mode (default): <https://eleventeen.blog>
+  or <https://eleventeen.netlify.app>
+- eleventeen on Netlify, Mono Mode: <https://mono.eleventeen.blog>
 - [eleventy-base-blog on Netlify](https://eleventy-base-blog.netlify.app)
 - [eleventy-base-blog on GitHub Pages](https://11ty.github.io/eleventy-base-blog/)
 - [Remix eleventy-base-blog on Glitch](https://glitch.com/~11ty-eleventy-base-blog)
