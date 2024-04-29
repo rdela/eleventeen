@@ -5,7 +5,7 @@ eleventyNavigation:
   order: 3
 ---
 
-# About Eleventeen <span role="img" aria-label="">🌈📓</span>
+# About eleventeen <span role="img" aria-label="">🌈📓</span>
 
 Eleventeen is an evolving variation of [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), an [Eleventy](https://www.11ty.dev) blog starter. The name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)) <span role="img" aria-label="">👩🏻‍🎤🎶</span>
 
