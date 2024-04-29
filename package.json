@@ -1,6 +1,6 @@
 {
 	"name": "eleventeen",
-	"version": "9.2.10-alpha.9",
+	"version": "9.2.11-alpha.9",
 	"description": "A starter repository for a blog web site using the Eleventy site generator.",
 	"type": "module",
 	"scripts": {
@@ -8,6 +8,7 @@
 		"build-ghpages": "eleventy --pathprefix=/eleventeen/",
 		"d": "eleventy --serve --quiet",
 		"noisy": "eleventy --serve",
+		"serve": "npx browser-sync '_site' --port 8080 --no-ghost-mode --no-notify --no-ui",
 		"start": "eleventy --serve --quiet",
 		"debug": "DEBUG=Eleventy* eleventy",
 		"debugstart": "DEBUG=Eleventy* eleventy --serve --quiet",
