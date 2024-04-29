@@ -79,8 +79,9 @@
 				changes in both mono and rainbow modes
 			#}
 			{% js %}
-let huedark = `#000`;
-let huehsl = `#fff`;
+let huedark = '#000';
+let huehsl = '#fff';
+
 function activateColorScheme() {
 	const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: light)');
 	if ((colorSchemeQueryList.media === 'not all') 
@@ -90,8 +91,6 @@ function activateColorScheme() {
 		document.querySelector('meta[name="theme-color"]').setAttribute('content', huedark);
 	}
 }
-{# activate initial theme-color in mono mode #}
-activateColorScheme();
 {# respond to prefers-color-scheme changes #}
 const darkPreference = window.matchMedia("(prefers-color-scheme: dark)");
 const lightPreference = window.matchMedia("(prefers-color-scheme: light)");
@@ -105,6 +104,9 @@ lightPreference.addEventListener("change", e => e.matches && activateColorScheme
 				{% include "node_modules/@famebot/chromagen/dist/chromagen.umd.js" %}
 			{% endjs %}
 			{% js %}
+{# connect Rainbow Me button #}
+document.querySelector('#rainbutton').innerHTML = '<button title="wish upon a star" onclick="rainbow()">🌈 Rainbow Me</button>';
+
 const rainbow = () => {
 var colorScheme = chromagen();
 {#- https://davidwalsh.name/css-variables-javascript #}
@@ -124,12 +126,10 @@ docstyle.setProperty('--primarydarker', `hsl(${colorScheme.complement}, ${colorS
 docstyle.setProperty('--text-color-dark', `hsl(${colorScheme.hue}, ${colorScheme.saturation}, ${colorScheme.lighter})`);
 docstyle.setProperty('--text-color-light', `hsl(${colorScheme.hue}, ${colorScheme.saturation}, ${colorScheme.darker})`);
 {# 
-	activate theme-color so theme-color updates even if page already loaded, 
-	for example when Rainbow Me button is clicked.
+	activate theme-color. needs to happen here so theme-color updates even if
+	page already loaded, for example when Rainbow Me button is clicked.
 #}
 activateColorScheme();
-{# connect Rainbow Me button #}
-document.querySelector('#rainbutton').innerHTML = `<button title="wish upon a star" onclick="rainbow()">🌈 Rainbow Me</button>`;
 {# update readout #}
 document.querySelector('#chromagen').innerHTML = `<details>
 	<summary><span role="img" aria-label="palette">🎨</span>
@@ -150,8 +150,13 @@ document.querySelector('#chromagen').innerHTML = `<details>
 }
 rainbow();
 			{% endjs %}
-			{% endif %}
 			{# end rainbow mode code lode #}
+			{% else %}
+			{% js %}
+{# activate theme-color in mono mode #}
+activateColorScheme();
+			{% endjs %}
+			{% endif %}
 
 			{#
 				getBundleFileUrl Writes the bundle content to a content-hashed file location in your 
