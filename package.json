@@ -8,6 +8,7 @@
 		"build-ghpages": "eleventy --pathprefix=/eleventeen/",
 		"d": "eleventy --serve --quiet",
 		"noisy": "eleventy --serve",
+		"serve": "npx browser-sync '_site' --port 8080 --no-ghost-mode --no-notify --no-ui",
 		"start": "eleventy --serve --quiet",
 		"debug": "DEBUG=Eleventy* eleventy",
 		"debugstart": "DEBUG=Eleventy* eleventy --serve --quiet",
