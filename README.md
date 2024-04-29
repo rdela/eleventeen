@@ -6,7 +6,7 @@ Eleventeen is an evolving variation of [Eleventy Base Blog](https://github.com/1
 
 ## WARNING: Here Be Canaries <span role="img" aria-label="">🐥</span>
 
-Eleventeen boldly embraced [Eleventy v3](https://www.11ty.dev/blog/canary-eleventy-v3/) ahead of its upstream source in [PR #8](https://github.com/rdela/eleventeen/pull/8) / [v9.0.0-alpha.5](https://github.com/rdela/eleventeen/releases/tag/v9.0.0-alpha.5), while Eleventy Base Blog remains on the stable [v2 release](https://www.11ty.dev/blog/eleventy-v2/)) as of 28 April 2024.
+Eleventeen boldly embraced [Eleventy v3](https://www.11ty.dev/blog/canary-eleventy-v3/) ahead of its upstream source in [PR #8](https://github.com/rdela/eleventeen/pull/8) / [v9.0.0-alpha.5](https://github.com/rdela/eleventeen/releases/tag/v9.0.0-alpha.5), while Eleventy Base Blog remains on the stable [v2 release](https://www.11ty.dev/blog/eleventy-v2/) as of 28 April 2024.
 
 ## Rainbow Mode™
 
