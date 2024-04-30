@@ -112,7 +112,7 @@ npx @11ty/eleventy --serve
 
 You can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the internals.
 
-## Features
+## Key Features
 
 - Using [Eleventy ~~v2.0~~ 3.0 alpha](https://www.11ty.dev/blog/canary-eleventy-v3/) with zero-JavaScript output.
 	- Content is exclusively pre-rendered (this is a static site).
@@ -123,6 +123,31 @@ You can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the in
 	- [View the Lighthouse report for the latest eleventeen build](https://eleventeen.blog/reports/lighthouse/) courtesy of the [Netlify Lighthouse plugin](https://github.com/netlify/netlify-plugin-lighthouse).
 	- _0 Cumulative Layout Shift_
 	- _0ms Total Blocking Time_
+
+## We work hard for these hundies
+
+Like Eleventy Base Blog, eleventeen scores a perfect 400 on Lighthouse audits, 100 in accessibility, best-practices, performance, and SEO.
+
+If you deploy eleventeen to Netlify as is with its included `netlify.toml` build config file, eleventeen expects [netlify-plugin-lighthouse](https://github.com/netlify/netlify-plugin-lighthouse) to be installed at v6 or higher, so it can monitor Lighthouse audit performance thresholds in the `onPostBuild` event. v5 changed @netlify/plugin-lighthouse’s default behavior to running during the `onSuccess` build step in [PR #588](https://github.com/netlify/netlify-plugin-lighthouse/pull/588). Running the plugin in `onPostBuild` now requires `fail_deploy_on_score_thresholds` to be set to `true` in `netlify.toml`.
+
+If the plugin is not installed or installed at a version older than 5.0.0, particularly 4.1.1 or lower, you will get a “failed due to plugin error” during the build. The deploy log shows “Deploy failed due to an error in @netlify/plugin-lighthouse plugin,” and more specifically: 
+
+```
+Plugin "@netlify/plugin-lighthouse" invalid/unknown input(s) "fail_deploy_on_score_thresholds"
+```
+
+You can [install the plugin through the Netlify UI](https://www.npmjs.com/package/@netlify/plugin-lighthouse#install-plugin-through-the-netlify-ui): “from the [Integrations Hub](https://www.netlify.com/integrations/lighthouse/), the [Plugins directory](https://app.netlify.com/plugins), or through this [direct installation link](https://app.netlify.com/plugins/@netlify/plugin-lighthouse/install).” One tricky part of installing it through the UI is making sure you are on version 6 or higher. v6 is the latest version as of 2024-05-01. To check you can visit your site’s [Enabled integrations](https://docs.netlify.com/integrations/build-plugins/#manage-plugin-versions) and select Options > Change version to make sure you are on a major version greater than or equal to 6.0.0.
+
+Alternatively, you can install the plugin manually with: 
+
+```sh
+npm i -D @netlify/plugin-lighthouse
+```
+
+Some versions below v6 can exhibit an issue where the presence of a `x-robots-tag: noindex` header on deploy previews lowers the SEO score to 92, but even then production builds still score 100. The solution is to update the plugin, and this is what led to discovering the issues detailed here, in [PR #16](https://github.com/rdela/eleventeen/pull/16) / [commit 5172fb3](https://github.com/rdela/eleventeen/commit/5172fb3678da0b1c0bc03ace86a4175104efbd62), and [on Mastodon](https://mastodon.social/@rdela/112209383077547429). Note netlify-plugin-lighthouse is now in [maintenance(-only) mode](https://github.com/netlify/netlify-plugin-lighthouse/blob/main/CONTRIBUTING.md).
+
+## More Features
+
 - Local development live reload provided by [Eleventy Dev Server](https://www.11ty.dev/docs/dev-server/).
 - Content-driven [navigation menu](https://www.11ty.dev/docs/plugins/navigation/)
 - [Image optimization](https://www.11ty.dev/docs/plugins/image/) via the `{% image %}` shortcode.
@@ -151,8 +176,8 @@ You can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the in
 ## Demos
 
 - eleventeen on Netlify, Rainbow Mode (default): <https://eleventeen.blog>
-  or <https://eleventeen.netlify.app>
-- eleventeen on Netlify, Mono Mode: <https://mono.eleventeen.blog>
+  or <https://eleventeen.netlify.app> ([Latest Lighthouse report](https://eleventeen.blog/reports/lighthouse/))
+- eleventeen on Netlify, Mono Mode: <https://mono.eleventeen.blog> ([Latest Lighthouse report](https://mono.eleventeen.blog/reports/lighthouse/))
 - [eleventy-base-blog on Netlify](https://eleventy-base-blog.netlify.app)
 - [eleventy-base-blog on GitHub Pages](https://11ty.github.io/eleventy-base-blog/)
 - [Remix eleventy-base-blog on Glitch](https://glitch.com/~11ty-eleventy-base-blog)
