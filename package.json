@@ -1,7 +1,7 @@
 {
 	"name": "eleventeen",
-	"version": "9.2.12-alpha.9",
-	"description": "A starter repository for a blog web site using the Eleventy site generator.",
+	"version": "9.2.13-alpha.10",
+	"description": "Starter repository for a website built with Eleventy + eleventeen",
 	"type": "module",
 	"scripts": {
 		"build": "eleventy",
@@ -39,10 +39,10 @@
 	},
 	"homepage": "https://github.com/11ty/eleventy-base-blog#readme",
 	"devDependencies": {
-		"@11ty/eleventy": "3.0.0-alpha.9",
+		"@11ty/eleventy": "3.0.0-alpha.10",
 		"@11ty/eleventy-img": "^4.0.2",
 		"@11ty/eleventy-navigation": "^0.3.5",
-		"@11ty/eleventy-plugin-bundle": "^1.0.5",
+		"@11ty/eleventy-plugin-bundle": "^2.0.2",
 		"@11ty/eleventy-plugin-rss": "^1.2.0",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"@famebot/chromagen": "^1.0.1",

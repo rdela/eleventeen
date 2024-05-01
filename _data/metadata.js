@@ -1,5 +1,5 @@
 let data = {
-	title: "eleventeen v9.2.12-alpha.9",
+	title: "eleventeen v9.2.13-alpha.10",
 	url: "https://eleventeen.blog",
 	language: "en",
 	description: "Rainbow Eleventy blog",
@@ -10,7 +10,7 @@ let data = {
 	},
 	siteimage: "https://o.famebot.com/file/famebot/eleventeen.png",
 	mono: false,
-	eleventeen: "9.2.12-alpha.9",
+	eleventeen: "9.2.13-alpha.10",
 };
 
 export default data;
