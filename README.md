@@ -124,7 +124,7 @@ You can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the in
 	- _0 Cumulative Layout Shift_
 	- _0ms Total Blocking Time_
 
-## We work hard for these hundies
+## We Work Hard for These Hundies
 
 Like Eleventy Base Blog, eleventeen scores a perfect 400 on Lighthouse audits, 100 in accessibility, best-practices, performance, and SEO.
 
@@ -183,7 +183,7 @@ Some versions below v6 can exhibit an issue where the presence of a `x-robots-ta
 - [Remix eleventy-base-blog on Glitch](https://glitch.com/~11ty-eleventy-base-blog)
 - [eleventy-base-blog on Cloudflare Pages](https://eleventy-base-blog-d2a.pages.dev/)
 
-## Deploy this to your own site
+## Deploy This to Your Own Site
 
 Deploy this Eleventy site in just a few clicks on these services:
 
