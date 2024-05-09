@@ -32,12 +32,12 @@
 	},
 	"funding": {
 		"type": "opencollective",
-		"url": "https://opencollective.com/11ty"
+		"url": "https://opencollective.com/famebotstudios"
 	},
 	"bugs": {
-		"url": "https://github.com/11ty/eleventy-base-blog/issues"
+		"url": "https://github.com/rdela/eleventeen/issues"
 	},
-	"homepage": "https://github.com/11ty/eleventy-base-blog#readme",
+	"homepage": "https://eleventeen.blog/about/",
 	"devDependencies": {
 		"@11ty/eleventy": "3.0.0-alpha.10",
 		"@11ty/eleventy-img": "^4.0.2",
