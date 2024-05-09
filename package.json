@@ -16,7 +16,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/11ty/eleventy-base-blog.git"
+		"url": "git://github.com/rdela/eleventeen.git"
 	},
 	"author": {
 		"name": "Zach Leatherman",
