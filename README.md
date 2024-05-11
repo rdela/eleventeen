@@ -2,11 +2,15 @@
 
 [![](https://o.famebot.com/file/famebot/eleventeen.png)](https://eleventeen.blog)
 
-Eleventeen is an evolving variation of [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), an [Eleventy](https://www.11ty.dev) blog starter. The name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)) <span role="img" aria-label="">👩🏻‍🎤🎶</span>
+Eleventeen is an evolving variation of [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), an [Eleventy](https://www.11ty.dev/) (11ty) blog starter. “Eleventy is a simpler static site generator,” created and maintained by [Zach Leatherman](https://www.zachleat.com/), who [blogs about Eleventy](https://www.zachleat.com/web/?category=eleventy) often.
+
+[Ricky de Laveaga](https://rdela.com/) develops [eleventeen on GitHub](https://github.com/rdela/eleventeen) primarily for [Famebot](https://famebot.com/) and [Artist Activist](https://artact.io/). Famebot is the micro movie studio Ricky runs with [Laramie Dennis](https://laramiedennis.com/), and Artist Activist is a creative agency advocating for positive change Ricky co-founded with [Clifford J. Tasner](https://www.cliffordjtasner.com/).
+
+The name eleventeen is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)) <span role="img" aria-label="">👩🏻‍🎤🎶</span>
 
 ## WARNING: Here Be Canaries <span role="img" aria-label="">🐥</span>
 
-Eleventeen boldly embraced [Eleventy v3](https://www.11ty.dev/blog/canary-eleventy-v3/) ahead of its upstream source in [PR #8](https://github.com/rdela/eleventeen/pull/8) / [v9.0.0-alpha.5](https://github.com/rdela/eleventeen/releases/tag/v9.0.0-alpha.5), while Eleventy Base Blog remains on the stable [v2 release](https://www.11ty.dev/blog/eleventy-v2/) as of 28 April 2024.
+Eleventeen boldly embraced [Eleventy v3](https://www.11ty.dev/blog/canary-eleventy-v3/) ahead of its upstream source in [PR #8](https://github.com/rdela/eleventeen/pull/8) / [v9.0.0-alpha.5](https://github.com/rdela/eleventeen/releases/tag/v9.0.0-alpha.5), while Eleventy Base Blog remains on the stable [v2 release](https://www.11ty.dev/blog/eleventy-v2/) as of 10 May 2024.
 
 ## Rainbow Mode™
 
@@ -215,3 +219,10 @@ If your site enforces a [Content Security Policy](https://developer.mozilla.org/
 
 1. In `base.njk`, remove `<style>{% getBundle "css" %}</style>` and uncomment `<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">`
 2. Configure the server with the CSP directive `style-src: 'unsafe-inline'` (less secure).
+
+## Other Eleventy Resources
+
+- [The 11ty Bundle](https://11tybundle.dev/), an ever-expanding collection of Eleventy resources curated by [Bob Monsour](https://www.bobmonsour.com/)
+- [Eleventy Community Discord Server](https://www.11ty.dev/blog/discord/)
+- [Eleventy YouTube channel](https://www.youtube.com/@EleventyVideo)
+- [CloudCannon YouTube channel](https://www.youtube.com/@CloudCannon)
