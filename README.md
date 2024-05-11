@@ -14,7 +14,7 @@ Eleventeen boldly embraced [Eleventy v3](https://www.11ty.dev/blog/canary-eleven
 
 ## Rainbow Mode™
 
-In addition to Base Blog’s killer features and Eleventy 3’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports a novel new visual experience we call [Rainbow Mode™](https://github.com/rdela/eleventeen/pull/1), powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish under the [Famebot](https://github.com/famebot) organization. Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color names.”
+In addition to Base Blog’s killer features and Eleventy 3’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports a novel new visual experience we call [Rainbow Mode™](https://github.com/rdela/eleventeen/pull/1), powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish under the [Famebot organization](https://github.com/famebot). Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color names.”
 
 ### prefers-color-scheme: rainbow
 
