@@ -24,7 +24,7 @@ We posit a third color scheme preference in addition to light and dark “modes,
 
 [v9.2.3-alpha.5](https://github.com/rdela/eleventeen/releases/tag/v9.2.3-alpha.5) added a `mono` option to [`_data/metadata.js`](_data/metadata.js) in [PR #13](https://github.com/rdela/eleventeen/pull/13) that disables Rainbow Mode if you set it to `true`.
 
-`mono` is `false` by default, on purpose, because it beats making people set an option called `rainbow` to `false`. Plus it might make the current `{%- if not metadata.mono %}` template logic in [`_includes/layouts/base.njk`](_includes/layouts/base.njk) a little more resilient.
+`mono` is `false` by default, on purpose, because it beats making people set an option called `rainbow` to `false`. Plus it might make the current `if not metadata.mono` template logic in [`_includes/layouts/base.njk`](_includes/layouts/base.njk) a little more resilient.
 
 ### Show Me the Mono
 
