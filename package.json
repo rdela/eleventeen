@@ -1,6 +1,6 @@
 {
 	"name": "eleventeen",
-	"version": "9.2.13-alpha.10",
+	"version": "9.2.14-alpha.10",
 	"description": "Starter repository for a website built with Eleventy + eleventeen",
 	"type": "module",
 	"scripts": {
