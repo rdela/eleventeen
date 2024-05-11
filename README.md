@@ -2,7 +2,7 @@
 
 [![](https://o.famebot.com/file/famebot/eleventeen.png)](https://eleventeen.blog)
 
-Eleventeen is an evolving variation of [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), an [Eleventy](https://www.11ty.dev/) (11ty) blog starter. “Eleventy is a simpler static site generator,” created and maintained by [Zach Leatherman](https://www.zachleat.com/), who [blogs about Eleventy](https://www.zachleat.com/web/?category=eleventy) often.
+Eleventeen is an evolving variation of [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), an [Eleventy (11ty)](https://www.11ty.dev/) blog starter. “Eleventy is a simpler static site generator,” created and maintained by [Zach Leatherman](https://www.zachleat.com/), who [blogs about Eleventy](https://www.zachleat.com/web/?category=eleventy) often.
 
 [Ricky de Laveaga](https://rdela.com/) develops [eleventeen on GitHub](https://github.com/rdela/eleventeen) primarily for [Famebot](https://famebot.com/) and [Artist Activist](https://artact.io/). Famebot is the micro movie studio Ricky runs with [Laramie Dennis](https://laramiedennis.com/), and Artist Activist is a creative agency advocating for positive change Ricky co-founded with [Clifford J. Tasner](https://www.cliffordjtasner.com/).
 
