@@ -7,15 +7,19 @@ eleventyNavigation:
 
 # About eleventeen <span role="img" aria-label="">🌈📓</span>
 
-Eleventeen is an evolving variation of [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), an [Eleventy](https://www.11ty.dev) blog starter. The name is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)) <span role="img" aria-label="">👩🏻‍🎤🎶</span>
+Eleventeen is an evolving variation of [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), an [Eleventy (11ty)](https://www.11ty.dev/) blog starter. “Eleventy is a simpler static site generator,” created and maintained by [Zach Leatherman](https://www.zachleat.com/), who [blogs about Eleventy](https://www.zachleat.com/web/?category=eleventy) often.
+
+[Ricky de Laveaga](https://rdela.com/) develops [eleventeen on GitHub](https://github.com/rdela/eleventeen) primarily for [Famebot](https://famebot.com/) and [Artist Activist](https://artact.io/). Famebot is the micro movie studio Ricky runs with [Laramie Dennis](https://laramiedennis.com/), and Artist Activist is a creative agency advocating for positive change Ricky co-founded with [Clifford J. Tasner](https://www.cliffordjtasner.com/).
+
+The name eleventeen is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)) <span role="img" aria-label="">👩🏻‍🎤🎶</span>
+
+## Rainbow Mode™
 
 Eleventy Base Blog is:
 
 > A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v2.0 release](https://www.11ty.dev/blog/eleventy-v2/)).
 
-## Rainbow Mode™
-
-In addition to Base Blog’s killer features and [Eleventy v3](https://www.11ty.dev/blog/canary-eleventy-v3/)’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports a novel new visual experience we call [Rainbow Mode](https://github.com/rdela/eleventeen/pull/1), powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish under the [Famebot](https://github.com/famebot) organization. Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color&nbsp;names.”
+In addition to Base Blog’s killer features and our upgraded [Eleventy v3](https://www.11ty.dev/blog/canary-eleventy-v3/)’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports a novel new visual experience we call [Rainbow Mode](https://github.com/rdela/eleventeen/pull/1), powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish on GitHub under the [Famebot organization](https://github.com/famebot). Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color&nbsp;names.”
 
 ### prefers-color-scheme: rainbow
 
@@ -34,6 +38,13 @@ You can see Mono Mode enabled at [mono.eleventeen.blog](https://mono.eleventeen.
 Try toggling light and dark mode using devtools, there are links to how at the bottom to [chromagen.io](https://chromagen.io/)
 
 The rainbow eleventeen demo still lives (happily ever after) at [eleventeen.blog](https://eleventeen.blog)
+
+## Other Eleventy Resources
+
+- [The 11ty Bundle](https://11tybundle.dev/), an ever-expanding collection of Eleventy resources curated by [Bob Monsour](https://www.bobmonsour.com/)
+- [Eleventy Community Discord Server](https://www.11ty.dev/blog/discord/)
+- [Eleventy YouTube channel](https://www.youtube.com/@EleventyVideo)
+- [CloudCannon YouTube channel](https://www.youtube.com/@CloudCannon)
 
 ## Star Power <span role="img" aria-label="">⭐️⚡️</span>
 
