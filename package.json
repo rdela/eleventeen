@@ -1,6 +1,6 @@
 {
 	"name": "eleventeen",
-	"version": "9.2.14-alpha.10",
+	"version": "9.2.15-alpha.13",
 	"description": "Starter repository for a website built with Eleventy + eleventeen",
 	"type": "module",
 	"scripts": {
@@ -39,11 +39,11 @@
 	},
 	"homepage": "https://eleventeen.blog/about/",
 	"devDependencies": {
-		"@11ty/eleventy": "3.0.0-alpha.10",
+		"@11ty/eleventy": "3.0.0-alpha.13",
 		"@11ty/eleventy-img": "^4.0.2",
 		"@11ty/eleventy-navigation": "^0.3.5",
 		"@11ty/eleventy-plugin-bundle": "^2.0.2",
-		"@11ty/eleventy-plugin-rss": "^1.2.0",
+		"@11ty/eleventy-plugin-rss": "^2.0.1",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"@famebot/chromagen": "^1.0.1",
 		"luxon": "^3.4.4",
