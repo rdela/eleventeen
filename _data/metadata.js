@@ -1,5 +1,5 @@
 let data = {
-	title: "eleventeen v9.2.15-alpha.13",
+	title: "eleventeen v" + process.env.npm_package_version,
 	url: "https://eleventeen.blog",
 	language: "en",
 	description: "Rainbow Eleventy blog",
@@ -10,7 +10,8 @@ let data = {
 	},
 	siteimage: "https://o.famebot.com/file/famebot/eleventeen.png",
 	mono: true,
-	eleventeen: "9.2.15-alpha.13",
+	eleventeenv: process.env.npm_package_version,
+	elevenv: process.env.ELEVENTY_VERSION,
 };
 
 export default data;
