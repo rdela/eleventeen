@@ -2,19 +2,19 @@
 
 [![](https://o.famebot.com/file/famebot/eleventeen.png)](https://eleventeen.blog)
 
-Eleventeen is an evolving variation of [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), an [Eleventy (11ty)](https://www.11ty.dev/) blog starter. “Eleventy is a simpler static site generator,” created and maintained by [Zach Leatherman](https://www.zachleat.com/), who [blogs about Eleventy](https://www.zachleat.com/web/?category=eleventy) often.
+Eleventeen is an evolving variation of [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), a blueprint to start a blog with [Eleventy (11ty)](https://www.11ty.dev/), the award-winning open source site generator created and maintained by [Zach Leatherman](https://www.zachleat.com/), who [blogs about Eleventy](https://www.zachleat.com/web/?category=eleventy) often.
 
-[Ricky de Laveaga](https://rdela.com/) develops [eleventeen on GitHub](https://github.com/rdela/eleventeen) primarily for [Famebot](https://famebot.com/) and [Artist Activist](https://artact.io/). Famebot is the micro movie studio Ricky runs with [Laramie Dennis](https://laramiedennis.com/), and Artist Activist is a creative agency advocating for positive change Ricky co-founded with [Clifford J. Tasner](https://www.cliffordjtasner.com/).
+[Ricky de Laveaga](https://rdela.com/bio/) builds [eleventeen on GitHub](https://github.com/rdela/eleventeen) for web projects by [Famebot](https://famebot.com/) and [Artist Activist](https://artact.io/). Famebot is the micro movie studio Ricky runs with [Laramie Dennis](https://laramiedennis.com/), and Artist Activist is a creative agency advocating for positive change Ricky co-founded with [Clifford J. Tasner](https://www.cliffordjtasner.com/).
 
 The name eleventeen is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)) <span role="img" aria-label="">👩🏻‍🎤🎶</span>
 
 ## WARNING: Here Be Canaries <span role="img" aria-label="">🐥</span>
 
-Eleventeen boldly embraced [Eleventy v3](https://www.11ty.dev/blog/canary-eleventy-v3/) ahead of its upstream source in [PR #8](https://github.com/rdela/eleventeen/pull/8) / [v9.0.0-alpha.5](https://github.com/rdela/eleventeen/releases/tag/v9.0.0-alpha.5), while Eleventy Base Blog remains on the stable [v2 release](https://www.11ty.dev/blog/eleventy-v2/) as of 10 May 2024.
+Eleventeen boldly embraced the alpha release of [Eleventy v3 canary](https://www.11ty.dev/blog/canary-eleventy-v3/) ahead of its upstream source in [PR #8](https://github.com/rdela/eleventeen/pull/8) / [v9.0.0-alpha.5](https://github.com/rdela/eleventeen/releases/tag/v9.0.0-alpha.5), while Eleventy Base Blog remains on the stable [v2 release](https://www.11ty.dev/blog/eleventy-v2/) as of 8 July 2024.
 
 ## Rainbow Mode™
 
-In addition to Base Blog’s killer features and Eleventy 3’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports a novel new visual experience we call [Rainbow Mode™](https://github.com/rdela/eleventeen/pull/1), powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish under the [Famebot organization](https://github.com/famebot). Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color names.”
+In addition to Base Blog’s killer features and Eleventy 3’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports a novel new visual experience we call Rainbow Mode, powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish under the [Famebot organization](https://github.com/famebot). Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color names.”
 
 ### prefers-color-scheme: rainbow
 
@@ -22,9 +22,9 @@ We posit a third color scheme preference in addition to light and dark “modes,
 
 ## Mono Mode <span role="img" aria-label="">📓🏁</span>
 
-[v9.2.3-alpha.5](https://github.com/rdela/eleventeen/releases/tag/v9.2.3-alpha.5) added a `mono` option to [`_data/metadata.js`](_data/metadata.js) in [PR #13](https://github.com/rdela/eleventeen/pull/13) that disables Rainbow Mode if you set it to `true`.
+v9.2.3-alpha.5 added a `mono` option to [`_data/metadata.js`](_data/metadata.js) that disables Rainbow Mode if you set it to `true`.
 
-`mono` is `false` by default, on purpose, because it beats making people set an option called `rainbow` to `false`. Plus it might make the current `if not metadata.mono` template logic in [`_includes/layouts/base.njk`](_includes/layouts/base.njk) a little more resilient.
+`mono` is `false` by default, on purpose, because it beats making people set an option called `rainbow` to `false`. Plus it might make the `if not metadata.mono` template logic in [`_includes/layouts/base.njk`](_includes/layouts/base.njk) a little more resilient.
 
 ### Show Me the Mono
 
@@ -36,7 +36,7 @@ The rainbow eleventeen demo still lives (happily ever after) at [eleventeen.blog
 
 ## Other Additions to and Divergences from Eleventy Base Blog
 
-Rejoicing and rainbows aside, eleventeen also adds post images in [PR #10](https://github.com/rdela/eleventeen/pull/10) / [v9.2.1-alpha.5 ](https://github.com/rdela/eleventeen/releases/tag/v9.2.1-alpha.5), refines them further in 🎈[PR #11](https://github.com/rdela/eleventeen/pull/10) / [v9.2.2-alpha.5 ](https://github.com/rdela/eleventeen/releases/tag/v9.2.2-alpha.5), and makes some more subtle adjustments to Eleventy Base Blog. There are various changes in `public/css/index.css`, and in `_includes/postslist.njk`:
+Rejoicing and rainbows aside, eleventeen also adds post images, and makes some more subtle adjustments to Eleventy Base Blog. There are various changes in `public/css/index.css`, and in `_includes/postslist.njk`:
 
 ```njk
 <ol reversed class="postlist" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
@@ -222,7 +222,7 @@ If your site enforces a [Content Security Policy](https://developer.mozilla.org/
 
 ## Other Eleventy Resources
 
-- [The 11ty Bundle](https://11tybundle.dev/), an ever-expanding collection of Eleventy resources curated by [Bob Monsour](https://www.bobmonsour.com/)
+- [The 11ty Bundle](https://11tybundle.dev/), an ever-expanding collection of Eleventy news and resources curated by [Bob Monsour](https://www.bobmonsour.com/)
 - [Eleventy Community Discord Server](https://www.11ty.dev/blog/discord/)
 - [Eleventy YouTube channel](https://www.youtube.com/@EleventyVideo)
 - [CloudCannon YouTube channel](https://www.youtube.com/@CloudCannon)
