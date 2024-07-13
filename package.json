@@ -1,6 +1,6 @@
 {
 	"name": "eleventeen",
-	"version": "9.2.18-alpha.14",
+	"version": "9.2.19-alpha.16",
 	"description": "Starter repository for a website built with Eleventy + eleventeen",
 	"type": "module",
 	"scripts": {
@@ -39,7 +39,7 @@
 	},
 	"homepage": "https://eleventeen.blog/about/",
 	"devDependencies": {
-		"@11ty/eleventy": "3.0.0-alpha.14",
+		"@11ty/eleventy": "3.0.0-alpha.16",
 		"@11ty/eleventy-img": "^4.0.2",
 		"@11ty/eleventy-navigation": "^0.3.5",
 		"@11ty/eleventy-plugin-bundle": "^2.0.2",

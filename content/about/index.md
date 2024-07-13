@@ -27,9 +27,7 @@ We posit a third color scheme preference in addition to light and dark “modes,
 
 ## Mono Mode <span role="img" aria-label="">📓🏁</span>
 
-v9.2.3-alpha.5 added a `mono` option to [`_data/metadata.js`](https://github.com/rdela/eleventeen/blob/trunk/_data/metadata.js) that disables Rainbow Mode if you set it to `true`.
-
-`mono` is `false` by default, on purpose, because it beats making people set an option called `rainbow` to `false`. Plus it might make the `if not metadata.mono` template logic in [`_includes/layouts/base.njk`](https://github.com/rdela/eleventeen/blob/trunk/_includes/layouts/base.njk) a little more resilient.
+v9.2.3-alpha.5 added a `mono` option to [`_data/metadata.js`](https://github.com/rdela/eleventeen/blob/trunk/_data/metadata.js) that disables Rainbow Mode if you set it to `true`. `mono` is `false` by default, on purpose, because it beats making people set an option called `rainbow` to `false`.
 
 ### Show Me the Mono
 
@@ -38,6 +36,11 @@ You can see Mono Mode enabled at [mono.eleventeen.blog](https://mono.eleventeen.
 Try toggling light and dark mode using devtools, there are links to how at the bottom to [chromagen.io](https://chromagen.io/)
 
 The rainbow eleventeen demo still lives (happily ever after) at [eleventeen.blog](https://eleventeen.blog)
+
+## Get Started
+
+1. Edit [`_data/metadata.js`](https://github.com/rdela/eleventeen/blob/trunk/_data/metadata.js) with the information for your site.
+2. (Optional) Review `eleventy.config.js` build [configuration](https://www.11ty.dev/docs/config/)
 
 ## Other Eleventy Resources
 

@@ -12,6 +12,11 @@ The name eleventeen is an homage to the [Daisy Chainsaw album](https://en.wikipe
 
 Eleventeen boldly embraced the alpha release of [Eleventy v3 canary](https://www.11ty.dev/blog/canary-eleventy-v3/) ahead of its upstream source in [PR #8](https://github.com/rdela/eleventeen/pull/8) / [v9.0.0-alpha.5](https://github.com/rdela/eleventeen/releases/tag/v9.0.0-alpha.5), while Eleventy Base Blog remains on the stable [v2 release](https://www.11ty.dev/blog/eleventy-v2/) as of 8 July 2024.
 
+## Get Started
+
+1. Edit `_data/metadata.js` with the information for your site.
+2. (Optional) Review `eleventy.config.js` build [configuration](https://www.11ty.dev/docs/config/)
+
 ## Rainbow Mode™
 
 In addition to Base Blog’s killer features and Eleventy 3’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports a novel new visual experience we call Rainbow Mode, powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish under the [Famebot organization](https://github.com/famebot). Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color names.”
@@ -22,9 +27,7 @@ We posit a third color scheme preference in addition to light and dark “modes,
 
 ## Mono Mode <span role="img" aria-label="">📓🏁</span>
 
-v9.2.3-alpha.5 added a `mono` option to [`_data/metadata.js`](_data/metadata.js) that disables Rainbow Mode if you set it to `true`.
-
-`mono` is `false` by default, on purpose, because it beats making people set an option called `rainbow` to `false`. Plus it might make the `if not metadata.mono` template logic in [`_includes/layouts/base.njk`](_includes/layouts/base.njk) a little more resilient.
+v9.2.3-alpha.5 added a `mono` option to [`_data/metadata.js`](_data/metadata.js) that disables Rainbow Mode if you set it to `true`. `mono` is `false` by default, on purpose, because it beats making people set an option called `rainbow` to `false`.
 
 ### Show Me the Mono
 
