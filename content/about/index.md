@@ -40,7 +40,7 @@ The rainbow eleventeen demo still lives (happily ever after) at [eleventeen.blog
 ## Get Started
 
 1. Edit [`_data/metadata.js`](https://github.com/rdela/eleventeen/blob/trunk/_data/metadata.js) with the information for your site.
-2. (Optional) Review `eleventy.config.js` build [configuration](https://www.11ty.dev/docs/config/)
+2. (Optional) Review [`eleventy.config.js`](https://github.com/rdela/eleventeen/blob/trunk/eleventy.config.js) build [configuration](https://www.11ty.dev/docs/config/).
 
 ## Other Eleventy Resources
 
