@@ -1,5 +1,5 @@
 import { DateTime } from "luxon";
-import markdownItAnchor from "markdown-it-anchor";
+import { IdAttributePlugin } from "@11ty/eleventy";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginBundle from "@11ty/eleventy-plugin-bundle";
@@ -29,6 +29,7 @@ export default async function(eleventyConfig) {
 
 	// Official plugins
 	eleventyConfig.addPlugin(pluginRss);
+	eleventyConfig.addPlugin(IdAttributePlugin);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
 		preAttributes: { tabindex: 0 },
 	});
@@ -79,20 +80,6 @@ export default async function(eleventyConfig) {
 		return (tags || []).filter(
 			(tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1
 		);
-	});
-
-	// Customize Markdown library settings:
-	eleventyConfig.amendLibrary("md", (mdLib) => {
-		mdLib.use(markdownItAnchor, {
-			permalink: markdownItAnchor.permalink.ariaHidden({
-				placement: "after",
-				class: "header-anchor",
-				symbol: "#",
-				ariaHidden: false,
-			}),
-			level: [1, 2, 3, 4],
-			slugify: eleventyConfig.getFilter("slugify"),
-		});
 	});
 
 	eleventyConfig.addShortcode("currentBuildDate", () => {
