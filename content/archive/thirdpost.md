@@ -2,10 +2,10 @@
 title: This is my third post.
 description: This is a post on My Blog about win-win survival strategies.
 date: 2018-08-24
-hero: https://raw.githubusercontent.com/11ty/11ty-website/a394cc007a0fb752fc65abef26b238c64c4134af/src/blog/eight-million.jpg
-heroalt: Zach pointing to the new balloons in his office that say 8 Million
-herocaption: Eight Million Eleventy npm Downloads!
-herolink: https://www.11ty.dev/blog/eight-million/
+hero: https://o.famebot.com/file/famebot/eleventeen.png
+heroalt: screenshot
+herocaption: latest eleventeen
+herolink: /about/
 tags:
   - second tag
   - posts with two tags
