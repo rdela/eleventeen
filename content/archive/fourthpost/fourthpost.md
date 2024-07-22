@@ -1,4 +1,5 @@
 ---
+templateEngineOverride: webc,md
 title: This is my fourth post.
 description: This is a post on My Blog about touchpoints and circling wagons.
 date: 2018-09-30
@@ -12,7 +13,7 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews.
 
 Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
 
-{% image "./possum.png", "A possum parent and two possum kids hanging from the iconic red balloon" %}
+<img webc:is="eleventy-image" width="288,350" sizes="100vw" src="/img/possum.png" formats="avif,webp,png" alt="A possum parent and two possum kids hanging from the iconic red balloon">
 
 ## Section Header
 

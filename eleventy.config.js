@@ -4,7 +4,8 @@ import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginBundle from "@11ty/eleventy-plugin-bundle";
 import pluginNavigation from "@11ty/eleventy-navigation";
-import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
+import { EleventyHtmlBasePlugin, EleventyRenderPlugin } from "@11ty/eleventy";
+import pluginWebc from "@11ty/eleventy-plugin-webc";
 
 import pluginDrafts from "./eleventy.config.drafts.js";
 import pluginImages from "./eleventy.config.images.js";
@@ -28,6 +29,14 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginImages);
 
 	// Official plugins
+	eleventyConfig.addPlugin(pluginWebc, {
+		components: [
+			"./_components/**/*.webc",
+			// "npm:@11ty/eleventy-img/*.webc",
+		],
+	});
+	eleventyConfig.addPlugin(EleventyRenderPlugin);
+
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(IdAttributePlugin);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
