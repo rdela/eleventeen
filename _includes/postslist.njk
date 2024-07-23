@@ -3,11 +3,11 @@
 	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
 		{%- if post.data.hero and post.data.heroalt %}
 		<figure class="postlist-img"><a href="{{ post.url }}" class="postlist-thumb">
-			{%- if post.data.hero | fullPostImgUrl %}
+			{# {%- if post.data.hero | fullPostImgUrl %}
 				{% image post.data.hero, post.data.heroalt, [488] %}
 			{%- else %}
 				{% image ['./', post.url, post.data.hero] | join, post.data.heroalt, [488] %}
-			{%- endif %}
+			{%- endif %} #}
 		</a></figure>
 		{%- endif %}
 		<div class="postlist-text">

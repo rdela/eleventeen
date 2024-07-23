@@ -1,0 +1,58 @@
+---node
+templateEngineOverride: md,webc
+const layout = "layouts/base.njk";
+const previousPost = getPreviousCollectionItem(collections.posts);
+const nextPost = getNextCollectionItem(collections.posts);
+---
+<!-- {%- css %}
+/* Only include the syntax highlighter CSS on blog posts */
+{% include "node_modules/prismjs/themes/prism-okaidia.css" %}
+{% include "public/css/prism-diff.css" %}
+{%- endcss %} -->
+<figure>
+<!-- {%- if hero and heroalt %}
+
+	{%- if herolink %} -->
+		<a :href="herolink">
+	<!-- {%- endif %}
+
+	{% image hero, heroalt %}
+
+	{%- if herolink %} -->
+		</a>
+	<!-- {%- endif %}
+
+	{%- if herocaption %} -->
+		<figcaption>
+			<!-- {%- if herolink %} -->
+			<a :href="herolink" @text="herocaption"></a>
+			<!-- {%- endif %} -->
+		</figcaption>
+	<!-- {%- endif %}
+{%- endif %} -->
+</figure>
+<h1 @text="title"></h1>
+
+<ul class="post-metadata">
+	<li><time :datetime="htmlDateString(page.date)" @text="readableDate(page.date)"></time></li>
+	<div webc:for="filterTagList(tag of tags)">
+		<li>
+			<a :href="`/tags/${slugify(tag)}`" class="post-tag" @text="tag"></a>
+		</li>
+	</div>
+</ul>
+
+<div @html="content" webc:nokeep></div>
+
+<!-- {%- if collections.posts %} -->
+<!-- {%- if nextPost or previousPost %} -->
+<ul class="links-nextprev">
+	<!-- {%- if previousPost %} -->
+	<li>Previous: <a :href="previousPost.url" @text="previousPost.data.title"></a></li>
+	<!-- {% endif %} -->
+	<!-- {%- if nextPost %} -->
+	<li>Next: <a :href="nextPost.url" @text="nextPost.data.title"></a></li>
+	<!-- {% endif %} -->
+</ul>
+<!-- {%- endif %} -->
+<!-- {%- endif %} -->

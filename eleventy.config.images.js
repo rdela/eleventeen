@@ -58,7 +58,8 @@ export default function (eleventyConfig) {
 			if (isFullUrl(src)) {
 				input = src;
 			} else {
-				input = relativeToInputPath(this.page.inputPath, src);
+				// input = relativeToInputPath(this.page.inputPath, src);
+				return;
 			}
 
 			let metadata = await eleventyImage(input, {

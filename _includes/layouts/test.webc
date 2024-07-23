@@ -1,0 +1,18 @@
+---node
+const layout = "layouts/base.njk";
+---
+<div webc:if="hero && heroalt" webc:nokeep>
+<figure>
+	<a :href="herolink">
+		<img webc:is="eleventy-image" :src="hero" :alt="heroalt">
+	</a>
+	<figcaption @text="herocaption"></figcaption>
+</figure>
+</div>
+<h1 @text="title"></h1>
+
+<ul class="post-metadata">
+	<li><time :datetime="htmlDateString(page.date)" @text="readableDate(page.date)"></time></li>
+</ul>
+
+<div @html="content" webc:nokeep></div>

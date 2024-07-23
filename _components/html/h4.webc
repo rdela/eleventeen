@@ -1,8 +1,5 @@
 <link rel="stylesheet" href="heading.css">
-<script webc:type="js" webc:root="override">
-let slug = slugify(slots.text.default);
-`<h4 id="${slug}">
-	<a href="#${slug}" class="heading-link"><span aria-hidden="true">#</span><visually-hidden>anchor</visually-hidden></a>
-	${slots.text.default}
-</h4>`
-</script>
+<h4 @attributes webc:root="override">
+	<a href="#" class="heading-link"><span aria-hidden="true">#</span></a>
+	<slot></slot>
+</h4>

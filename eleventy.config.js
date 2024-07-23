@@ -28,17 +28,18 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginDrafts);
 	eleventyConfig.addPlugin(pluginImages);
 
+	
 	// Official plugins
+	eleventyConfig.addPlugin(IdAttributePlugin);
 	eleventyConfig.addPlugin(pluginWebc, {
 		components: [
 			"./_components/**/*.webc",
-			// "npm:@11ty/eleventy-img/*.webc",
+			"npm:@11ty/eleventy-img/*.webc",
 		],
 	});
 	eleventyConfig.addPlugin(EleventyRenderPlugin);
 
 	eleventyConfig.addPlugin(pluginRss);
-	eleventyConfig.addPlugin(IdAttributePlugin);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
 		preAttributes: { tabindex: 0 },
 	});
@@ -142,13 +143,13 @@ export default async function(eleventyConfig) {
 	return {
 		// Control which files Eleventy will process
 		// e.g.: *.md, *.njk, *.html, *.liquid
-		templateFormats: ["md", "njk", "html", "liquid"],
+		templateFormats: ["md", "njk", "webc", "html", "liquid"],
 
 		// Pre-process *.md files with: (default: `liquid`)
 		markdownTemplateEngine: "njk",
 
 		// Pre-process *.html files with: (default: `liquid`)
-		htmlTemplateEngine: "njk",
+		htmlTemplateEngine: "webc",
 
 		// These are all optional:
 		dir: {
