@@ -38,7 +38,11 @@ layout: layouts/base.njk
 	{%- endfor %}
 </ul>
 
+<heading-anchors position="beforeend">
+
 {{ content | safe }}
+
+</heading-anchors>
 
 {%- if collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
@@ -50,3 +54,24 @@ layout: layouts/base.njk
 </ul>
 {%- endif %}
 {%- endif %}
+
+{%- css %}
+heading-anchors a[href^="#"] {
+	display: inline-block;
+	max-inline-size: 1ch;
+	white-space: nowrap;
+	overflow-x: hidden;
+	pointer-events: none;
+	color: transparent;
+	margin-inline-start: 0.375ch;
+	vertical-align: bottom;
+}
+
+heading-anchors a[href^="#"]::before {
+	content: "#";
+	color: var(--text-color-link);
+	pointer-events: auto;
+}
+{% endcss %}
+{# {%- js %}{% include "/js/heading-anchors.js" %}{% endjs %} #}
+<script type="module" src="/js/heading-anchors.js"></script>
