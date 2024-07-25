@@ -23,7 +23,33 @@
 		#}
 
 		{#- Add an arbitrary string to the bundle #}
-		{%- css %}* { box-sizing: border-box; }{% endcss %}
+		{%- css %}
+* { box-sizing: border-box; }
+
+heading-anchors a[href^="#"] {
+	color: transparent;
+	display: inline-block;
+	margin-inline-start: 0.375ch;
+	max-inline-size: 1ch;
+	overflow-x: hidden;
+	pointer-events: none;
+	text-decoration: none;
+	vertical-align: bottom;
+	white-space: nowrap;
+}
+
+heading-anchors a[href^="#"]::before {
+	content: "#";
+	color: var(--text-color-link);
+	pointer-events: auto;
+}
+
+heading-anchors a[href^="#"]:focus::before,
+heading-anchors a[href^="#"]:hover::before {
+	color: var(--text-color-link-highlight);
+	text-decoration: underline;
+}
+			{% endcss %}
 		{#- Add the contents of a file to the bundle #}
 		{%- css %}{% include "public/css/index.css" %}{% endcss %}
 		
@@ -60,7 +86,9 @@
 			</header>
 
 			<main id="skip">
-				{{ content | safe }}
+				<heading-anchors position="beforeend">
+					{{ content | safe }}
+				</heading-anchors>
 			</main>
 
 			<footer>
@@ -157,6 +185,8 @@ rainbow();
 activateColorScheme();
 			{% endjs %}
 			{% endif %}
+
+			<script type="module" src="/js/heading-anchors.js"></script>
 
 			{#
 				getBundleFileUrl Writes the bundle content to a content-hashed file location in your 

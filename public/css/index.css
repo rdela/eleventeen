@@ -435,31 +435,3 @@ header {
 .post-metadata time {
 	margin-inline-end: 1em;
 }
-
-/* Direct Links / Markdown Headers
-.header-anchor {
-	text-decoration: none;
-	font-style: normal;
-	font-size: 1em;
-	margin-inline-start: 0.1em;
-}
-
-a.header-anchor,
-a.header-anchor:visited {
-	color: transparent;
-}
-
-a.header-anchor:focus,
-a.header-anchor:hover {
-	text-decoration: underline;
-}
-
-a.header-anchor:focus,
-:hover > a.header-anchor {
-	color: var(--text-color-link-highlight);
-}
-
-h2 + .header-anchor {
-	font-size: 1.5em;
-}
-*/
