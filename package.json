@@ -1,6 +1,6 @@
 {
 	"name": "eleventeen",
-	"version": "9.2.20-alpha.17",
+	"version": "9.2.21-alpha.17",
 	"description": "Starter repository for a website built with Eleventy + eleventeen",
 	"type": "module",
 	"scripts": {
@@ -45,6 +45,7 @@
 		"@11ty/eleventy-plugin-bundle": "^2.0.2",
 		"@11ty/eleventy-plugin-rss": "^2.0.2",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
+		"@daviddarnes/heading-anchors": "^2.0.0",
 		"@famebot/chromagen": "^1.0.1",
 		"luxon": "^3.4.4"
 	}
