@@ -49,7 +49,7 @@ heading-anchors a[href^="#"]:hover::before {
 	color: var(--text-color-link-highlight);
 	text-decoration: underline;
 }
-			{% endcss %}
+		{% endcss %}
 		{#- Add the contents of a file to the bundle #}
 		{%- css %}{% include "public/css/index.css" %}{% endcss %}
 		
@@ -186,8 +186,6 @@ activateColorScheme();
 			{% endjs %}
 			{% endif %}
 
-			<script type="module" src="/js/heading-anchors.js"></script>
-
 			{#
 				getBundleFileUrl Writes the bundle content to a content-hashed file location in your 
 				output directory and returns the URL to the file for use.
@@ -203,6 +201,7 @@ activateColorScheme();
 				prefers-color-scheme initial preference and changes
 			#}
 			<script async src="{% getBundleFileUrl "js" %}"></script>
+			<script async type="module" src="/js/heading-anchors.js"></script>
 		</div>
 	</body>
 </html>

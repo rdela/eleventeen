@@ -264,6 +264,12 @@ main img {
 	max-width: 100%;
 }
 
+main img,
+main img::before {
+	color: transparent;
+	font-size: 0;
+}
+
 footer,
 header {
 	padding: 1rem;

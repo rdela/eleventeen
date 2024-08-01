@@ -1,10 +1,9 @@
 import { DateTime } from "luxon";
-import { IdAttributePlugin } from "@11ty/eleventy";
+import { EleventyHtmlBasePlugin, IdAttributePlugin } from "@11ty/eleventy";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginBundle from "@11ty/eleventy-plugin-bundle";
 import pluginNavigation from "@11ty/eleventy-navigation";
-import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
 import pluginDrafts from "./eleventy.config.drafts.js";
 import pluginImages from "./eleventy.config.images.js";
@@ -30,14 +29,14 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginImages);
 
 	// Official plugins
-	eleventyConfig.addPlugin(pluginRss);
+	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(IdAttributePlugin);
+	eleventyConfig.addPlugin(pluginBundle);
+	eleventyConfig.addPlugin(pluginNavigation);
+	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
 		preAttributes: { tabindex: 0 },
 	});
-	eleventyConfig.addPlugin(pluginNavigation);
-	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-	eleventyConfig.addPlugin(pluginBundle);
 
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
