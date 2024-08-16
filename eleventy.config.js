@@ -14,8 +14,6 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		"./public/": "/",
 		"./node_modules/prismjs/themes/prism-okaidia.css": "/css/prism-okaidia.css",
-		"./node_modules/@daviddarnes/heading-anchors/heading-anchors.js":
-			"/js/heading-anchors.js",
 	});
 
 	// Run Eleventy when these files change:

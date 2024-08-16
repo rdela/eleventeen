@@ -1,0 +1,55 @@
+/**
+ * Thanks to @daviddarnes/heading-anchors 2.0.0
+ * https://github.com/daviddarnes/heading-anchors
+ * and 11ty
+ * https://github.com/11ty/11ty-website/blob/main/src/_includes/components/heading-anchors.js
+ */
+class HeadingAnchors extends HTMLElement {
+	static register(tagName) {
+		if ("customElements" in window) {
+			customElements.define(tagName || "heading-anchors", HeadingAnchors);
+		}
+	}
+
+	connectedCallback() {
+		this.headings.forEach((heading) => {
+			if (
+				!heading.querySelector("a.direct-link") ||
+				heading.hasAttribute("data-heading-anchors-optout")
+			) {
+				heading.insertAdjacentHTML(this.position, this.anchor(heading));
+                heading.remove();
+			}
+		});
+	}
+
+	anchor(heading) {
+		console.log(heading);
+		// TODO this would be good use case for shadow dom
+		let anchor = document.createElement("a");
+		anchor.setAttribute("data-pagefind-ignore", "");
+		anchor.href = `#${heading.id}`;
+		anchor.classList.add("direct-link");
+		anchor.innerHTML = `<span class="sr-only">Jump to heading</span><span aria-hidden="true">#</span>`;
+		let flexybox = document.createElement("div");
+		flexybox.classList.add("anchored-heading");
+		flexybox.innerHTML = `${heading.outerHTML}${anchor.outerHTML}`;
+		return flexybox.outerHTML;
+	}
+
+	get headings() {
+		return this.querySelectorAll(
+			this.selector.split(",").map((entry) => `${entry.trim()}[id]`)
+		);
+	}
+
+	get selector() {
+		return this.getAttribute("selector") || "h1,h2,h3,h4";
+	}
+
+	get position() {
+		return this.getAttribute("position") || "afterend";
+	}
+}
+
+HeadingAnchors.register();

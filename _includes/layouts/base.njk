@@ -26,16 +26,20 @@
 		{%- css %}
 * { box-sizing: border-box; }
 
+.anchored-heading {
+	display: flex;
+	align-items: baseline;
+}
+
 heading-anchors a[href^="#"] {
 	color: transparent;
-	display: inline-block;
 	margin-inline-start: 0.375ch;
 	max-inline-size: 1ch;
 	overflow-x: hidden;
 	pointer-events: none;
 	text-decoration: none;
-	vertical-align: bottom;
 	white-space: nowrap;
+	padding-top: 0.125rem;
 }
 
 heading-anchors a[href^="#"]::before {
@@ -86,7 +90,7 @@ heading-anchors a[href^="#"]:hover::before {
 			</header>
 
 			<main id="skip">
-				<heading-anchors position="beforeend">
+				<heading-anchors position="beforebegin">
 					{{ content | safe }}
 				</heading-anchors>
 			</main>

@@ -5,6 +5,9 @@ layout: layouts/base.njk
 /* Only include the syntax highlighter CSS on blog posts */
 {% include "node_modules/prismjs/themes/prism-okaidia.css" %}
 {% include "public/css/prism-diff.css" %}
+pre[class*="language-"] {
+	margin: .75rem 0;
+}
 {%- endcss %}
 <figure>
 {%- if hero and heroalt %}

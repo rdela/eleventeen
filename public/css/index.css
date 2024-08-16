@@ -82,6 +82,7 @@ body {
 .pantalla {
 	margin: 0 auto;
 	max-width: 50em;
+	position: relative;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -202,7 +203,7 @@ button:active,
 }
 
 figure {
-	margin: 0;
+	margin: 0 0 0.75rem;
 }
 
 figcaption {
@@ -253,6 +254,7 @@ code {
 main {
 	font-size: var(--article-font-size);
 	padding: 0 1rem;
+	position: relative;
 }
 
 main :first-child {
