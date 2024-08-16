@@ -22,24 +22,42 @@
 		4. Learn more: https://github.com/11ty/eleventy-plugin-bundle
 		#}
 
+		{#- Add the contents of a file to the bundle #}
+		{%- css %}{% include "public/css/index.css" %}{% endcss %}
+		
+		{%- if not metadata.mono %}
+		{%- css %}{% include "public/css/rainbow.css" %}{% endcss %}
+		{% endif %}
+		{#- Or add from node_modules #}
+		{# {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %} #}
+
 		{#- Add an arbitrary string to the bundle #}
 		{%- css %}
-* { box-sizing: border-box; }
+:root {
+	--anchored-heading-gap: 0.375;
+	--anchored-heading-margin: calc(var(--anchored-heading-gap) * 1ch);
+	--anchored-heading-rem: calc(var(--anchored-heading-gap) * 1rem);
+	--anchored-heading-difference: calc(var(--anchored-heading-gap) * var(--article-font-size) - var(--anchored-heading-rem));
+	--anchored-heading-offset: calc(var(--article-font-size) + var(--anchored-heading-difference));
+}
 
 .anchored-heading {
 	display: flex;
-	align-items: baseline;
+	align-items: last baseline;
+}
+
+.anchored-heading :is(h1, h2, h3, h4) {
+	max-inline-size: calc(100% - var(--anchored-heading-offset));
 }
 
 heading-anchors a[href^="#"] {
 	color: transparent;
-	margin-inline-start: 0.375ch;
+	margin-inline-start: var(--anchored-heading-margin);
 	max-inline-size: 1ch;
 	overflow-x: hidden;
 	pointer-events: none;
 	text-decoration: none;
 	white-space: nowrap;
-	padding-top: 0.125rem;
 }
 
 heading-anchors a[href^="#"]::before {
@@ -54,14 +72,6 @@ heading-anchors a[href^="#"]:hover::before {
 	text-decoration: underline;
 }
 		{% endcss %}
-		{#- Add the contents of a file to the bundle #}
-		{%- css %}{% include "public/css/index.css" %}{% endcss %}
-		
-		{%- if not metadata.mono %}
-		{%- css %}{% include "public/css/rainbow.css" %}{% endcss %}
-		{% endif %}
-		{#- Or add from node_modules #}
-		{# {%- css %}{% include "node_modules/prismjs/themes/prism-okaidia.css" %}{% endcss %} #}
 
 		{#- Render the CSS bundle using Inlined CSS (for the fastest site performance in production) #}
 		<style>{% getBundle "css" %}</style>
