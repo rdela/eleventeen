@@ -5,7 +5,7 @@ eleventyNavigation:
   order: 3
 ---
 
-# About eleventeen <span role="img" aria-label="">🌈📓</span>
+<h1 data-heading-anchors-optout>About eleventeen <span role="img" aria-label="">🌈📓</span></h1>
 
 Eleventeen is an evolving variation of [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), a starter repository showing how to build a blog with [Eleventy (11ty)](https://www.11ty.dev/), the award-winning open source site generator created and maintained by [Zach Leatherman](https://www.zachleat.com/), who [blogs about Eleventy](https://www.zachleat.com/web/?category=eleventy) often.
 
