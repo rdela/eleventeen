@@ -1,12 +1,21 @@
 /* Defaults */
 :root {
+	--article-font-size: 1.25rem;
+	--article-h1-size: 2em;
+	--article-h2-size: 1.5em;
+	--article-h3-size: 1.125em;
+	--article-h4-size: 1.0625em;
+	--article-h5-size: 0.9375em;
+	--article-h6-size: 1.25rem;
+	--article-line-height-body: 1.5;
+	--article-line-height-heading: 1.25;
 	--font-family: -apple-system, system-ui, sans-serif;
 	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono,
 		Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono,
 		Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New,
 		Courier, monospace;
-	--article-font-size: 1.25rem;
 	--syntax-tab-size: 4;
+	--vspace: 1.5rem;
 }
 
 /* Default theme colors */
@@ -82,6 +91,7 @@ body {
 .pantalla {
 	margin: 0 auto;
 	max-width: 50em;
+	position: relative;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -102,8 +112,8 @@ h4,
 h5,
 h6,
 p {
-	margin-block-end: 1.5rem;
-	margin-block-start: 1.5rem;
+	margin-block-end: var(--vspace);
+	margin-block-start: var(--vspace);
 }
 
 h1,
@@ -112,32 +122,32 @@ h3,
 h4,
 h5,
 h6 {
-	line-height: 1.25;
+	line-height: var(--article-line-height-heading);
 }
 
 h1 {
-	font-size: 2em;
+	font-size: var(--article-h1-size);
 }
 
 h2 {
-	font-size: 1.5em;
+	font-size: var(--article-h2-size);
 }
 
 h3 {
-	font-size: 1.125em;
+	font-size: var(--article-h3-size);
 }
 
 h4 {
-	font-size: 1.0625em;
+	font-size: var(--article-h4-size);
 }
 
 h5 {
-	font-size: 0.9375em;
+	font-size: var(--article-h5-size);
 	text-transform: uppercase;
 }
 
 h6 {
-	font-size: 0.875em;
+	font-size: var(--article-h6-size);
 	text-transform: uppercase;
 }
 
@@ -147,7 +157,7 @@ p:last-child {
 
 p,
 li {
-	line-height: 1.5;
+	line-height: var(--article-line-height-body);
 }
 
 a {
@@ -202,7 +212,7 @@ button:active,
 }
 
 figure {
-	margin: 0;
+	margin: 0 0 calc(var(--vspace) / 2);
 }
 
 figcaption {
@@ -231,7 +241,7 @@ code {
 }
 
 pre:not([class*="language-"]) {
-	margin: 0.5em 0;
+	margin: calc(var(--vspace) / 4) 0 var(--vspace);
 	line-height: 1.375; /* 22px /16 */
 	-moz-tab-size: var(--syntax-tab-size);
 	-o-tab-size: var(--syntax-tab-size);
@@ -253,10 +263,7 @@ code {
 main {
 	font-size: var(--article-font-size);
 	padding: 0 1rem;
-}
-
-main :first-child {
-	margin-block-start: 0;
+	position: relative;
 }
 
 main img {
@@ -401,7 +408,7 @@ header {
 }
 
 .postlist-text a {
-	line-height: 1.25;
+	line-height: var(--article-line-height-heading);
 }
 
 .ellipsize {

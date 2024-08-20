@@ -45,7 +45,6 @@
 		"@11ty/eleventy-plugin-bundle": "^2.0.2",
 		"@11ty/eleventy-plugin-rss": "^2.0.2",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-		"@daviddarnes/heading-anchors": "^2.0.0",
 		"@famebot/chromagen": "^1.0.1",
 		"luxon": "^3.4.4"
 	}
