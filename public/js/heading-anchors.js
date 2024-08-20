@@ -13,12 +13,12 @@ class HeadingAnchors extends HTMLElement {
 
 	connectedCallback() {
 		this.headings.forEach((heading) => {
-            if (
-                heading.hasAttribute("data-heading-anchors-optout") === false
-            ) {
-                heading.insertAdjacentHTML(this.position, this.anchor(heading));
-                heading.remove();
-            }
+			if (
+				heading.hasAttribute("data-heading-anchors-optout") === false
+			) {
+				heading.insertAdjacentHTML(this.position, this.anchor(heading));
+				heading.remove();
+			}
 		});
 	}
 
