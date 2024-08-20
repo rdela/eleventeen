@@ -37,20 +37,25 @@
 	--anchored-heading-gap: 0.375;
 	--anchored-heading-margin: calc(var(--anchored-heading-gap) * 1ch);
 	--anchored-heading-rem: calc(var(--anchored-heading-gap) * 1rem);
-	--anchored-heading-difference: calc(var(--anchored-heading-gap) * var(--article-font-size) - var(--anchored-heading-rem));
-	--anchored-heading-offset: calc(var(--article-font-size) + var(--anchored-heading-difference));
+	--anchored-heading-min-size: 1.328125rem; {# calc(var(--article-font-size) * var(--article-h4-size)) #}
+	--anchored-heading-difference: calc(var(--anchored-heading-gap) * var(--anchored-heading-min-size) - var(--anchored-heading-rem));
+	--anchored-heading-offset: calc(var(--anchored-heading-min-size) + var(--anchored-heading-difference));
 }
 
 .anchored-heading {
-	display: flex;
 	align-items: last baseline;
+	display: flex;
+	margin-block-end: 1.5rem;
+	margin-block-start: 1.5rem;
 }
 
 .anchored-heading :is(h1, h2, h3, h4) {
+	margin-block-end: 0;
+	margin-block-start: 0;
 	max-inline-size: calc(100% - var(--anchored-heading-offset));
 }
 
-heading-anchors a[href^="#"] {
+heading-anchors a[href].direct-link {
 	color: transparent;
 	margin-inline-start: var(--anchored-heading-margin);
 	max-inline-size: 1ch;
@@ -60,14 +65,14 @@ heading-anchors a[href^="#"] {
 	white-space: nowrap;
 }
 
-heading-anchors a[href^="#"]::before {
-	content: "#";
+heading-anchors a[href].direct-link::before {
 	color: var(--text-color-link);
+	content: "#";
 	pointer-events: auto;
 }
 
-heading-anchors a[href^="#"]:focus::before,
-heading-anchors a[href^="#"]:hover::before {
+heading-anchors a[href].direct-link:focus::before,
+heading-anchors a[href].direct-link:hover::before {
 	color: var(--text-color-link-highlight);
 	text-decoration: underline;
 }
@@ -100,7 +105,7 @@ heading-anchors a[href^="#"]:hover::before {
 			</header>
 
 			<main id="skip">
-				<heading-anchors position="beforebegin">
+				<heading-anchors>
 					{{ content | safe }}
 				</heading-anchors>
 			</main>

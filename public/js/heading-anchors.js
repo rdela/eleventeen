@@ -13,18 +13,16 @@ class HeadingAnchors extends HTMLElement {
 
 	connectedCallback() {
 		this.headings.forEach((heading) => {
-			if (
-				!heading.querySelector("a.direct-link") ||
-				heading.hasAttribute("data-heading-anchors-optout")
-			) {
-				heading.insertAdjacentHTML(this.position, this.anchor(heading));
+            if (
+                heading.hasAttribute("data-heading-anchors-optout") === false
+            ) {
+                heading.insertAdjacentHTML(this.position, this.anchor(heading));
                 heading.remove();
-			}
+            }
 		});
 	}
 
 	anchor(heading) {
-		console.log(heading);
 		// TODO this would be good use case for shadow dom
 		let anchor = document.createElement("a");
 		anchor.setAttribute("data-pagefind-ignore", "");
@@ -48,7 +46,7 @@ class HeadingAnchors extends HTMLElement {
 	}
 
 	get position() {
-		return this.getAttribute("position") || "afterend";
+		return this.getAttribute("position") || "beforebegin";
 	}
 }
 
