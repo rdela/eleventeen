@@ -2,11 +2,20 @@
 layout: layouts/base.njk
 ---
 {%- css %}
-/* Only include the syntax highlighter CSS on blog posts */
+{# Only include the syntax highlighter CSS on blog posts #}
 {% include "node_modules/prismjs/themes/prism-okaidia.css" %}
 {% include "public/css/prism-diff.css" %}
+pre[class*="language-"] {
+	margin: .375rem 0 1.5rem;
+}
+
+{# no top margin on post hero or title #}
+main figure.hero:first-of-type,
+main h1.title:first-of-type {
+	margin-block-start: 0;
+}
 {%- endcss %}
-<figure>
+<figure class="hero">
 {%- if hero and heroalt %}
 
 	{%- if herolink %}
@@ -28,7 +37,7 @@ layout: layouts/base.njk
 	{%- endif %}
 {%- endif %}
 </figure>
-<h1>{{ title }}</h1>
+<h1 class="title" data-heading-anchors-optout>{{ title }}</h1>
 
 <ul class="post-metadata">
 	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
