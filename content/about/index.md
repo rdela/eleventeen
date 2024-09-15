@@ -1,5 +1,4 @@
 ---
-layout: layouts/base.njk
 eleventyNavigation:
   key: About
   order: 3
@@ -15,7 +14,7 @@ The name eleventeen is an homage to the [Daisy Chainsaw album](https://en.wikipe
 
 ## Rainbow Mode™
 
-In addition to Eleventy Base Blog’s killer features and our upgraded [Eleventy v3 beta](https://www.11ty.dev/blog/canary-eleventy-v3/)’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports a novel new visual experience we call Rainbow Mode, powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish on GitHub under the [Famebot organization](https://github.com/famebot). Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color&nbsp;names.”
+In addition to Eleventy Base Blog’s killer features, eleventeen sports a novel new visual experience we call Rainbow Mode, powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish on GitHub under the [Famebot organization](https://github.com/famebot). Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color&nbsp;names.”
 
 ### prefers-color-scheme: rainbow
 

@@ -1,18 +1,19 @@
 {
 	"name": "eleventeen",
-	"version": "9.2.25-beta.1",
+	"version": "9.3.1-alpha.19",
 	"description": "Starter repository for a website built with Eleventy + eleventeen",
 	"type": "module",
 	"scripts": {
-		"build": "eleventy",
-		"build-ghpages": "eleventy --pathprefix=/eleventeen/",
-		"d": "eleventy --serve --quiet",
-		"start": "eleventy --serve --quiet",
-		"noisy": "eleventy --serve",
-		"bs": "eleventy && npx browser-sync '_site' --port 8080 --no-ghost-mode --no-notify --no-ui",
-		"debug": "DEBUG=Eleventy* eleventy",
-		"debugstart": "DEBUG=Eleventy* eleventy --serve --quiet",
-		"benchmark": "DEBUG=Eleventy:Benchmark* eleventy"
+		"benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
+		"bs": "npx @11ty/eleventy && npx browser-sync '_site' --port 8080 --no-ghost-mode --no-notify --no-ui",
+		"build": "npx @11ty/eleventy",
+		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventeen/",
+		"build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
+		"d": "npx @11ty/eleventy --serve --quiet",
+		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
+		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
+		"noisy": "npx @11ty/eleventy --serve",
+		"start": "npx @11ty/eleventy --serve --quiet"
 	},
 	"repository": {
 		"type": "git",
@@ -39,13 +40,18 @@
 	},
 	"homepage": "https://eleventeen.blog/about/",
 	"devDependencies": {
-		"@11ty/eleventy": "3.0.0-beta.1",
-		"@11ty/eleventy-img": "^4.0.2",
+		"@11ty/eleventy": "3.0.0-alpha.20",
+		"@11ty/eleventy-img": "5.0.0-beta.10",
 		"@11ty/eleventy-navigation": "^0.3.5",
-		"@11ty/eleventy-plugin-bundle": "^2.0.2",
 		"@11ty/eleventy-plugin-rss": "^2.0.2",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
 		"@famebot/chromagen": "^1.0.1",
-		"luxon": "^3.4.4"
+		"cross-env": "^7.0.3",
+		"luxon": "^3.5.0",
+		"zod": "^3.23.8",
+		"zod-validation-error": "^3.3.1"
+	},
+	"dependencies": {
+		"@zachleat/heading-anchors": "^1.0.1"
 	}
 }

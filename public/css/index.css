@@ -64,6 +64,10 @@
 	}
 }
 
+@view-transition {
+	navigation: auto;
+}
+
 /* Global stylesheet */
 * {
 	box-sizing: border-box;
@@ -222,8 +226,18 @@ figcaption {
 }
 
 .links-nextprev {
+	display: flex;
+	justify-content: space-between;
 	list-style: none;
 	padding: 1em 0;
+}
+
+.links-nextprev li {
+	max-width: 50%;
+}
+
+.links-nextprev-next {
+	text-align: right;
 }
 
 table {
@@ -411,17 +425,6 @@ header {
 	line-height: var(--article-line-height-heading);
 }
 
-.ellipsize {
-	overflow: hidden; /* keeps the element from overflowing its parent */
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
-	-webkit-line-clamp: 3; /* start showing ellipsis when 3rd line is reached */
-	line-clamp: 3;
-	/* implicit... */
-	/* text-overflow: ellipsis; */
-	/* white-space: normal; */
-}
-
 /* Tags */
 .post-tag {
 	display: inline-flex;
@@ -447,4 +450,24 @@ header {
 
 .post-metadata time {
 	margin-inline-end: 1em;
+}
+
+/* Ellipsize */
+.ellipsize {
+	overflow: hidden; /* keeps the element from overflowing its parent */
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	/* implicit... */
+	/* text-overflow: ellipsis; */
+	/* white-space: normal; */
+}
+
+.line-clamp-1 {
+	-webkit-line-clamp: 1; /* start showing ellipsis when 3rd line is reached */
+	line-clamp: 1;
+}
+
+.line-clamp-3 {
+	-webkit-line-clamp: 3; /* start showing ellipsis when 3rd line is reached */
+	line-clamp: 3;
 }

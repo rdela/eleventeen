@@ -10,7 +10,7 @@ The name eleventeen is an homage to the [Daisy Chainsaw album](https://en.wikipe
 
 ## Rainbow Mode™
 
-In addition to Eleventy Base Blog’s killer features and our upgraded [Eleventy v3 beta](https://www.11ty.dev/blog/canary-eleventy-v3/)’s bundler-free [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) support, eleventeen sports a novel new visual experience we call Rainbow Mode, powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish on GitHub under the [Famebot organization](https://github.com/famebot). Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color&nbsp;names.”
+In addition to Eleventy Base Blog’s killer features, eleventeen sports a novel new visual experience we call Rainbow Mode, powered by [Chromagen](https://github.com/famebot/chromagen), the color scheme generator we publish on GitHub under the [Famebot organization](https://github.com/famebot). Our homegrown Rainbow Mode is wholly distinct from and not to be confused with Emacs [rainbow-mode](https://elpa.gnu.org/packages/rainbow-mode.html), which “sets background color to strings that match color&nbsp;names.”
 
 ### prefers-color-scheme: rainbow
 
@@ -148,20 +148,20 @@ Some versions below v6 can exhibit an issue where the presence of a `x-robots-ta
 
 - Local development live reload provided by [Eleventy Dev Server](https://www.11ty.dev/docs/dev-server/).
 - Content-driven [navigation menu](https://www.11ty.dev/docs/plugins/navigation/)
-- [Image optimization](https://www.11ty.dev/docs/plugins/image/) via the `{% image %}` shortcode.
+- Fully automated [Image optimization](https://www.11ty.dev/docs/plugins/image/)
 	- Zero-JavaScript output.
 	- Support for modern image formats automatically (e.g. AVIF and WebP)
+	- Processes images on-request during `--serve` for speedy local builds.
 	- Prefers `<img>` markup if possible (single image format) but switches automatically to `<picture>` for multiple image formats.
 	- Automated `<picture>` syntax markup with `srcset` and optional `sizes`
 	- Includes `width`/`height` attributes to avoid [content layout shift](https://web.dev/cls/).
 	- Includes `loading="lazy"` for native lazy loading without JavaScript.
 	- Includes [`decoding="async"`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/decoding)
 	- Images can be co-located with blog post files.
-	- View the [Image plugin source code](https://github.com/11ty/eleventy-base-blog/blob/main/eleventy.config.images.js)
 - Per page CSS bundles [via `eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle).
 - Built-in [syntax highlighter](https://www.11ty.dev/docs/plugins/syntaxhighlight/) (zero-JavaScript output).
 - Blog Posts
-	- Draft posts: use `draft: true` to mark a blog post as a draft. Drafts are **only** included during `--serve`/`--watch` and are excluded from full builds. View the [Drafts plugin source code](https://github.com/rdela/eleventeen/blob/trunk/eleventy.config.drafts.js).
+	- Draft posts: use `draft: true` to mark a blog post as a draft. Drafts are **only** included during `--serve`/`--watch` and are excluded from full builds. This is driven by the `eleventyExcludeFromCollections` and `permalink` computed data in the `content/blog/blog.11tydata.js` directory data file. Schema validator will show an error if non-boolean value is set in data cascade.
 	- Automated next/previous links
 	- Accessible deep links to headings
 - Generated Pages
@@ -177,9 +177,10 @@ Some versions below v6 can exhibit an issue where the presence of a `x-robots-ta
   or <https://eleventeen.netlify.app> ([Latest Lighthouse report](https://eleventeen.blog/reports/lighthouse/))
 - eleventeen on Netlify, Mono Mode: <https://mono.eleventeen.blog> ([Latest Lighthouse report](https://mono.eleventeen.blog/reports/lighthouse/))
 - [eleventy-base-blog on Netlify](https://eleventy-base-blog.netlify.app)
+- [eleventy-base-blog on Vercel](https://demo-base-blog.11ty.dev/)
 - [eleventy-base-blog on GitHub Pages](https://11ty.github.io/eleventy-base-blog/)
-- [Remix eleventy-base-blog on Glitch](https://glitch.com/~11ty-eleventy-base-blog)
 - [eleventy-base-blog on Cloudflare Pages](https://eleventy-base-blog-d2a.pages.dev/)
+- [Remix eleventy-base-blog on Glitch](https://glitch.com/~11ty-eleventy-base-blog)
 
 ## Deploy This to Your Own Site
 
@@ -188,7 +189,7 @@ Deploy this Eleventy site in just a few clicks on these services:
 - [Deploy eleventeen to **Netlify**](https://app.netlify.com/start/deploy?repository=https://github.com/rdela/eleventeen)
 - [Deploy eleventeen to **Vercel**](https://vercel.com/import/project?template=rdela%2Feleventeen)
 - Look in `.github/workflows/gh-pages.yml.sample` for information on Deploying to **GitHub Pages**.
-- [Try it out on **Stackblitz**](https://stackblitz.com/github/rdela/eleventeen)
+- [Try eleventeen out on **Stackblitz**](https://stackblitz.com/github/rdela/eleventeen)
 - Read more about [Deploying an Eleventy project](https://www.11ty.dev/docs/deployment/) to the web.
 
 ### Implementation Notes

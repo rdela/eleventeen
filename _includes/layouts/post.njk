@@ -22,7 +22,7 @@ main h1.title:first-of-type {
 		<a href={{ herolink }}>
 	{%- endif %}
 
-	{% image hero, heroalt %}
+	<img src="{{ hero }}" alt="{{ heroalt }}" />
 
 	{%- if herolink %}
 		</a>
@@ -54,8 +54,8 @@ main h1.title:first-of-type {
 {%- set nextPost = collections.posts | getNextCollectionItem %}
 {%- if nextPost or previousPost %}
 <ul class="links-nextprev">
-	{%- if previousPost %}<li>Previous: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-	{%- if nextPost %}<li>Next: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+	{%- if previousPost %}<li class="links-nextprev-prev">← Previous<br><a class="ellipsize line-clamp-1" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+	{%- if nextPost %}<li class="links-nextprev-next ellipsize line-clamp-1">Next →<br><a class="ellipsize line-clamp-1" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
 </ul>
 {%- endif %}
 {%- endif %}

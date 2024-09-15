@@ -8,8 +8,8 @@
 		<meta name="description" content="{{ description or metadata.description }}">
 		<meta property="og:image" content="{% shareimg hero or metadata.siteimage %}" />
 		{#- Atom and JSON feeds included by default #}
-		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="{{ metadata.title }}">
-		<link rel="alternate" href="/feed/feed.json" type="application/json" title="{{ metadata.title }}">
+		<link rel="alternate" href="feed/atom.njk" type="application/atom+xml" title="{{ metadata.title }}">
+		<link rel="alternate" href="feed/json.njk" type="application/json" title="{{ metadata.title }}">
 
 		{#- Uncomment this if you’d like folks to know that you used Eleventy to build your site!  #}
 		{#- <meta name="generator" content="{{ eleventy.generator }}"> #}
@@ -41,14 +41,12 @@
 	--anchored-heading-difference: calc(var(--anchored-heading-gap) * var(--anchored-heading-min-size) - var(--anchored-heading-rem));
 	--anchored-heading-offset: calc(var(--anchored-heading-min-size) + var(--anchored-heading-difference));
 }
-
 .anchored-heading {
-	align-items: last baseline;
-	display: flex;
+	{# align-items: last baseline;
+	display: flex; #}
 	margin-block-end: 1.5rem;
 	margin-block-start: 1.5rem;
 }
-
 .anchored-heading :is(h1, h2, h3, h4) {
 	margin-block-end: 0;
 	margin-block-start: 0;
@@ -83,6 +81,8 @@ heading-anchors a[href].direct-link:hover::before {
 
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
+
+		{%- js %}{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
 	</head>
 	<body>
 		<div class="pantalla">
@@ -214,13 +214,10 @@ activateColorScheme();
 				for repeat-views (and across multiple pages, too).
 				https://mathiasbynens.be/notes/inline-vs-separate-file
 				http://calendar.perfplanet.com/2011/why-inlining-everything-is-not-the-answer/
-				Choosing not to block render
-				https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#blocking_rendering_till_a_script_is_fetched_and_executed
 				need bundle in both mono and rainbow modes to set and respond to 
 				prefers-color-scheme initial preference and changes
 			#}
-			<script async src="{% getBundleFileUrl "js" %}"></script>
-			<script async type="module" src="/js/heading-anchors.js"></script>
+			<script type="module" src="{% getBundleFileUrl "js" %}"></script>
 		</div>
 	</body>
 </html>

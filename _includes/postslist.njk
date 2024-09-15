@@ -4,14 +4,14 @@
 		{%- if post.data.hero and post.data.heroalt %}
 		<figure class="postlist-img"><a href="{{ post.url }}" class="postlist-thumb">
 			{%- if post.data.hero | fullPostImgUrl %}
-				{% image post.data.hero, post.data.heroalt, [488] %}
+				<img src="{{ post.data.hero }}" alt="{{ post.data.heroalt }}" eleventy:widths="488" />
 			{%- else %}
-				{% image ['./', post.url, post.data.hero] | join, post.data.heroalt, [488] %}
+				<img src="./{{ post.url }}{{ post.data.hero }}" alt="{{ post.data.heroalt }}" eleventy:widths="488" />
 			{%- endif %}
 		</a></figure>
 		{%- endif %}
 		<div class="postlist-text">
-			<a href="{{ post.url }}" class="postlist-link ellipsize">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+			<a href="{{ post.url }}" class="postlist-link ellipsize line-clamp-3">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
 			<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("d LLLL yyyy") }}</time>
 		</div>
 	</li>
