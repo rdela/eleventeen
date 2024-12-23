@@ -54,8 +54,16 @@ main h1.title:first-of-type {
 {%- set nextPost = collections.posts | getNextCollectionItem %}
 {%- if nextPost or previousPost %}
 <ul class="links-nextprev">
-	{%- if previousPost %}<li class="links-nextprev-prev">← Previous<br><a class="ellipsize line-clamp-1" href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-	{%- if nextPost %}<li class="links-nextprev-next ellipsize line-clamp-1">Next →<br><a class="ellipsize line-clamp-1" href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+	{%- if previousPost %}
+	<li class="links-nextprev-prev"><a href="{{ previousPost.url }}">← Previous<br><span class="ellipsize line-clamp-1">{{ previousPost.data.title }}</span></a></li>
+	{%- else %}
+	<li class="links-nextprev-prev"><a href="/archive/">← Back to index</a></li>
+	{% endif %}
+	{%- if nextPost %}
+	<li class="links-nextprev-next"><a href="{{ nextPost.url }}">Next →<br><span class="ellipsize line-clamp-1">{{ nextPost.data.title }}</span></a></li>
+	{%- else %}
+	<li class="links-nextprev-next"><a href="/archive/">Back to index →</a></li>
+	{% endif %}
 </ul>
 {%- endif %}
 {%- endif %}

@@ -5,6 +5,7 @@ import pluginNavigation from "@11ty/eleventy-navigation";
 import eleventyImage, { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 import pluginFilters from "./_config/filters.js";
+import dmd from "./_data/metadata.js";
 
 import path from "path";
 
@@ -70,12 +71,12 @@ export default async function(eleventyConfig) {
 			limit: 10,
 		},
 		metadata: {
-			language: "en",
-			title: "Blog Title",
-			subtitle: "This is a longer description about your blog.",
-			base: "https://example.com/",
+			language: `${dmd.language}`,
+			title: `${dmd.title}`,
+			subtitle: `${dmd.description}`,
+			base: `${dmd.url}`,
 			author: {
-				name: "Your Name"
+				name: `${dmd.author.name}`
 			}
 		}
 	});

@@ -1,6 +1,6 @@
 {
 	"name": "eleventeen",
-	"version": "9.3.1-alpha.19",
+	"version": "9.3.1",
 	"description": "Starter repository for a website built with Eleventy + eleventeen",
 	"type": "module",
 	"scripts": {
@@ -17,7 +17,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/rdela/eleventeen.git"
+		"url": "git+https://github.com/rdela/eleventeen.git"
 	},
 	"author": {
 		"name": "Zach Leatherman",
@@ -40,16 +40,16 @@
 	},
 	"homepage": "https://eleventeen.blog/about/",
 	"devDependencies": {
-		"@11ty/eleventy": "3.0.0-alpha.20",
-		"@11ty/eleventy-img": "5.0.0-beta.10",
+		"@11ty/eleventy": "^3.0.0",
+		"@11ty/eleventy-img": "^5.0.0",
 		"@11ty/eleventy-navigation": "^0.3.5",
 		"@11ty/eleventy-plugin-rss": "^2.0.2",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-		"@famebot/chromagen": "^1.0.1",
+		"@famebot/chromagen": "^1.0.2",
 		"cross-env": "^7.0.3",
 		"luxon": "^3.5.0",
-		"zod": "^3.23.8",
-		"zod-validation-error": "^3.3.1"
+		"zod": "^3.24.1",
+		"zod-validation-error": "^3.4.0"
 	},
 	"dependencies": {
 		"@zachleat/heading-anchors": "^1.0.1"
