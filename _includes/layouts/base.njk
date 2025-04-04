@@ -82,7 +82,7 @@ heading-anchors a[href].direct-link:hover::before {
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
 
-		<script>{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}</script>
+		<script type="module">{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}</script>
 	</head>
 	<body>
 		<div class="pantalla">
