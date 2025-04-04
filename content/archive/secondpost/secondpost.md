@@ -14,9 +14,9 @@ Edit posts in the github app like wheeeeeee agile frameworks to provide a robust
 
 ## Section Header
 
-- <a href="/archive/firstpost/">First post</a>
+- <a href="/archive/firstpost.md">First post</a>
   + [Section Header](/archive/firstpost/#section-header)
-- <a href="/archive/thirdpost/">Third post</a>
+- <a href="archive/thirdpost.md">Third post</a>
   + [Code](/archive/thirdpost/#code)
     * [Styled (with Syntax)](/archive/thirdpost/#styled-with-syntax)
     * [Unstyled](/archive/thirdpost/#unstyled)
