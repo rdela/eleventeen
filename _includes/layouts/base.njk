@@ -82,7 +82,7 @@ heading-anchors a[href].direct-link:hover::before {
 		{#- Renders the CSS bundle using a separate file, if you can't set CSP directive style-src: 'unsafe-inline' #}
 		{#- <link rel="stylesheet" href="{% getBundleFileUrl "css" %}"> #}
 
-		{%- js %}{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}{% endjs %}
+		<script>{% include "node_modules/@zachleat/heading-anchors/heading-anchors.js" %}</script>
 	</head>
 	<body>
 		<div class="pantalla">
@@ -125,7 +125,7 @@ heading-anchors a[href].direct-link:hover::before {
 				listen for and respond to prefers-color-scheme (light/dark)
 				changes in both mono and rainbow modes
 			#}
-			{% js %}
+			<script>
 let huedark = '#000';
 let huehsl = '#fff';
 
@@ -143,14 +143,12 @@ const darkPreference = window.matchMedia("(prefers-color-scheme: dark)");
 const lightPreference = window.matchMedia("(prefers-color-scheme: light)");
 darkPreference.addEventListener("change", e => e.matches && activateColorScheme());
 lightPreference.addEventListener("change", e => e.matches && activateColorScheme());
-			{% endjs %}
+			</script>
 			
 			{# rainbow mode code lode #}
 			{%- if not metadata.mono %}
-			{% js %}
+			<script>
 				{% include "node_modules/@famebot/chromagen/dist/chromagen.umd.js" %}
-			{% endjs %}
-			{% js %}
 {# connect Rainbow Me button #}
 document.querySelector('#rainbutton').innerHTML = '<button title="wish upon a star" onclick="rainbow()">🌈 Rainbow Me</button>';
 
@@ -196,28 +194,14 @@ document.querySelector('#chromagen').innerHTML = `<details>
 </details>`;
 }
 rainbow();
-			{% endjs %}
+			</script>
 			{# end rainbow mode code lode #}
 			{% else %}
-			{% js %}
-{# activate theme-color in mono mode #}
+			{# activate theme-color in mono mode #}
+			<script>
 activateColorScheme();
-			{% endjs %}
+			</script>
 			{% endif %}
-
-			{#
-				getBundleFileUrl Writes the bundle content to a content-hashed file location in your 
-				output directory and returns the URL to the file for use.
-				https://github.com/11ty/eleventy-plugin-bundle/blob/main/README.md#write-a-bundle-to-a-file
-				Note that writing bundles to files will likely be slower for 
-				empty-cache first time visitors but better cached in the browser 
-				for repeat-views (and across multiple pages, too).
-				https://mathiasbynens.be/notes/inline-vs-separate-file
-				http://calendar.perfplanet.com/2011/why-inlining-everything-is-not-the-answer/
-				need bundle in both mono and rainbow modes to set and respond to 
-				prefers-color-scheme initial preference and changes
-			#}
-			<script type="module" src="{% getBundleFileUrl "js" %}"></script>
 		</div>
 	</body>
 </html>

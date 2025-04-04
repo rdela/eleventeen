@@ -46,7 +46,8 @@ export default async function(eleventyConfig) {
 	// Adds the {% css %} paired shortcode
 	eleventyConfig.addBundle("css");
 	// Adds the {% js %} paired shortcode
-	eleventyConfig.addBundle("js");
+	// https://github.com/rdela/eleventeen/pull/47#issuecomment-2738689736
+	// eleventyConfig.addBundle("js");
 
 	// Official plugins
 	eleventyConfig.addPlugin(HtmlBasePlugin);
