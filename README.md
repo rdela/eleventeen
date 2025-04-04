@@ -1,10 +1,8 @@
 # [eleventeen](https://eleventeen.blog) <span role="img" aria-label="">🌈📓</span>
 
-[![](https://o.famebot.com/file/famebot/eleventeen.png)](https://eleventeen.blog)
-
 Eleventeen is an evolving variation of [Eleventy Base Blog](https://github.com/11ty/eleventy-base-blog), a starter repository showing how to build a blog with [Eleventy](https://www.11ty.dev/), the open source site generator created by Zach Leatherman, who [writes about Eleventy](https://www.zachleat.com/web/?category=eleventy) often.
 
-[Ricky de Laveaga](https://rdela.com/bio/) builds [eleventeen on GitHub](https://github.com/rdela/eleventeen) for web projects by [Famebot](https://famebot.com/) and [Artist&nbsp;Activist](https://artact.io/). Famebot is the micro movie studio Ricky runs with [Laramie Dennis](https://laramiedennis.com/), and Artist Activist is a creative agency advocating for positive change Ricky co-founded with [Clifford&nbsp;J.&nbsp;Tasner](https://www.cliffordjtasner.com/).
+[Ricky de Laveaga](https://rdela.com/bio/) builds [eleventeen on GitHub](https://github.com/rdela/eleventeen) for web projects by [Famebot](https://famebot.com/) and [Artist&nbsp;Activist](https://artact.io/). Famebot is the micro movie studio Ricky runs with [Laramie Dennis](https://laramiedennis.com/), and Artist Activist is a creative studio advocating for positive change Ricky co-founded with [Clifford&nbsp;J.&nbsp;Tasner](https://www.cliffordjtasner.com/).
 
 The name eleventeen is an homage to the [Daisy Chainsaw album](https://en.wikipedia.org/wiki/Eleventeen_(album)) <span role="img" aria-label="">👩🏻‍🎤🎶</span>
 
