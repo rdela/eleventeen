@@ -1,6 +1,6 @@
 let data = {
 	title: "eleventeen v" + process.env.npm_package_version,
-	url: "https://eleventeen.blog",
+	url: "https://eleventeen.netlify.app",
 	language: "en",
 	description: "Rainbow Eleventy blog",
 	author: {
