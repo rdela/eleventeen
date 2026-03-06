@@ -38,7 +38,7 @@
 	"bugs": {
 		"url": "https://github.com/rdela/eleventeen/issues"
 	},
-	"homepage": "https://eleventeen.blog/about/",
+	"homepage": "https://eleventeen.netlify.app/about/",
 	"devDependencies": {
 		"@11ty/eleventy": "^3.0.0",
 		"@11ty/eleventy-img": "^5.0.0",
